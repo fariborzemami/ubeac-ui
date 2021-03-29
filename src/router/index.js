@@ -3,19 +3,20 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Pages from '@/config/pages'
+import Views from '@/config/views'
 
 const routes = []
-Pages.forEach(page => {
+Views.forEach(view => {
+  console.log()
   routes.push({
     path: view.path,    
-    component: () => import('@/global/layouts/' + page.theme + '.vue'),
+    component: () => import('@/global/layouts/' + view.theme + '.vue'),
     children:
       [
         {
           name: view.name,
           path: '',
-          component: () => import('@/pages/' + page.name + '.vue'),
+          component: () => import('@/views/' + view.name + '.vue'),
         }
       ]
   })
