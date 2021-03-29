@@ -7,18 +7,19 @@ import Views from '@/config/views'
 
 const routes = []
 Views.forEach(view => {
-  console.log()
   routes.push({
-    path: view.path,    
-    component: () => import('@/global/layouts/' + view.theme + '.vue'),
-    children:
-      [
-        {
-          name: view.name,
-          path: '',
-          component: () => import('@/views/' + view.name + '.vue'),
-        }
-      ]
+    path: view.path,  
+    component: () => import('@/views/' + view.name + '.vue'), 
+    meta: view
+    // // component: () => import('@/global/layouts/' + view.theme + '.vue'),
+    // children:
+    //   [
+    //     {
+    //       name: view.name,
+    //       path: '',
+    //       component: () => import('@/views/' + view.name + '.vue'),
+    //     }
+    //   ]
   })
 
 })

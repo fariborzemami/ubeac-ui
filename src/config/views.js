@@ -2,21 +2,21 @@ export default [
     {
         path: '/',
         name: 'Home',
-        theme: 'Full',
+        layout: 'Full',
     },
     {
         path: '/about',
         name: 'About',
-        theme: 'Full',
+        layout: 'NoSidebar',
     },
     {
         path: '/login',
         name: 'Login',
-        theme: 'Full',
+        layout: 'Full',
     },
     {
         path: '/profile',
         name: 'Profile',
-        theme: 'Full',
+        layout: 'Full',
     }
 ]

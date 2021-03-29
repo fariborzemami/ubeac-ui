@@ -4,6 +4,12 @@ export default {
         [
             {
                 title: 'Home',
+                href: '/',
+                icon: 'wizard',
+                roles: [Roles.ALL]
+            },
+            {
+                title: 'About',
                 href: '/about',
                 icon: 'wizard',
                 roles: [Roles.ALL]
