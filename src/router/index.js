@@ -11,15 +11,6 @@ Views.forEach(view => {
     path: view.path,  
     component: () => import('@/views/' + view.name + '.vue'), 
     meta: view
-    // // component: () => import('@/global/layouts/' + view.theme + '.vue'),
-    // children:
-    //   [
-    //     {
-    //       name: view.name,
-    //       path: '',
-    //       component: () => import('@/views/' + view.name + '.vue'),
-    //     }
-    //   ]
   })
 
 })
