@@ -12,11 +12,16 @@ export default [
     {
         path: '/login',
         name: 'Login',
-        layout: 'Full',
+        layout: 'Blank',
     },
     {
         path: '/profile',
         name: 'Profile',
-        layout: 'Full',
+        layout: 'Simple',
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        layout: 'Blank',
     }
 ]

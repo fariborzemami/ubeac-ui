@@ -2,7 +2,7 @@
   <div>
     <u-header></u-header>
     <u-profile-menu :items="navigationItems.profile"></u-profile-menu>
-    <u-content><router-view/></u-content>
+    <router-view/>
     <u-footer></u-footer>
   </div>
 </template>
