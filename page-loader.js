@@ -9,7 +9,6 @@ module.exports = function (source, map) {
       return { page: pageConfig }
     }
   }`
-  console.log(out)
   this.callback(
     null,
     out,
