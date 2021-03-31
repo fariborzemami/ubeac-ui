@@ -1,23 +1,20 @@
-<template layout="Full" title="Home Title" routes="/,/home" icon="test-icon" roles="ADMIN,UNKNWON">
-  <u-content><h1>This is home page! {{ amir }}xxxxx</h1>
-  </u-content>
-</template>
-<page>
-{
-  "layout": "Full",
-  "title": "Home Title",
-  "description": "Description for the home page goes here!",
-  "routes":["/", "/home"],
-  "icon": "test-icon",
-  "roles":["ADMIN", "UNKNWON"]
-}
+<page layout="Full" title="Home Title" route="/" icon="test-icon" roles="ADMIN,UNKNWON">
+  <h1>Home page</h1>
 </page>
 <script>
 export default {
+  mounted() {
+    console.log(123);
+  },
   data() {
     return {
       amir: 123123123
     };
-  }
-}
+  },
+};
 </script>
+<style scoped>
+.a {
+  columns: 2;
+}
+</style>

@@ -1,18 +1,6 @@
-<template>
-  <u-content>
-    This is about page!
-  </u-content>
-</template>
-// <page>
-// {
-//   "layout": "Full",
-//   "title": "About Title",
-//   "description": "Description for the home page goes here!",
-//   "routes":["/", "/home"],
-//   "icon": "test-icon",
-//   "roles":["ADMIN", "UNKNWON"]
-// }
-// </page>
+<page layout="Full" title="About Title" route="/about" icon="test-icon" roles="ADMIN,UNKNWON">
+  <h1>About page</h1>
+</page>
 <script>
 export default {
   data() {

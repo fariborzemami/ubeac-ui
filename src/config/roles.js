@@ -1,5 +1,5 @@
 export default {
-    ADMIN: 'admin',
+    ADMIN: 'admins',
     ALL: '*',
     UNKNWON: '?',
     AUTH: 'auth'
