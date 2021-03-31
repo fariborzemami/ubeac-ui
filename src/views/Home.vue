@@ -1,5 +1,5 @@
-<template>
-  <u-content><h1>This is home page! {{ page.title }}</h1>
+<template layout="Full" title="Home Title" routes="/,/home" icon="test-icon" roles="ADMIN,UNKNWON">
+  <u-content><h1>This is home page! {{ amir }}xxxxx</h1>
   </u-content>
 </template>
 <page>
@@ -18,8 +18,6 @@ export default {
     return {
       amir: 123123123
     };
-  },
-  mounted() {
   }
-};
+}
 </script>
