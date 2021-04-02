@@ -8,6 +8,7 @@ The goal of this project is to develope a language/technology independent UI fra
 ## Defintions
 * [Pages](/docs/pages.md)
 * [Layouts](/docs/layouts.md)
+* [Components](/docs/components.md)
 * [Users](/docs/users.md)
 * [Roles](/docs/roles.md)
 
