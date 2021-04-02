@@ -4,7 +4,7 @@ module.exports = {
       rules: [
         {
           test: /\.(vue)$/i,
-          loader: require.resolve('./loaders/page-loader.js')
+          loader: require.resolve('./core/loaders/page-loader.js')
         }
       ]
     },
