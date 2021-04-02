@@ -1,3 +1,3 @@
-<template>
-  <u-content>User profile is here</u-content>
-</template>
+<page layout="NoSidebar" title="Profile Title" route="/profile" icon="test-icon" roles="?">
+  <h1>Profile page</h1>
+</page>

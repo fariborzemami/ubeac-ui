@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Pages from '@/runtime/pages'
 
 Vue.use(VueRouter)
 
-import Views from '@/config/pages'
-
 const routes = []
-Views.forEach(view => {
+
+Pages.forEach(page => {
   routes.push({
-    path: view.path,  
-    component: () => import('@/pages/' + view.name + '.vue'), 
-    meta: view
+    path: page.route,  
+    component: () => import('@/pages/' + page.name), 
+    meta: page
   })
 
 })

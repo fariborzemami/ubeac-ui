@@ -4,7 +4,7 @@
 <script>
 export default {
   mounted() {
-    console.log(123);
+    console.log(this.pages);
   },
   data() {
     return {
