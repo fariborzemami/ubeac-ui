@@ -6,10 +6,10 @@ The goal of this project is to develope a language/technology independent UI fra
 * Minimizing Javascript/CSS development
 
 ## Defintions
-* [Pages](/doc/pages.md)
-* [Layouts](/doc/layouts.md)
-* [Users](/doc/users.md)
-* [Roles](/doc/roles.md)
+* [Pages](/docs/pages.md)
+* [Layouts](/docs/layouts.md)
+* [Users](/docs/users.md)
+* [Roles](/docs/roles.md)
 
 
 
