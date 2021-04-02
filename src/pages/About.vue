@@ -5,11 +5,11 @@
 export default {
   data() {
     return {
-      amir: 123123123
+      amir: 123123123,
     };
   },
   mounted() {
     // console.log(this)
-  }
+  },
 };
 </script>
