@@ -3,13 +3,13 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Views from '@/config/views'
+import Views from '@/config/pages'
 
 const routes = []
 Views.forEach(view => {
   routes.push({
     path: view.path,  
-    component: () => import('@/views/' + view.name + '.vue'), 
+    component: () => import('@/pages/' + view.name + '.vue'), 
     meta: view
   })
 
