@@ -13,3 +13,5 @@ Each page must have these configurations:
   <div>Hello world!</div>
 </page>
 ```
+
+## what about child routes?
