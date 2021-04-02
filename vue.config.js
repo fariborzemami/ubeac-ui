@@ -1,4 +1,5 @@
-const VuePagePlugin = require('./core/webpack/plugins/page-plugin')
+const webpackFilesPath = './core/webpack'
+const VuePagePlugin = require(webpackFilesPath + '/plugins/page-plugin')
 
 module.exports = {
   configureWebpack: {
@@ -6,7 +7,7 @@ module.exports = {
       rules: [
         {
           test: /\.(vue)$/i,
-          loader: require.resolve('./core/webpack/loaders/page-loader.js')
+          loader: require.resolve(webpackFilesPath + '/loaders/page-loader.js')
         }
       ]
     },
