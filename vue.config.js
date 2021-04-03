@@ -8,7 +8,7 @@ module.exports = {
         {
           test: /\.(vue)$/i,
           loaders: [
-            require.resolve(webpackFilesPath + '/loaders/page-loader.js'),            
+            require.resolve(webpackFilesPath + '/loaders/page-loader.js'),
             require.resolve(webpackFilesPath + '/loaders/model-attr-loader.js')
           ]
         }
