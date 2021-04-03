@@ -39,6 +39,18 @@ const pages = [
     icon: 'test-icon',
     roles: '?',
     name: 'Register.vue'
+  },
+  {
+    layout: 'Full',
+    title: 'Contacts',
+    route: '/contacts/add',
+    name: 'contacts/Add.vue'
+  },
+  {
+    layout: 'Full',
+    title: 'Contacts',
+    route: '/contacts/list',
+    name: 'contacts/List.vue'
   }
 ]
 Vue.mixin({

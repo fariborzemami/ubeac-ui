@@ -4,7 +4,7 @@ import Vue from 'vue'
 
 const requireComponent = require.context(
     // The relative path of the components folder
-    '@/../core/layouts',
+    '@/../core/layout',
     // Whether or not to look in subfolders
     true,
     // The regular expression used to match base component filenames

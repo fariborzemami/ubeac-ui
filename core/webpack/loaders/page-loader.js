@@ -7,7 +7,7 @@ const traverse = require("@babel/traverse");
 const generator = require("@babel/generator");
 
 const loader = async function (source, map) {
-
+    console.log('page-loader')
     let callback = this.async();
     let result = source;
     try {
