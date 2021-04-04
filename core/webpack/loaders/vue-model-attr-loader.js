@@ -1,14 +1,16 @@
 const { getCustomBlock, descriptorToHTML, toDescriptor } = require("./utils");
 const cheerio = require('cheerio');
+
+const { config } = require('../config')
 const attr_name = 'model'
 
 const loader = async function (source, map) {
     let callback = this.async();
-    let result = source;
+    let finalSource = source;
 
     try {
         var sourceDesc = toDescriptor(source);
-        var pageBlock = getCustomBlock(sourceDesc, 'page')
+        var pageBlock = getCustomBlock(sourceDesc, config.htmlTemplateRootTag)
 
         if (pageBlock) {
 
@@ -28,11 +30,11 @@ const loader = async function (source, map) {
                 });
 
                 pageBlock.content = $.html()
-                result = descriptorToHTML(sourceDesc)
+                finalSource = descriptorToHTML(sourceDesc)
             }
         }
 
-        callback(null, result, map);
+        callback(null, finalSource, map);
 
     } catch (error) {
         callback(error);

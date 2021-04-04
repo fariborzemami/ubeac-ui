@@ -5,9 +5,8 @@ const { parse } = require('@vue/component-compiler-utils');
 const compiler = require('vue-template-compiler');
 const prettier = require('prettier')
 
+const { config } = require('../config')
 const PLUGIN_NAME = 'VuePagePlugin'
-const PAGES_FOLDER = './src/pages/'
-const GENERATED_FILE = '../../../src/runtime/pages.js'
 const patterns = ['**/*.vue']
 
 const toDescriptor = source =>
@@ -22,7 +21,7 @@ class VuePagePlugin {
     }
 
     apply(compiler) {
-        compiler.hooks.done.tap(PLUGIN_NAME, (
+        compiler.hooks.done.tap(config.pageFolder, (
             stats /* stats is passed as an argument when done hook is tapped.  */
         ) => {
         });
@@ -31,7 +30,7 @@ class VuePagePlugin {
             try {
                 // getting all pages
                 const pagePaths = fg.sync(patterns, {
-                    cwd: PAGES_FOLDER,
+                    cwd: config.pageFolder,
                     onlyFiles: true,
                 })
 
@@ -39,7 +38,7 @@ class VuePagePlugin {
                 pagePaths.forEach((pagePath) => {
 
                     // reading file content
-                    var source = fs.readFileSync(path.join(PAGES_FOLDER, pagePath), 'utf8');
+                    var source = fs.readFileSync(path.join(config.pageFolder, pagePath), 'utf8');
 
                     // extracting root blocks
                     var sourceDesc = toDescriptor(source);
@@ -50,7 +49,7 @@ class VuePagePlugin {
                     }
                 });
 
-                var to = path.resolve(__dirname, GENERATED_FILE)
+                var to = path.resolve(__dirname, config.generatePageFile)
 
                 var code = `
                 import Vue from 'vue'
