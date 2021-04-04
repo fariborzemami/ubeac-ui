@@ -2,7 +2,6 @@ const { getCustomBlock, descriptorToHTML, toDescriptor } = require("./utils");
 const cheerio = require('cheerio');
 
 const { config } = require('../config')
-const attr_name = 'model'
 
 const loader = async function (source, map) {
     let callback = this.async();
@@ -20,25 +19,27 @@ const loader = async function (source, map) {
                 selfClosingTags: true,
             });
 
-            let selector = $(`[${attr_name}]`)
+            config.attributeMappings.forEach((map) => {
+                let attrSelector = $(`[${map.from}]`)
+                if (attrSelector.length > 0) {
+                    attrSelector.each(function (index, element) {
+                        let old_value = $(this).attr(map.from);
+                        let new_value = map.getValue(old_value);
+                        $(this).attr(map.to, new_value);
+                        $(this).attr(map.from, null);
+                    });
+                }
+            })
 
-            if (selector.length > 0) {
-                selector.each(function (index, element) {
-                    var old_value = $(this).attr(attr_name);
-                    $(this).attr(`v-${attr_name}`, `model.${old_value}`);
-                    $(this).attr(attr_name, null);
-                });
-
-                pageBlock.content = $.html()
-                finalSource = descriptorToHTML(sourceDesc)
-            }
-        }
+            pageBlock.content = $.html()
+            finalSource = descriptorToHTML(sourceDesc)
+    }
 
         callback(null, finalSource, map);
 
-    } catch (error) {
-        callback(error);
-    }
+} catch (error) {
+    callback(error);
+}
 };
 
 exports.default = loader;

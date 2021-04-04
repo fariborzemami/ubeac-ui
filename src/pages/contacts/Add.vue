@@ -19,11 +19,11 @@
           <u-input type="textbox" model="address" label="Address" multiLine fullRow />
         </u-form-content>
         <u-form-actions>
-          <u-btn label="Load" @click="loadContact" />
-          <u-btn label="Add" @click="addContact" />
-          <u-btn label="Update" @click="updateContact" />
-          <u-btn label="Delete" @click="deleteContact" />
-          <u-btn label="Reset" @click="reset" />
+          <u-btn label="Load" on-click="loadContact" />
+          <u-btn label="Add" on-click="addContact" />
+          <u-btn label="Update" on-click="updateContact" />
+          <u-btn label="Delete" on-click="deleteContact" />
+          <u-btn label="Reset" on-click="reset" />
         </u-form-actions>
       </u-form>
     </u-card>
