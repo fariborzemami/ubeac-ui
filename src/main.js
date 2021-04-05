@@ -4,8 +4,13 @@ import router from './router'
 import store from './store'
 import registerComponents from '../core/components/register-components'
 import registerLayouts from '../core/layout/register-layouts'
+import Pages from '@/generated/pages';
 
 const app = createApp(App)
+
+app.config.globalProperties.core = {
+    pages: Pages
+}
 
 app.use(store)
 app.use(router)

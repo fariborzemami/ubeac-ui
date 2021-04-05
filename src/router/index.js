@@ -1,6 +1,5 @@
-
 import { createRouter, createWebHistory } from 'vue-router'
-import Pages from '../generated/pages';
+import Pages from '@/generated/pages';
 
 const routes = [
   // add custom routes here
