@@ -1,5 +1,4 @@
-import Vue from 'vue'
-const pages = [
+export default [
   {
     layout: 'Full',
     title: 'About Title',
@@ -53,14 +52,3 @@ const pages = [
     name: 'contacts/List.vue'
   }
 ]
-Vue.mixin({
-  data: function() {
-    return {
-      get pages() {
-        return pages
-      }
-    }
-  }
-})
-
-export default pages

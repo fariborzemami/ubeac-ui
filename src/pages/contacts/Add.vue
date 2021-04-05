@@ -3,7 +3,7 @@
     <u-card title="Add Contact">
       <u-form columns="2">
         <u-form-content>
-          <u-input type="textbox" model="id" label="Id" />
+          <u-input type="textbox" :model="model.id" label="Id" />
           <u-input type="dropdown" model="title" label="Title" />
           <u-input type="textbox" model="name" label="Fullname" />
           <u-input type="dropdown" model="companyId" label="Company" />
@@ -23,7 +23,7 @@
           <u-btn label="Add" on-click="addContact" />
           <u-btn label="Update" on-click="updateContact" />
           <u-btn label="Delete" on-click="deleteContact" />
-          <u-btn label="Reset" on-click="reset" />
+          <u-btn label="Reset" @click="reset" />
         </u-form-actions>
       </u-form>
     </u-card>
@@ -43,9 +43,9 @@ export default {
   },
   methods: {
     reset() {
-      console.log(this.$route.meta.layout='Blank')
+      // console.log(this.$route.meta.layout='Blank')
       console.log(this.model)
-      console.log(this.pages)
+      // console.log(this.pages)
       console.log("reset");
     },
     loadContact() {

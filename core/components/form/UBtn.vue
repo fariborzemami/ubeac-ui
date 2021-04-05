@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-bind="$attrs" @click="onClick" :disabled="disabled">
+    <button v-bind="$attrs" :disabled="disabled">
       {{ label }}
     </button>
   </div>
@@ -15,10 +15,10 @@ export default {
       disabled: false
     };
   },
-  methods: {
-    onClick() {
-      this.$emit("click");
-    }
-  }
+  // methods: {
+  //   onClick() {
+  //     this.$emit("click");
+  //   }
+  // }
 };
 </script>

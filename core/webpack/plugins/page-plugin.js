@@ -1,21 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 const fg = require('fast-glob')
-const { parse } = require('@vue/component-compiler-utils');
-const compiler = require('vue-template-compiler');
 const prettier = require('prettier')
+const cheerio = require('cheerio')
 
 const { config } = require('../config')
 const PLUGIN_NAME = 'VuePagePlugin'
 const patterns = ['**/*.vue']
-
-const toDescriptor = source =>
-    parse({
-        source: source,
-        compiler,
-        needMap: false
-    });
-
 class VuePagePlugin {
     constructor() {
     }
@@ -28,7 +19,8 @@ class VuePagePlugin {
 
         compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
             try {
-                // getting all pages
+
+                // getting all *.vue pages
                 const pagePaths = fg.sync(patterns, {
                     cwd: config.pageFolder,
                     onlyFiles: true,
@@ -40,38 +32,30 @@ class VuePagePlugin {
                     // reading file content
                     var source = fs.readFileSync(path.join(config.pageFolder, pagePath), 'utf8');
 
-                    // extracting root blocks
-                    var sourceDesc = toDescriptor(source);
-                    var pageBlockIndex = sourceDesc.customBlocks.findIndex(customBlock => customBlock.type === 'page');
-                    if (pageBlockIndex >= 0) {
-                        var pageAttrs = sourceDesc.customBlocks[pageBlockIndex].attrs
-                        pages.push({ ...pageAttrs, name: pagePath });
+                    // extracting root block's attributes
+                    const $ = cheerio.load(source, {
+                        xmlMode: true,
+                        decodeEntities: false,
+                        selfClosingTags: true,
+                    });
+                    let rootnode = $(config.htmlTemplateRootTag)
+
+                    if (rootnode && rootnode.attr()) {
+                        pages.push({ ...rootnode.attr(), name: pagePath });
                     }
                 });
 
                 var to = path.resolve(__dirname, config.generatePageFile)
 
-                var code = `
-                import Vue from 'vue'
-                const pages = ${JSON.stringify(pages)}
-                Vue.mixin({
-                    data: function() {
-                      return {
-                        get pages() {
-                          return pages
-                        }
-                      }
-                    }
-                  })
-                  
-                export default pages `
-                
+                var code = `export default ${JSON.stringify(pages)}`
+
                 var code = prettier.format(code, {
                     parser: 'babel',
                     semi: false,
                     singleQuote: true,
                 })
 
+                // these lines should be used to avoid recursive dependency 
                 if (
                     fs.existsSync(to) &&
                     fs.readFileSync(to, 'utf8').trim() === code.trim()

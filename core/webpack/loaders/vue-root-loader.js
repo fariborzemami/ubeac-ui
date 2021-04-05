@@ -1,5 +1,5 @@
 const { config } = require('../config')
-const { getCustomBlock, descriptorToHTML, toDescriptor } = require("./utils");
+const cheerio = require('cheerio')
 
 const loader = async function (source, map) {
 
@@ -7,30 +7,16 @@ const loader = async function (source, map) {
     let finalSource = source;
 
     try {
-        // parsing source to SFCDescriptor
-        let sourceDesc = toDescriptor(source);
+        const $ = cheerio.load(source, {
+            xmlMode: true,
+            decodeEntities: false,
+            selfClosingTags: true,
+        });
 
         // finding root html templte block
-        let rootBlock = getCustomBlock(sourceDesc, config.htmlTemplateRootTag);
+        $(config.htmlTemplateRootTag).each((i, item) => item.tagName = 'template')
 
-        if (rootBlock) {
-
-            let finalDesc = {
-                template: {
-                    type: 'template',
-                    content: rootBlock.content,
-                    attrs: rootBlock.attrs
-                },
-                customBlocks: sourceDesc.customBlocks.filter((x) => x.type !== config.htmlTemplateRootTag),
-                styles: sourceDesc.styles,
-                script: sourceDesc.script
-            };
-
-            finalSource = descriptorToHTML(finalDesc)
-
-        }
-
-        callback(null, finalSource, map);
+        callback(null, $.html(), map);
 
     } catch (error) {
         callback(error);

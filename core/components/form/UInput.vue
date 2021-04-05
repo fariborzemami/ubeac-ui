@@ -1,8 +1,9 @@
   
 <template>
   <div>
-    {{ label }}
-    <input type="text" v-bind="$attrs" :value="value" @input="onInput" />
+    {{ label }}    
+    <input type="text" v-bind="$attrs" :value="searchText" @input="searchText = $event.target.value"/>
+    <input type="text" v-bind="$attrs" :modelValue="value" />
     <slot />
   </div>
 </template>
@@ -14,16 +15,17 @@ export default {
   //     return this.$parent._data.model["email"]
   //   }
   // },
-  // data() {
-  //   return {
-  //     // xxx: this.$parent._data.model["email"],
-  //   };
-  // },
-  methods: {
-    onInput(event) {
-      this.$emit("input", event.target.value);
-    }
+  data() {
+    return {
+      searchText:''
+      // xxx: this.$parent._data.model["email"],
+    };
   },
+  // methods: {
+  //   onInput(event) {
+  //     this.$emit("input", event.target.value);
+  //   }
+  // },
   props: ["label", "value"],
   // created() {
   //   if (!this.$attrs["placeholder"]) {

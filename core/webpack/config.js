@@ -2,7 +2,7 @@ const config =
 {
     htmlTemplateRootTag: 'page',
     pageFolder: './src/pages/',
-    generatePageFile: '../../../src/runtime/pages.js',
+    generatePageFile: '../../../src/generated/pages.js',
     attributeMappings: [
         {
             from: 'model',
