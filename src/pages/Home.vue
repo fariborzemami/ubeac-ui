@@ -1,5 +1,7 @@
 <page layout="Full" title="Home Title" route="/" icon="test-icon" roles="ADMIN,UNKNWON">
-  <h1>Home page</h1>
+  <u-content>
+      <u-card title="Home page">Home page is here</u-card>
+  </u-content>
 </page>
 <script>
 export default {
