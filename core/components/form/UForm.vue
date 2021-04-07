@@ -3,3 +3,9 @@
     <slot> Form content is empty! </slot>
   </form>
 </template>
+<script>
+export default {
+  inheritAttrs: true,
+  props: ["columns"]
+};
+</script>

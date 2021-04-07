@@ -1,6 +1,11 @@
 <template>
   <div>
-    <button v-bind="$attrs" :disabled="disabled">
+    <button
+      v-bind="$attrs"
+      :disabled="disabled"
+      type="button"
+      :class="cssClass"
+    >
       {{ label }}
     </button>
   </div>
@@ -10,15 +15,21 @@ import { LabelMixin } from "../../mixins/component-mixins";
 export default {
   inheritAttrs: false,
   mixins: [LabelMixin],
-  data() {
-    return {
-      disabled: false
-    };
+  props: {
+    type: {
+      type: String,
+      default: "submit"
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
-  // methods: {
-  //   onClick() {
-  //     this.$emit("click");
-  //   }
-  // }
+  computed: {
+    cssClass: function() {
+      if (this.type === "submit") return "btn btn-primary";
+      return 'danger'
+    }
+  }
 };
 </script>

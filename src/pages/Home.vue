@@ -1,7 +1,5 @@
 <page layout="Full" title="Home Title" route="/" icon="test-icon" roles="ADMIN,UNKNWON">
-  <u-content>
-      <u-card title="Home page">Home page is here</u-card>
-  </u-content>
+  <u-card title="Home page"> This is home page content! </u-card>
 </page>
 <script>
 export default {
@@ -12,7 +10,7 @@ export default {
     return {
       amir: 123123123
     };
-  },
+  }
 };
 </script>
 <style scoped>

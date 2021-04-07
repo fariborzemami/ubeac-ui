@@ -1,7 +1,5 @@
 <page layout="Full" title="About Title" route="/about" icon="test-icon" roles="ADMIN,UNKNWON">
-  <u-content>
-      <u-card title="About page">About page is here</u-card>
-  </u-content>
+  <u-card title="About page">About page is here</u-card>
 </page>
 <script>
 export default {
