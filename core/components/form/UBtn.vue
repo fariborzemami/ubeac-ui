@@ -1,35 +1,47 @@
 <template>
   <div>
-    <button
-      v-bind="$attrs"
-      :disabled="disabled"
-      type="button"
-      :class="cssClass"
-    >
-      {{ label }}
+    <button class="btn" :class="additionalClass">
+      <slot></slot>
     </button>
   </div>
 </template>
 <script>
-import { LabelMixin } from "../../mixins/component-mixins";
+
+// available types
+const types = {
+  submit: "btn-success",
+  cancel: "btn-secondary",
+  danger: "btn-danger",
+};
+
 export default {
   inheritAttrs: false,
-  mixins: [LabelMixin],
   props: {
     type: {
       type: String,
-      default: "submit"
+      default: "submit",
+      validator: (value) => {
+        if (!types[value])
+          console.error(
+            `UBtn: type property is not correct, available types: ${JSON.stringify(
+              Object.getOwnPropertyNames(types)
+            )}`
+          );
+        return types[value];
+      },
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
+  },
+  mounted() {
+    
   },
   computed: {
-    cssClass: function() {
-      if (this.type === "submit") return "btn btn-primary";
-      return 'danger'
-    }
-  }
+    additionalClass() {
+      return types[this.type];
+    },
+  },
 };
 </script>

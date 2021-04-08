@@ -40,11 +40,11 @@
         />
       </u-form-content>
       <u-form-actions>
-        <u-btn label="Load" on-click="loadContact" type="bbbb" />
-        <u-btn label="Add" on-click="addContact" />
+        <u-btn label="Load" on-click="loadContact" type="submit">Submit</button>
+        <!-- <u-btn label="Add" on-click="addContact" />
         <u-btn label="Update" on-click="updateContact" />
         <u-btn label="Delete" on-click="deleteContact" />
-        <u-btn label="Reset" @click="reset" />
+        <u-btn label="Reset" @click="reset" /> -->
       </u-form-actions>
     </u-form>
   </u-card>
@@ -64,25 +64,25 @@ export default {
   methods: {
     reset() {
       // console.log(this.$route.meta.layout='Blank')
-      console.log(this.model);
+      // console.log(this.model);
       // console.log(this.pages)
-      console.log("reset");
+      // console.log("reset");
     },
     loadContact() {
-      console.log(this.model);
-      console.log("loadContact");
+      // console.log(this.model);
+      // console.log("loadContact");
     },
     addContact() {
-      console.log(this.model);
-      console.log("addContact");
+      // console.log(this.model);
+      // console.log("addContact");
     },
     updateContact() {
-      console.log(this.model);
-      console.log("updateContact");
+      // console.log(this.model);
+      // console.log("updateContact");
     },
     deleteContact() {
-      console.log(this.model);
-      console.log("deleteContact");
+      // console.log(this.model);
+      // console.log("deleteContact");
     }
   }
 };
