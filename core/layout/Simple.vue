@@ -5,5 +5,4 @@
     <u-footer></u-footer>
   </div>
 </template>
-<script>
 
