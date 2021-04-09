@@ -3,6 +3,7 @@
     <button v-bind="$attrs" :disabled="disabled">
       {{ label }}
     </button>
+    <q-btn color="primary" label="Primary" />
   </div>
 </template>
 <script>

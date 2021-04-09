@@ -1,6 +1,6 @@
 export default [
   {
-    layout: 'Full',
+    layout: 'NoSidebar',
     title: 'About Title',
     route: '/about',
     icon: 'test-icon',

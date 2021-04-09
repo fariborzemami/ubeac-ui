@@ -21,4 +21,15 @@ module.exports = {
     },
     plugins: [new VuePagePlugin()],
   },
+
+  pluginOptions: {
+    quasar: {
+      importStrategy: 'kebab',
+      rtlSupport: true
+    }
+  },
+
+  transpileDependencies: [
+    'quasar'
+  ]
 };

@@ -1,31 +1,32 @@
 <template>
-  <div class="nav">
-    <h1>Sidebar Menu</h1>
-    <div v-for="item in items" v-bind:key="item.href">
-      <b
-        ><router-link :to="item.href">{{ item.title }}</router-link></b
-      >
-      <div v-for="child in item.children" v-bind:key="child">
-        <router-link :to="child.href">{{ child.title }}</router-link>
-      </div>
-    </div>
-  </div>
+  <q-list padding separator class="rounded-borders text-primary">
+    <q-item
+      :to="item.href"
+      v-for="item in items"
+      v-bind:key="item.href"
+      clickable
+      v-ripple
+      active-class="bg-teal-1" :active="active"
+    >
+      <q-item-section avatar>
+        <q-icon :name="item.icon" />
+      </q-item-section>
+      <q-item-section>{{ item.title }}</q-item-section>
+    </q-item>
+  </q-list>
 </template>
-
 <script>
+import { ref } from 'vue'
+
 export default {
   name: "SidebarMenu",
+   setup () {
+    return {
+      active: ref(true)
+    }
+  },
   props: {
-    items: Array
+    items: Array,
   },
 };
 </script>
-
-<style scoped>
-.nav {
-  float: left;
-  width: 15%; 
-  background: #ccc;
-  padding: 20px;
-}
-</style>
