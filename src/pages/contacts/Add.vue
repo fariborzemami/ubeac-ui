@@ -1,5 +1,4 @@
 <page layout="Full" title="Contacts" route="/contacts/add">
-  <u-content>
     <u-card title="Add Contact">
       <u-form columns="2">
         <u-form-content>
@@ -27,7 +26,6 @@
         </u-form-actions>
       </u-form>
     </u-card>
-  </u-content>
 </page>
 
 <script>
@@ -36,34 +34,34 @@ export default {
     return {
       model: {
         id: 100,
-        name: "amir"
+        name: "amir",
       },
-      message: ""
+      message: "",
     };
   },
   methods: {
     reset() {
       // console.log(this.$route.meta.layout='Blank')
-      console.log(this.model)
+      console.log(this.model);
       // console.log(this.pages)
       console.log("reset");
     },
     loadContact() {
-      console.log(this.model)
+      console.log(this.model);
       console.log("loadContact");
     },
     addContact() {
-      console.log(this.model)
+      console.log(this.model);
       console.log("addContact");
     },
     updateContact() {
-      console.log(this.model)
+      console.log(this.model);
       console.log("updateContact");
     },
     deleteContact() {
-      console.log(this.model)
+      console.log(this.model);
       console.log("deleteContact");
-    }
-  }
+    },
+  },
 };
 </script>

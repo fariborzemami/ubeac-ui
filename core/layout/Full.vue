@@ -3,16 +3,16 @@
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="left = !left" />
-        <q-toolbar-title>
-          Full layout
-        </q-toolbar-title>
+        <q-toolbar-title> Full layout </q-toolbar-title>
       </q-toolbar>
     </q-header>
     <q-drawer show-if-above v-model="left" side="left" bordered>
       <u-sidebar :items="navigationItems.sidebar"></u-sidebar>
     </q-drawer>
     <q-page-container>
-      <router-view />
+      <q-page padding>
+        <router-view />
+      </q-page>
     </q-page-container>
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
@@ -28,9 +28,9 @@ export default {
   setup() {
     return {
       left: ref(false),
-      navigationItems: ref(nav)
+      navigationItems: ref(nav),
     };
-  }
+  },
 };
 </script>
 

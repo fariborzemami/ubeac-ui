@@ -1,8 +1,13 @@
 <template>
-  <div>
-    <h1>{{title}}</h1>
-    <slot />
-  </div>
+  <q-card>
+    <q-card-section>
+      <div class="text-h6">{{ title }}</div>
+    </q-card-section>
+    <q-separator />
+    <q-card-actions>
+      <slot />
+    </q-card-actions>
+  </q-card>
 </template>
 <script>
 export default {
@@ -10,8 +15,8 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Card"
+      default: "Card",
     },
-  }
+  },
 };
 </script>

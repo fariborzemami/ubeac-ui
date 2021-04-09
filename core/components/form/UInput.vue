@@ -1,27 +1,21 @@
 <template>
-  <div>
-    {{ label }}
-    <input
-      type="text"
-      v-model="value"
-    />
-    <slot />
-  </div>
+  <q-input outlined v-model="value" :label="label" dense="true">
+  </q-input>
 </template>
 <script>
 export default {
   inheritAttrs: false,
-  props: ['modelValue', 'label'],
-  emits: ['update:modelValue'],
+  props: ["modelValue", "label"],
+  emits: ["update:modelValue"],
   computed: {
     value: {
       get() {
-        return this.modelValue
+        return this.modelValue;
       },
       set(value) {
-        this.$emit('update:modelValue', value)
-      }
-    }
-  }
+        this.$emit("update:modelValue", value);
+      },
+    },
+  },
 };
 </script>

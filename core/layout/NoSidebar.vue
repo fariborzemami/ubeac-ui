@@ -8,7 +8,9 @@
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <router-view />
+      <q-page padding>
+        <router-view />
+      </q-page>
     </q-page-container>
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>

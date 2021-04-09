@@ -1,7 +1,5 @@
 <page layout="Full" title="Home Title" route="/" icon="test-icon" roles="ADMIN,UNKNWON">
-  <u-content>
-      <u-card title="Home page">Home page is here</u-card>
-  </u-content>
+<u-card title="Home">This is Home page</u-card>
 </page>
 <script>
 export default {
@@ -10,13 +8,8 @@ export default {
   },
   data() {
     return {
-      amir: 123123123
+      amir: 123123123,
     };
   },
 };
 </script>
-<style scoped>
-.a {
-  columns: 2;
-}
-</style>
