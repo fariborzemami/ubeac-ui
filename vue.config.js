@@ -1,5 +1,5 @@
-const webpackFilesPath = './core/webpack'
-const VuePagePlugin = require(webpackFilesPath + '/plugins/page-plugin')
+const webpackFilesPath = "./core/webpack";
+const VuePagePlugin = require(webpackFilesPath + "/plugins/page-plugin");
 
 module.exports = {
   configureWebpack: {
@@ -7,13 +7,18 @@ module.exports = {
       rules: [
         {
           test: /\.(vue)$/i,
-          loaders: [
-            require.resolve(webpackFilesPath + '/loaders/vue-root-loader.js'),
-            require.resolve(webpackFilesPath + '/loaders/vue-attr-loader.js')
-          ]
-        }
-      ]
+          loader: "string-replace-loader",
+          options: {
+            multiple: [
+              { search: "<page ", replace: "<template " },
+              { search: "</page>", replace: "</template>" },
+              { search: ' model="', replace: ' v-model="' },
+              { search: ' model=\'', replace: ' v-model=\'' },
+            ],
+          },
+        },
+      ],
     },
     plugins: [new VuePagePlugin()],
-  }
-}
+  },
+};
