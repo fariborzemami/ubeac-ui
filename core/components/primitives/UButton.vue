@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <button class="btn" :class="additionalClass">
-      <slot></slot>
-    </button>
-  </div>
+  <button class="btn" :class="additionalClass" @click="onClick">
+    <slot></slot>
+  </button>
 </template>
 <script>
-
 // available types
 const types = {
-  submit: "btn-success",
+  submit: "btn-primary",
   cancel: "btn-secondary",
-  danger: "btn-danger",
+  danger: "btn-danger"
 };
 
 export default {
@@ -20,28 +17,31 @@ export default {
     type: {
       type: String,
       default: "submit",
-      validator: (value) => {
+      validator: value => {
         if (!types[value])
           console.error(
-            `UBtn: type property is not correct, available types: ${JSON.stringify(
+            `UButton: type property is not correct, available types: ${JSON.stringify(
               Object.getOwnPropertyNames(types)
             )}`
           );
         return types[value];
-      },
+      }
     },
     disabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  mounted() {
-    
+  setup(props, { emit }) {
+    const onClick = value => {
+      emit("click", value);
+    };
+    return { onClick };
   },
   computed: {
     additionalClass() {
       return types[this.type];
-    },
-  },
+    }
+  }
 };
 </script>

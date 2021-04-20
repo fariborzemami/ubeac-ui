@@ -16,7 +16,7 @@ export default [
     name: 'Home.vue'
   },
   {
-    layout: 'Simple',
+    layout: 'Blank',
     title: 'Login Title',
     route: '/login',
     icon: 'test-icon',
