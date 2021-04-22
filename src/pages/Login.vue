@@ -20,8 +20,8 @@
       />
     </u-form-content>
     <u-form-actions>
-      <u-button variant="primary" @click="onSubmit"></u-button>
-      <u-button variant="secondary">Cancel</u-button>
+      <u-btn-submit :color="color" @click="onSubmit"></u-btn-submit>
+      <u-btn :color="color" disabled>Cancel</u-btn>
     </u-form-actions>
   </u-form>
 </page>
@@ -29,6 +29,7 @@
 export default {
   data() {
     return {
+      color:"secondary",
       model: {
         email: "",
         password: ""
@@ -38,6 +39,7 @@ export default {
   methods: {
     onSubmit() {
       console.log(this.model)
+      this.color="primary"
     }
   }
 };
