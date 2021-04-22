@@ -1,31 +1,38 @@
 <template>
   <div class="mb-3">
     <label :for="id" class="form-label">{{ label }}</label>
-      <u-input :id="id" v-bind="$props" v-model="textValue" />
+    <u-input :id="id" v-bind="$props" :model="modelValue" @input="onInput" />
   </div>
 </template>
 <script>
 import { ref } from "vue";
+
+const inputProps = {
+  placeholder: null,
+  modelValue: null
+};
+
 export default {
   inheritAttrs: false,
+  emits: ["update:modelValue"],
   props: {
-    type: {
-      type: String,
-      default: "text"
-    },
+    ...inputProps,
     label: {
       type: String,
-      default: "Input Label"
+      default: "Label",
     },
     id: {
-      type: String
-    },
-    placeholder: null
+      type: String,
+    }
   },
   setup() {
     const focus = ref(false);
-    const textValue = ref(null);
-    return { focus, textValue };
-  }
+    return { focus };
+  },
+  methods: {
+    onInput(event) {
+      this.$emit("update:modelValue", event.target.value);
+    },
+  },
 };
 </script>

@@ -3,18 +3,9 @@
 </page>
 <script>
 export default {
-  mounted() {
-    console.log(this.core.pages);
-  },
+  mounted() {},
   data() {
-    return {
-      amir: 123123123
-    };
-  }
+    return {};
+  },
 };
 </script>
-<style scoped>
-.a {
-  columns: 2;
-}
-</style>

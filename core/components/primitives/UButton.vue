@@ -1,47 +1,33 @@
 <template>
-  <button class="btn" :class="additionalClass" @click="onClick">
-    <slot></slot>
+  <button type="button" class="btn" :class="buttonClass">
+    <slot>Submit</slot>
   </button>
 </template>
 <script>
-// available types
-const types = {
-  submit: "btn-primary",
-  cancel: "btn-secondary",
-  danger: "btn-danger"
+
+const buttonProps = {
+  variant: {
+    type: String,
+    default: "primary",
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export default {
-  inheritAttrs: false,
-  props: {
-    type: {
-      type: String,
-      default: "submit",
-      validator: value => {
-        if (!types[value])
-          console.error(
-            `UButton: type property is not correct, available types: ${JSON.stringify(
-              Object.getOwnPropertyNames(types)
-            )}`
-          );
-        return types[value];
-      }
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
-  setup(props, { emit }) {
-    const onClick = value => {
-      emit("click", value);
-    };
-    return { onClick };
+  inheritAttrs: true,
+  props: buttonProps,
+  setup(props){
+    // props = _props
+    console .log(props)
+    // defineProps(buttonProps)
   },
   computed: {
-    additionalClass() {
-      return types[this.type];
-    }
-  }
+    buttonClass() {
+      return ["btn", "btn-" + this.variant];
+    },
+  },
 };
 </script>

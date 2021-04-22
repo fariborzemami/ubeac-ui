@@ -1,29 +1,36 @@
 <template>
   <input
     class="form-control"
-    :type="type"
     :placeholder="placeholder"
-    aria-label="default input example"
-    v-model="textValue"
+    :value="modelValue"
+    @input="onInput"
     @focus="focus = true"
     @blur="focus = false"
   />
 </template>
 <script>
 import { ref } from "vue";
+
+const inputProps = {
+  placeholder: null,
+  modelValue: null
+};
+
+const inputEmits = ["update:modelValue"];
+
 export default {
   inheritAttrs: true,
-  props: {
-    type: {
-      type: String,
-      default: "text"
-    },
-    placeholder: null
-  },
-  setup() {
+  emits: inputEmits,
+  props: inputProps,
+  setup(props, { emit }) {
+
     const focus = ref(false);
-    const textValue = ref(null);
-    return { focus, textValue };
+
+    const onInput = (event) => {
+      emit("update:modelValue", event.target.value);
+    };
+
+    return { focus, onInput };
   }
 };
 </script>

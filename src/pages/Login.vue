@@ -20,8 +20,8 @@
       />
     </u-form-content>
     <u-form-actions>
-      <u-button type="submit" @click="onSubmit">Submit</u-button>
-      <u-button type="cancel">Cancel</u-button>
+      <u-button variant="primary" @click="onSubmit"></u-button>
+      <u-button variant="secondary">Cancel</u-button>
     </u-form-actions>
   </u-form>
 </page>
