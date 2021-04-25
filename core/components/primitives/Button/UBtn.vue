@@ -71,4 +71,32 @@ export default {
     },
   },
 };
+
+// TODO: read about this:
+// https://v3.vuejs.org/guide/render-function.html#functional-components
+// const FunctionalComponent = (props, context) => {
+//   // ...
+// }
+
+// TODO: read about this:
+// https://v3.vuejs.org/api/composition-api.html#getcurrentinstance
+// import { getCurrentInstance } from 'vue'
+
+// const MyComponent = {
+//   setup() {
+//     const internalInstance = getCurrentInstance()
+
+//     internalInstance.appContext.config.globalProperties // access to globalProperties
+//   }
+// }
+
+// TODO: read about this:
+// https://www.vuemastery.com/blog/vue-3-data-down-events-up/
+// import { computed } from 'vue'
+// export function useModelWrapper(props, emit, name = 'modelValue') { 
+//   return computed({ 
+//     get: () => props[name], 
+//     set: (value) => emit(`update:${name}`, value) 
+//   })
+// }
 </script>
