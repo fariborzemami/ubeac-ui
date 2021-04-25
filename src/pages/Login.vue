@@ -20,8 +20,8 @@
       />
     </u-form-content>
     <u-form-actions>
-      <u-button variant="primary" @click="onSubmit"></u-button>
-      <u-button variant="secondary">Cancel</u-button>
+      <u-btn variant="primary" @onClick='onSubmit' @onBeforeClick='onBeforeSubmit' @onAfterClick='onAfterSubmit'></u-btn>
+      <u-btn variant="secondary">Cancel</u-btn>
     </u-form-actions>
   </u-form>
 </page>
@@ -36,8 +36,15 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
-      console.log(this.model)
+    onSubmit(e) {
+      console.log('Login_UBtn_click', e)
+    },
+    onBeforeSubmit(e) {
+      console.log('Login_UBtn_onBeforeClick', e)
+      return false
+    },
+    onAfterSubmit(e) {
+      console.log('Login_UBtn_onAfterClick', e)
     }
   }
 };
