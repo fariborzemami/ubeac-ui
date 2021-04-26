@@ -4,7 +4,6 @@
   </button>
 </template>
 <script>
-import { getCurrentInstance } from "vue";
 
 const _props = {
   variant: {
@@ -46,13 +45,15 @@ const _methods = {
   },
 };
 
-// const _emits = ["click"];
+const _emits = ["onClick", "onBeforeClick", "onAfterClick"];
+
+import { getCurrentInstance } from "vue";
 
 export default {
   name: "UBtn",
   inheritAttrs: true,
   props: { ..._props },
-  // emits: [..._emits],
+  emits: [..._emits],
   computed: {
     buttonClass() {
       return ["btn", "btn-" + this.variant];
