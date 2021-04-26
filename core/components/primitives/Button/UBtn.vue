@@ -4,12 +4,13 @@
   </button>
 </template>
 <script>
-import { getCurrentInstance } from 'vue'
+import { getCurrentInstance } from "vue";
 
 const _props = {
   variant: {
     type: String,
     default: "primary",
+    validator: (value) => ["primary", "secondary", "alert"].includes(value),
   },
   disabled: {
     type: Boolean,
@@ -58,7 +59,7 @@ export default {
     },
   },
   setup(props, { emit }) {
-    console.log(getCurrentInstance())
+    console.log(getCurrentInstance());
     console.log(emit);
   },
   methods: {
@@ -93,10 +94,10 @@ export default {
 // TODO: read about this:
 // https://www.vuemastery.com/blog/vue-3-data-down-events-up/
 // import { computed } from 'vue'
-// export function useModelWrapper(props, emit, name = 'modelValue') { 
-//   return computed({ 
-//     get: () => props[name], 
-//     set: (value) => emit(`update:${name}`, value) 
+// export function useModelWrapper(props, emit, name = 'modelValue') {
+//   return computed({
+//     get: () => props[name],
+//     set: (value) => emit(`update:${name}`, value)
 //   })
 // }
 </script>
