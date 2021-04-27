@@ -1,31 +1,16 @@
-
 # Components
 
-## Text/Label/Message?
+## Primitives
 
-### Configurations
+* [Button](/docs/components/primitive/button.md)
+* [Input](/docs/components/primitive/input.md)
+* [Icon](/docs/components/primitive/icon.md)
+* [Image](/docs/components/primitive/image.md)
+* [Alert](/docs/components/primitive/alert.md)
+* [Label](/docs/components/primitive/label.md)
 
-* value : string value
-* model : variable name 
-* style : warning, error, normal
+## Containers
 
-<:label style="warning">This is label</:label>
-<:label>{{title}}</:label>
-<:label model="title"></:label>
+## Forms
 
-## Textarea
-
-## Htmlarea
-
-## Textbox
-
-## Card
-
-## Button
-
-## From
-
-## Breadcrumb
-
-## Tab
-
+## Reports
