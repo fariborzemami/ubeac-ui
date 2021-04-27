@@ -9,3 +9,4 @@
     <div class="row border bg-light">Footer section is emprty!</div>
   </div>
 </template>
+
