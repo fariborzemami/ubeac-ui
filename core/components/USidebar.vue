@@ -1,14 +1,15 @@
 <template>
-  <div class="nav">
-    <h1>Sidebar Menu</h1>
-    <div v-for="item in items" v-bind:key="item.href">
-      <b
-        ><router-link :to="item.href">{{ item.title }}</router-link></b
-      >
-      <div v-for="child in item.children" v-bind:key="child">
-        <router-link :to="child.href">{{ child.title }}</router-link>
-      </div>
-    </div>
+  <div class="card">
+    <div class="card-header">Sidebar Menu</div>
+    <ul
+      class="list-group list-group-flush"
+      v-for="item in items"
+      v-bind:key="item.href"
+    >
+      <li class="list-group-item">
+        <router-link :to="item.href">{{ item.title }}</router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -17,15 +18,6 @@ export default {
   name: "SidebarMenu",
   props: {
     items: Array
-  },
+  }
 };
 </script>
-
-<style scoped>
-.nav {
-  float: left;
-  width: 15%; 
-  background: #ccc;
-  padding: 20px;
-}
-</style>

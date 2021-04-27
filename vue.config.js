@@ -10,6 +10,7 @@ module.exports = {
           loader: "string-replace-loader",
           options: {
             multiple: [
+              // TODO: implement with regex 
               { search: "<page ", replace: "<template " },
               { search: "</page>", replace: "</template>" },
               { search: ' model="', replace: ' v-model="' },
