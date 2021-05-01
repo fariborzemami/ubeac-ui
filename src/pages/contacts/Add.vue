@@ -2,10 +2,10 @@
   <u-card title="Add New Contact">
     <u-form columns="4">
       <u-form-content>
-          <u-input type="textbox" model="model.id" label="Id" />
-          <u-input type="dropdown" model="model.title" label="Title" />
-          <u-input type="textbox" model="model.name" label="Fullname" />
-          <u-input type="dropdown" model="model.companyId" label="Company" />
+          <u-form-input type="textbox" v-model="model.id" label="Id" />
+          <u-form-input type="textbox" v-model="model.title" label="Title" />
+          <u-input type="textbox" v-model="model.name" label="Fullname" />
+          <u-input type="textbox" model="model.companyId" label="Company" />
           <u-input type="textbox" model="model.jobTitle" label="Job title" />
           <u-input type="textbox" model="model.tel" label="Tel" maxlength="11" />
           <u-input type="textbox" model="model.extention" label="Ext." />
@@ -47,7 +47,7 @@ export default {
       // console.log("reset");
     },
     loadContact() {
-      // console.log(this.model);
+      console.log(this.model);
       // console.log("loadContact");
     },
     addContact() {

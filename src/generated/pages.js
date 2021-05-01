@@ -50,5 +50,11 @@ export default [
     title: 'Contacts',
     route: '/contacts/list',
     name: 'contacts/List.vue'
+  },
+  {
+    layout: 'Full',
+    title: 'Add Team',
+    route: '/teams/add',
+    name: 'teams/Add.vue'
   }
 ]

@@ -31,23 +31,23 @@ const _props = {
 
 const _methods = {
   onBeforeClick: function (emitter, event) {
-    console.log("UBtn_onBeforeClick_out", event);
+    // console.log("UBtn_onBeforeClick_out", event);
     emitter("onBeforeClick", event);
     return true;
   },
   onClick: function (emitter, event) {
-    console.log("UBtn_click_out", event);
+    // console.log("UBtn_click_out", event);
     emitter("onClick", event);
   },
   onAfterClick: function (emitter, event) {
-    console.log("UBtn_onAfterClick_out", event);
+    // console.log("UBtn_onAfterClick_out", event);
     emitter("onAfterClick", event);
   },
 };
 
 const _emits = ["onClick", "onBeforeClick", "onAfterClick"];
 
-import { getCurrentInstance } from "vue";
+// import { getCurrentInstance } from "vue";
 
 export default {
   name: "UBtn",
@@ -59,10 +59,10 @@ export default {
       return ["btn", "btn-" + this.variant];
     },
   },
-  setup(props, { emit }) {
-    console.log(getCurrentInstance());
-    console.log(emit);
-  },
+  // setup(props, { emit }) {
+  //   console.log(getCurrentInstance());
+  //   console.log(emit);
+  // },
   methods: {
     ..._methods,
     onClickInner: function (e) {

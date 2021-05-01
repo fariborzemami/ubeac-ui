@@ -9,7 +9,6 @@
   />
 </template>
 <script>
-import { ref } from "vue";
 
 const inputProps = {
   placeholder: null,
@@ -18,6 +17,7 @@ const inputProps = {
 
 const inputEmits = ["update:modelValue"];
 
+import { ref } from "vue";
 export default {
   inheritAttrs: true,
   emits: inputEmits,
@@ -26,8 +26,9 @@ export default {
 
     const focus = ref(false);
 
-    const onInput = (event) => {
-      emit("update:modelValue", event.target.value);
+    const onInput = (e) => {
+      let value = e.target.value
+      emit("update:modelValue", value);
     };
 
     return { focus, onInput };

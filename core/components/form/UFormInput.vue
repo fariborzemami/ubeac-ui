@@ -1,8 +1,6 @@
 <template>
-  <div class="mb-3">
     <label :for="id" class="form-label">{{ label }}</label>
-    <u-input :id="id" v-bind="$props" :model="modelValue" @input="onInput" />
-  </div>
+    <u-input :id="id" v-bind="$attrs" :value="modelValue" @input="onInput" />
 </template>
 <script>
 import { ref } from "vue";
@@ -20,9 +18,11 @@ export default {
     label: {
       type: String,
       default: "Label",
-    },
-    id: {
-      type: String,
+    }
+  },
+  data(){
+    return {
+      id: this.modelValue
     }
   },
   setup() {

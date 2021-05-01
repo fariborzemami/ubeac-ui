@@ -1,16 +1,18 @@
 <template>
   <div class="card-body">
-    <slot>
-        Form content is empty!
-    </slot>
+    <UFormRow :columns="columns" :elements="$slots.default()">
+      <slot />
+    </UFormRow>
   </div>
 </template>
 <script>
+import UFormRow from "./UFormRow.vue";
 export default {
+  components: { UFormRow },
   props: {
     columns: {
-      type: String,
-      default: '1'
+      type: [String, Number],
+      default: 2
     }
   }
 };

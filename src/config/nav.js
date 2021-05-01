@@ -9,6 +9,12 @@ export default {
                 roles: [Roles.ALL]
             },
             {
+                title: 'Team/Add',
+                href: '/teams/add',
+                icon: 'wizard',
+                roles: [Roles.ALL]
+            },
+            {
                 title: 'About',
                 href: '/about',
                 icon: 'wizard',
