@@ -1,18 +1,19 @@
 <template>
     <label :for="id" class="form-label">{{ label }}</label>
-    <u-input :id="id" v-bind="$attrs" :value="modelValue" @input="onInput" />
+    <u-input :id="id" v-bind="$attrs" :value="modelValue" @input="onInput"/>
 </template>
 <script>
-import { ref } from "vue";
 
 const inputProps = {
   placeholder: null,
-  modelValue: null
+  modelValue: String
 };
+
+const inputEmits = ["update:modelValue"];
 
 export default {
   inheritAttrs: false,
-  emits: ["update:modelValue"],
+  emits: inputEmits,
   props: {
     ...inputProps,
     label: {
@@ -25,12 +26,9 @@ export default {
       id: this.modelValue
     }
   },
-  setup() {
-    const focus = ref(false);
-    return { focus };
-  },
   methods: {
     onInput(event) {
+      console.log('second', event)
       this.$emit("update:modelValue", event.target.value);
     },
   },

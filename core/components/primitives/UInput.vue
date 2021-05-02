@@ -12,7 +12,7 @@
 
 const inputProps = {
   placeholder: null,
-  modelValue: null
+  modelValue: String
 };
 
 const inputEmits = ["update:modelValue"];
@@ -21,17 +21,24 @@ import { ref } from "vue";
 export default {
   inheritAttrs: true,
   emits: inputEmits,
-  props: inputProps,
-  setup(props, { emit }) {
+  props: {...inputProps},
+  setup() {
 
     const focus = ref(false);
 
-    const onInput = (e) => {
-      let value = e.target.value
-      emit("update:modelValue", value);
-    };
+    // const onInput = (e) => {
+    //   let value = e.target.value
+    //   console.log('first')
+    //   emit("update:modelValue", value);
+    // };
 
-    return { focus, onInput };
-  }
+    return { focus };
+  },
+  methods: {
+    onInput(event) {
+      console.log('first', event)
+      this.$emit("update:modelValue", event.target.value);
+    },
+  },
 };
 </script>
