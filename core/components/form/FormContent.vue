@@ -1,14 +1,14 @@
 <template>
   <div class="card-body">
-    <UFormRow :columns="columns" :elements="$slots.default()">
+    <FormRow :columns="columns" :elements="$slots.default()">
       <slot />
-    </UFormRow>
+    </FormRow>
   </div>
 </template>
 <script>
-import UFormRow from "./UFormRow.vue";
+import FormRow from "./FormRow";
 export default {
-  components: { UFormRow },
+  components: { FormRow },
   props: {
     columns: {
       type: [String, Number],
