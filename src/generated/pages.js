@@ -50,5 +50,11 @@ export default [
     title: 'Add Team New',
     route: '/teams/addnew',
     name: 'teams/AddNew.vue'
+  },
+  {
+    layout: 'Full',
+    title: 'Add Team New',
+    route: '/teams/addnewnew',
+    name: 'teams/AddNewNew.vue'
   }
 ]

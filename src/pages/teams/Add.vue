@@ -5,9 +5,9 @@
       <u-form-input type="textbox" v-model="model.namespace" label="Namespace" ref="txtNamespace" />
     </u-form-content>
     <u-form-actions>
-      <u-btn @click="onSubmitA" text="OK" variant="secondary" />
-      <u-btn @click="onSubmitB" text="Check" variant="primary" />
-      <u-btn @click="onSubmitC" text="Danger" variant="danger" />
+      <u-btn @click="onSubmitA" text="OK" />
+      <u-btn @click="onSubmitB" text="Check" />
+      <u-btn @click="onSubmitC" text="Danger" />
       <u-alert ref="alertA" variant="secondary">OK, this is fine!</u-alert>
       <u-alert ref="alertB" variant="primary">NOK, please try again!</u-alert>
       <u-alert ref="alertC" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert>
