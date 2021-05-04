@@ -8,9 +8,9 @@
       <u-btn @click="onSubmitA" text="OK" />
       <u-btn @click="onSubmitB" text="Check" />
       <u-btn @click="onSubmitC" text="Danger" />
-      <u-alert-a :visible="alertA.visible" variant="secondary">OK, this is fine!</u-alert-a>
-      <u-alert-a :visible="alertB.visible" variant="primary">NOK, please try again!</u-alert-a>
-      <u-alert-a :visible="alertC.visible" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert-a>
+      <u-alert-a xid="alertA" variant="secondary">OK, this is fine!</u-alert-a>
+      <u-alert-a xid="alertB" variant="primary">NOK, please try again!</u-alert-a>
+      <u-alert-a xid="alertC" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert-a>
     </u-form-actions>
   </u-form>
 </page>
@@ -26,10 +26,14 @@ import { reactive } from "vue";
 const model = {
   name: "Default Team",
   namespace: "xyz",
-}
-const alertA = { visible: false };
-const alertB = { visible: false }
-const alertC = { visible: false }
+};
+const alertA = {
+  visible: false,
+  text: "",
+  variant: "primary",
+};
+const alertB = { visible: false };
+const alertC = { visible: false };
 const data = reactive({
   alertA,
   alertB,
