@@ -8,25 +8,38 @@
       <u-btn @click="onSubmitA" text="OK" />
       <u-btn @click="onSubmitB" text="Check" />
       <u-btn @click="onSubmitC" text="Danger" />
-      <u-alert-a xid="alertsA" visible="false" variant="secondary">OK, this is fine!</u-alert-a>
-      <u-alert-a xid="alertsB" visible="false" variant="primary">NOK, please try again!</u-alert-a>
-      <u-alert-a xid="alertsC" visible="false" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert-a>
+      <u-alert-a :visible="alertA.visible" variant="secondary">OK, this is fine!</u-alert-a>
+      <u-alert-a :visible="alertB.visible" variant="primary">NOK, please try again!</u-alert-a>
+      <u-alert-a :visible="alertC.visible" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert-a>
     </u-form-actions>
   </u-form>
 </page>
 
 <script>
+// TODO: cpmsider cheerio
+// import HTML from "html-parse-stringify";
+// var html = '<div class="oh"><p>hi</p></div>';
+// var ast = HTML.parse(html);
+// console.log(ast);
+
+import { reactive } from "vue";
+const model = {
+  name: "Default Team",
+  namespace: "xyz",
+}
+const alertA = { visible: false };
+const alertB = { visible: false }
+const alertC = { visible: false }
+const data = reactive({
+  alertA,
+  alertB,
+  alertC,
+  model,
+});
+
 export default {
-  data() {
-    return {
-      model: {
-        name: "Default Team",
-        namespace: "xyz",
-      },
-      alertA: { visible: false },
-      alertB: { visible: false },
-      alertC: { visible: false },
-    };
+  setup() {
+    return { ...data };
   },
   methods: {
     onSubmitA() {

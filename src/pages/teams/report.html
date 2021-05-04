@@ -1,0 +1,53 @@
+<page layout="Full" title="Add Team" route="/teams/addtemp">
+  <u-form title="Team detail" confirm="true">
+    <u-form-content columns="2">
+      <u-form-input
+        type="textbox"
+        v-model="model.name"
+        label="Name"
+        ref="txtName"
+      />
+      <u-form-input
+        type="textbox"
+        v-model="model.namespace"
+        label="Namespace"
+        ref="txtNamespace"
+      />
+    </u-form-content>
+    <u-form-content columns="1">
+      <u-form-input
+        type="textbox"
+        v-model="model.name"
+        label="Name"
+        ref="txtName"
+      />
+      <u-form-input
+        type="textbox"
+        v-model="model.namespace"
+        label="Namespace"
+        ref="txtNamespace"
+      />
+    </u-form-content>
+    <u-form-actions>
+      <u-btn-submit @click="onSubmit" />
+      <u-btn-cancel right />
+      <u-btn-back right />
+    </u-form-actions>
+    <u-form-message />
+  </u-form>
+
+  <u-report v-model="items" :filter="$refs.form" api="SERVER.getAllTeams">
+    <header>
+      resport for unit {{model.currentunit}} from date {{model.start}} to
+      {{model.to}}
+    </header>
+    <columns>
+      <u-column v-model="item.name" />
+      <u-column v-model="item.namesapce" />
+      <u-column v-model="item.lastname" />
+      <u-column v-model="item.age" />
+    </columns>
+
+    <footer></footer>
+  </u-report>
+</page>

@@ -10,13 +10,17 @@ module.exports = {
           loader: "string-replace-loader",
           options: {
             multiple: [
-              // TODO: implement with regex 
+              // TODO: implement with regex
               { search: "<page ", replace: "<template " },
               { search: "</page>", replace: "</template>" },
               { search: ' model="', replace: ' v-model="' },
-              { search: ' model=\'', replace: ' v-model=\'' },
+              { search: " model='", replace: " v-model='" },
             ],
           },
+        },
+        {
+          test: /\.(vue)$/i,
+          loaders: [require.resolve("./core/webpack/loaders/sample-loader")],
         },
       ],
     },

@@ -30,12 +30,18 @@ export default {
   },
   methods: {
     onSubmitA() {
+      // in Vue 2
+      // this.$set(this.alertA, "visible", !this.alertA.visible);
       this.alertA.visible = !this.alertA.visible;
     },
-    onSubmitB() {
+    onSubmitB() {  
+      // in Vue 2    
+      // this.$set(this.alertB, "visible", !this.alertB.visible);
       this.alertB.visible = !this.alertB.visible;
     },
-    onSubmitC() {
+    onSubmitC() {   
+      // in Vue 2      
+      // this.$set(this.alertC, "visible", !this.alertC.visible);
       this.alertC.visible = !this.alertC.visible;
     },
   },
