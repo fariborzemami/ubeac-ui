@@ -1,5 +1,6 @@
 import { Btn, BtnSubmit } from './primitives/Button'
 import { Input } from './primitives/Input'
+import { Alert } from './primitives/Alert'
 import { Card } from './containers'
 import { Form, FormActions, FormContent, FormInput, FormRow } from './form'
 
@@ -11,6 +12,7 @@ export default app => {
     app.component('UBtn', Btn)
     app.component('UBtnSubmit', BtnSubmit)
     app.component('UInput', Input)
+    app.component('UAlert', Alert)
     app.component('UCard', Card)
     app.component('UBreadcrumb', UBreadcrumb)
     app.component('UProfileMenu', UProfileMenu)

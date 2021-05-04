@@ -19,19 +19,7 @@ export default {
                 href: '/about',
                 icon: 'wizard',
                 roles: [Roles.ALL]
-            }, 
-            {
-                title: 'Add Contact',
-                href: '/contacts/add',
-                icon: 'wizard',
-                roles: [Roles.ALL]
-            }, 
-            {
-                title: 'Contacts List',
-                href: '/contacts/list',
-                icon: 'wizard',
-                roles: [Roles.ALL]
-            },
+            }
         ],
     profile:
         [

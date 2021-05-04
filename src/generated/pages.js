@@ -41,18 +41,6 @@ export default [
   },
   {
     layout: 'Full',
-    title: 'Contacts',
-    route: '/contacts/add',
-    name: 'contacts/Add.vue'
-  },
-  {
-    layout: 'Full',
-    title: 'Contacts',
-    route: '/contacts/list',
-    name: 'contacts/List.vue'
-  },
-  {
-    layout: 'Full',
     title: 'Add Team',
     route: '/teams/add',
     name: 'teams/Add.vue'

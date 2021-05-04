@@ -6,6 +6,6 @@
 <script>
 import Btn from "./Btn";
 export default {
-  components: { Btn }
+  extends: { Btn }
 };
 </script>
