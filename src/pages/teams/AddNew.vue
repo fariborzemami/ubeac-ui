@@ -1,4 +1,4 @@
-<page layout="Full" title="Add Team" route="/teams/add">
+<page layout="Full" title="Add Team New" route="/teams/addnew">
   <u-form title="Team detail">
     <u-form-content>
       <u-form-input type="textbox" v-model="model.name" label="Name" ref="txtName" />
@@ -8,9 +8,9 @@
       <u-btn @click="onSubmitA" text="OK" variant="secondary" />
       <u-btn @click="onSubmitB" text="Check" variant="primary" />
       <u-btn @click="onSubmitC" text="Danger" variant="danger" />
-      <u-alert ref="alertA" variant="secondary">OK, this is fine!</u-alert>
-      <u-alert ref="alertB" variant="primary">NOK, please try again!</u-alert>
-      <u-alert ref="alertC" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert>
+      <u-alert-a :visible="alertA.visible" variant="secondary">OK, this is fine!</u-alert-a>
+      <u-alert-a :visible="alertB.visible" variant="primary">NOK, please try again!</u-alert-a>
+      <u-alert-a :visible="alertC.visible" variant="danger">OOPS, namespace {{model.namespace}} already exists!</u-alert-a>
     </u-form-actions>
   </u-form>
 </page>
@@ -23,23 +23,21 @@ export default {
         name: "Default Team",
         namespace: "xyz",
       },
+      alertA: { visible: true },
+      alertB: { visible: true },
+      alertC: { visible: true },
     };
   },
   methods: {
     onSubmitA() {
-      this.$refs.alertA.visible = !this.$refs.alertA.visible;
+      this.alertA.visible = !this.alertA.visible;
     },
     onSubmitB() {
-      this.$refs.alertB.visible = !this.$refs.alertB.visible;
+      this.alertB.visible = !this.alertB.visible;
     },
     onSubmitC() {
-      this.$refs.alertC.visible = !this.$refs.alertC.visible;
+      this.alertC.visible = !this.alertC.visible;
     },
-  },
-  mounted() {
-    this.$refs.alertA.visible = false;
-    this.$refs.alertB.visible = false;
-    this.$refs.alertC.visible = false;
   },
 };
 </script>
