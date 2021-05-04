@@ -1,5 +1,5 @@
-<page layout="Full" title="Add Team New" route="/teams/addnewnew">
-  <u-form title="Team detail NEW!">
+<page layout="Full" title="Add Team New LAST" route="/teams/addnewnewlast">
+  <u-form title="Team detail NEW LAST!">
     <u-form-content>
       <u-form-input type="textbox" v-model="model.name" label="Name" />
       <u-form-input type="textbox" v-model="model.namespace" label="Namespace" />
