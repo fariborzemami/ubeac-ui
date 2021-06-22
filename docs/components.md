@@ -8,6 +8,7 @@
 * [Image](/docs/components/primitive/image.md)
 * [Alert](/docs/components/primitive/alert.md)
 * [Label](/docs/components/primitive/label.md)
+* [Label](/docs/components/primitive/select.md)
 
 ## Containers
 
