@@ -11,7 +11,7 @@
 * [Select](/docs/components/primitive/select.md)
 * [captcha](/docs/components/primitive/captcha.md)
 * [datalist](/docs/components/primitive/datalist.md)
-* [pager](/docs/components/primitive/pager.md)
+* [pagination](/docs/components/primitive/pagination.md)
 * [navigation](/docs/components/primitive/navigation.md)
 * [breadcrumb](/docs/components/primitive/breadcrumb.md)
 * [singleselector](/docs/components/primitive/singleselector.md)
