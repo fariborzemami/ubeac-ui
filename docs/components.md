@@ -12,7 +12,6 @@
 * [captcha](/docs/components/primitive/captcha.md)
 * [datalist](/docs/components/primitive/datalist.md)
 * [pagination](/docs/components/primitive/pagination.md)
-* [navigation](/docs/components/primitive/navigation.md)
 * [breadcrumb](/docs/components/primitive/breadcrumb.md)
 * [singleselector](/docs/components/primitive/singleselector.md)
 * [autocomplete](/docs/components/primitive/autocomplete.md)
@@ -27,7 +26,6 @@
 * [imagebutton](/docs/components/primitive/imagebutton.md)
 * [radiobutton](/docs/components/primitive/radiobutton.md)
 * [radiobuttonlist](/docs/components/primitive/radiobuttonlist.md)
-* [treeview](/docs/components/primitive/treeview.md)
 
 ## Containers
 
