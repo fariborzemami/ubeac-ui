@@ -29,9 +29,6 @@
 ### cssClass
 * type: String
 
-### showAsConfirm
-* type: boolean
-* default: false
 
 ### toolTip
 * type: String
