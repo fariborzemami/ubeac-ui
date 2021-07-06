@@ -28,7 +28,10 @@
 * progressBar
 * snackBar
 * treeView
-* 
+* imageGrid
+* grid
+* chart
+* customtable
 ## Containers
 * card
 * expansion-panels
