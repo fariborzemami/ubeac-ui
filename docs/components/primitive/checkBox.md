@@ -11,30 +11,24 @@
 * type: number
 * available values: string, datetime, date, time
 
-
-
 ### tooltip
 
 * type: String
 
-### isrequired
-* type: boolean
-* default: false
-
 ### id
+
 * type: String
 
 ### label
+
 * type: String
 
 ### cssClass
+
 * type: String
 
-### showAsConfirm
-* type: boolean
-* default: false
-
 ### toolTip
+
 * type: String
 
 ### autofocus
@@ -71,11 +65,11 @@
 
 ## Methods
 
-change
+onchange
 
 
 ## Examples
 
 ```html
-<u-checkBox disabled="false" autofocus visible="true" @change=""  loading="true" />
+<u-checkBox disable="false" autofocus visible="true" @change=""  loading="true" />
 ```
