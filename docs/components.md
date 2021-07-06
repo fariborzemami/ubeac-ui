@@ -23,9 +23,19 @@
 * [radiobuttonlist](/docs/components/primitive/radiobuttonlist.md)
 * alert
 * fileInput
+* slider
+* switch
+* list
+* progressBar
+* snackBar
+* treeView
+* 
 ## Containers
 * card
 * expansion-panels
+* stepper
+* tab
+* 
 ## Forms
 * Form
 * dialogs
