@@ -40,10 +40,16 @@
 
 ## Methods
 
+onLoad
+
 onChange
+
 onNextSelected
+
 onPrevSelected
+
 onFirstSelected
+
 onLastSelected
 
 ## Examples
