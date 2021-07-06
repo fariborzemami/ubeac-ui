@@ -95,6 +95,17 @@
 * type: boolean
 * default: false
 
+
+### search
+
+* type: boolean
+* default: false
+
+
+### url
+
+* type: string
+ 
 ## Methods
 
 change
