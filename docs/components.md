@@ -10,7 +10,6 @@
 * [Label](/docs/components/primitive/label.md)
 * [Select](/docs/components/primitive/select.md)
 * [captcha](/docs/components/primitive/captcha.md)
-* [datalist](/docs/components/primitive/datalist.md)
 * [pagination](/docs/components/primitive/pagination.md)
 * [breadcrumb](/docs/components/primitive/breadcrumb.md)
 * [singleselector](/docs/components/primitive/singleselector.md)
