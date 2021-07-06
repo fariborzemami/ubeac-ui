@@ -102,14 +102,12 @@
 * default: false
 
 
-### url
-
-* type: string
- 
 ## Methods
 
-change
-beforChange
+onchange
+
+onbeforChange
+
 onLoad
 
 ## Examples
