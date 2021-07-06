@@ -87,9 +87,6 @@ onselecte
 
 formater
 
-## Functions
-
-onload
 
 ## Examples
 
