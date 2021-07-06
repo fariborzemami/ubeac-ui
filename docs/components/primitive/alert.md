@@ -39,4 +39,3 @@ onclick
 <u-alert text="String"  visible="true" @click="" />
 ```
 
-// TODO: do we need this or we should use ULabel?
