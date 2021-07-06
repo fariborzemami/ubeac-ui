@@ -2,36 +2,15 @@
 
 ## Properties
 
-### text
-
-* type: String
 
 ### value
 
 * type: string
 
-
-
-
-### tooltip
-
-* type: String
-
-### isrequired
-
-* type: boolean
-* default: true
-
 ### isvalid
 
 * type: boolean
 * default: false
-
-### complexitylevel
-
-* type: string
-* default: high
-* available values: high,middle,low
 
 ### id
 
@@ -78,13 +57,17 @@
 * default: null
 * available values: en-US, fa-IR, ...
 
+### url
+
+* type: string
+
 ## Methods
 
 refresh
-
+validate
 
 ## Examples
 
 ```html
-<u-captcha complexitylevel="middle" visible="true" @refresh=""  loading="true" />
+<u-captcha url="api/getCaptcha" visible="true" @refresh=""  @validate="" />
 ```
