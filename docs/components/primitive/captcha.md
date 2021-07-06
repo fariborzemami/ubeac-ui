@@ -57,9 +57,6 @@
 * default: null
 * available values: en-US, fa-IR, ...
 
-### url
-
-* type: string
 
 ## Methods
 
@@ -67,8 +64,10 @@ refresh
 
 validate
 
+onload
+
 ## Examples
 
 ```html
-<u-captcha url="api/getCaptcha" visible="true" @refresh=""  @validate="" />
+<u-captcha visible="true" @refresh=""  @validate="" />
 ```
