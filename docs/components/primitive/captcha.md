@@ -60,7 +60,7 @@
 
 ## Methods
 
-refresh
+onrefresh
 
 validate
 
