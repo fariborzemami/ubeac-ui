@@ -41,6 +41,13 @@
 * type: boolean
 * default: false
 
+### type
+
+* type: string
+* default: ""
+* available: "confirm"
+
+
 ### dir
 
 * type: string
