@@ -16,7 +16,6 @@
 * [checkbox](/docs/components/primitive/checkBox.md)
 * [checkboxlist](/docs/components/primitive/checkboxlist.md)
 * [colorpicker](/docs/components/primitive/colorPicker.md)
-* [confirmcheckbox](/docs/components/primitive/confirmcheckbox.md)
 * [timepicker](/docs/components/primitive/timepicker.md)
 * [hyperlink](/docs/components/primitive/hyperlink.md)
 * [imagebutton](/docs/components/primitive/imagebutton.md)
