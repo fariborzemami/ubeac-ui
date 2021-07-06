@@ -28,18 +28,18 @@
 
 * type: String
 
-### calendar-class	
+### cssclass	
 
 * type: String
 
-### input-class
+### input-cssClass
 
 * type: String
 
-### week-first-day
+### firstDayOfWeek
 
 * type: number
-* default: 1 >> شنبه
+* default: 6 >> شنبه
 
 ### autofocus
 
@@ -74,20 +74,22 @@
 
 * type: String
 
-### tabIndex
-
-* type: Number
 
 ## Methods
 
+onload
+
 opened
-closed
-selectedDate
-changedMonth
-changedYear
+
+onclosed
+
+onselecte
+
+formater
+
 
 ## Examples
 
 ```html
-<u-datePicker isRequired="false" label="" disable="false" autofocus="false" visible="true" @opened="" @closed="" @selectedDate="" />
+<u-datePicker isRequired="false" label="" disable="false" autofocus="false" visible="true" @opened="" @closed="" @onselecte="" />
 ```

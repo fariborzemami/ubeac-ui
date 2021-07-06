@@ -54,19 +54,17 @@
 * type: boolean
 * default: false
 
-### language
-
-* type: String
-* default: null
-* available values: en-US, fa-IR, ...
-
 ## Methods
 
-change
+onchange
+
+onselect
+
+onload
 
 
 ## Examples
 
 ```html
-<u-colorPicker dir="left" visible="true" @change=""  loading="true" />
+<u-colorPicker dir="left" visible="true" @change=""  />
 ```

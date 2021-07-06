@@ -25,10 +25,12 @@
 
 ## Methods
 
-changeLevel
+onLoad
+
+onChange
 
 ## Examples
 
 ```html
-<u-breadcrumb visible="true" label="" items="" autofocus="false" class="" @changeLevel="" />
+<u-breadcrumb visible="true" label="" items="" autofocus="false" class="" @change="" />
 ```

@@ -15,10 +15,31 @@
 ### items
 
 * type: JSON, Array
-* ExampleJSON : {"key":"itemtitle","value":"1"} 
-* ExampleArray : [["itemtitle","1"],["itemtitle2","2"]]
+* ExampleJSON : {"key":"itemtitle","value":"1","Icon":"Alert"} 
+* ExampleArray : [["itemtitle","1","Alert"],["itemtitle2","2","Mail"]]
 
+### MaxSelectItem
 
+* type: number
+* default: 1
+
+### SelectedItem
+
+* type: number
+* available values: string, datetime, date, time
+
+### Icon
+
+* type: String
+* default: ""
+* alignment: Start,End
+
+### itemOptions
+
+* type: JSON
+* ExampleJSON : {"itemAlignment":"Start","IconAlignment":"end","spacing":"10"} 
+
+ 
 ### placeholder
 
 * type: String
@@ -42,7 +63,7 @@
 * type: boolean
 * default: false
 
-### disable
+### disabled
 
 * type: boolean
 * default: false
@@ -69,13 +90,28 @@
 * default: null
 * available values: en-US, fa-IR, ...
 
+### loading
+
+* type: boolean
+* default: false
+
+
+### search
+
+* type: boolean
+* default: false
+
+
 ## Methods
 
-change
-beforchange
+onchange
+
+onbeforChange
+
+onLoad
 
 ## Examples
 
 ```html
-<u-select texttype="String" valuetype="number" disabled="false" autofocus visible="true" @change="" @beforchange="" loading="true" />
+<u-select text="String" value="number" disabled="false" autofocus visible="true" @change="" @beforChange="" @onLoad="" loading="true" />
 ```

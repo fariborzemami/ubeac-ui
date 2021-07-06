@@ -12,15 +12,15 @@
 * type: boolean
 * default: true
 
-### class
+### cssClass
 
 * type: String
 
-### maxPageNumberView
+### totalVisible
 
 * type: number
 
-### showNextPrevButton
+### showButtons
 
 * type: boolean
 * default: true
@@ -30,24 +30,30 @@
 * type: boolean
 * default: true
 
-### items
+### length
 
 * type: number
 
-### pageNumber
-
-* type: number
-
-### pageSize
+### currentPage
 
 * type: number
 
 ## Methods
 
-changePageNumber
+onLoad
+
+onChange
+
+onNextSelected
+
+onPrevSelected
+
+onFirstSelected
+
+onLastSelected
 
 ## Examples
 
 ```html
-<u-pagination pageNumber="10" pageSize="5" disable="false" visible="disable" maxPageNumberView="5" showFirstLastButton="false"></ul>
+<u-pagination length="10" disable="false" visible="disable" totalVisible="5" showFirstLastButton="false"></ul>
 ```

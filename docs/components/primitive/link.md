@@ -1,4 +1,4 @@
-# UHyperlink
+# Ulink(must confirm!!!!)
 
 ## Properties
 
@@ -53,11 +53,11 @@
 
 ## Methods
 
-click
+onclick
 
 
 ## Examples
 
 ```html
-<u-hyperlink href="https://www.google.com" title="Click Me" target="_blank" text="Google" @click="" />
+<u-link href="https://www.google.com" title="Click Me" target="_blank" text="Google" @click="" />
 ```
