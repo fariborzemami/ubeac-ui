@@ -64,6 +64,7 @@
 ## Methods
 
 refresh
+
 validate
 
 ## Examples
