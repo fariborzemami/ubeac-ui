@@ -14,7 +14,7 @@
 
 * type: String
 
-### input-class
+### cssClass
 
 * type: String
 
@@ -27,11 +27,6 @@
 
 * type: boolean
 * default: false
-
-### autocomplete
-
-* type: String
-* default: 'off'
 
 ### visible
 
@@ -56,18 +51,20 @@
 
 * type: String
 
-### tabIndex
-
-* type: Number
 
 ## Methods
 
-open
-close
-change
+onOpen
+
+onClose
+
+onChange
+
+formatter
+
 
 ## Examples
 
 ```html
-<u-timePicker isRequired="false" label="" disable="false" autofocus="false" visible="true" autocomplate="on" @open="" @close="" @change="" />
+<u-timePicker isRequired="false" label="" disable="false" autofocus="false" visible="true"  @open="" @close="" @change="" />
 ```
