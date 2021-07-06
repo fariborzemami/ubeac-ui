@@ -21,7 +21,6 @@
 * [imagebutton](/docs/components/primitive/imagebutton.md)
 * [radiobutton](/docs/components/primitive/radiobutton.md)
 * [radiobuttonlist](/docs/components/primitive/radiobuttonlist.md)
-* alert
 * fileInput
 * slider
 * switch
