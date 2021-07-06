@@ -45,37 +45,44 @@
 
 * type: String
 
-### tabIndex
-
-* type: Number
-
 ### repeatColumns
 
 * type: Number
 
-### class
+### cssClass
 
 * type: String
 
-### selectedValueItems
-
-* type: Array
-* available values: object
-
-### selectedTextItems
-
-* type: Array
-* available values: string
 
 ### items
 
 * type: JSON, Array
-* ExampleJSON : {"key":"itemtitle","value":"1"} 
-* ExampleArray : [["itemtitle","1"],["itemtitle2","2"]]
+* ExampleJSON : {"key":"itemtitle","value":"1","Icon":"Alert","selected":"false"} 
+* ExampleArray : [["itemtitle","1","Alert","true"],["itemtitle2","2","Mail","false"]]
+
+### MaxSelectItem
+
+* type: number
+* default: none
+
+### SelectedItem
+
+* type: JSON, Array
+
+* ExampleJSON : {"key":"itemtitle","value":"1","Icon":"Alert"} 
+* ExampleArray : [["itemtitle","1","Alert"],["itemtitle2","2","Mail"]]
+
+### Icon
+
+* type: String
+* default: ""
+* alignment: Start,End
 
 ## Methods
 
-change
+onchange
+
+onload
 
 ## Examples
 
