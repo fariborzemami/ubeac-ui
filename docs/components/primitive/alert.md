@@ -5,37 +5,31 @@
 ### text
 
 * type: String
-
-### Icon
-
-* type: String
 * default: ""
-* alignment: Start,End
 
-### Type
+### type
 
-* type: String
- Specify a success, info, warning or error alert. Uses the contextual color and has a pre-defined icon.
-
-### size
-* type: string
-Specify a value or pre defined sized
-
-### position
-* type: string
-Specify pre defined positions like botton, right, top
+* type: String (success/info/warning/error)
+* default: "info" 
 
 ### visible
 * type: boolean
+* default: true
 
+### closable/hideable/???
+* type: boolean
+* default: false
 
 ### Methods
 
-onclick
 
 ## Examples
 
 ```html
-<u-alert text="String"  visible="true" @click="" />
+<u-alert text="Alert text will be shown!" visible="true" />
+
+<u-alert :visible="!isMobile()">
+...
+</u-alert>
 ```
 
