@@ -20,17 +20,17 @@
 ### items
 
 * type: JSON, Array
-* ExampleJSON : {"Text":"itemtitle","Link":"1","ActiveLink":"true",,"tooltip":"..."} 
+* ExampleJSON : {"Text":"itemtitle","Link":"www.google.com","ActiveLink":"true",,"tooltip":"..."} 
 * ExampleArray : [["itemtitle","1","true","..."],["itemtitle2","2","false","..."]]
 
 ## Methods
 
-onLoad
+load
 
-onChange
+click
 
 ## Examples
 
 ```html
-<u-breadcrumb visible="true" label="" items="" autofocus="false" class="" @change="" />
+<u-breadcrumb visible="true" label="" items="" autofocus="false" class="" @click="" />
 ```
