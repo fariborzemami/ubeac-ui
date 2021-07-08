@@ -20,8 +20,9 @@
 * type: boolean
 * default: false
 
-### Methods
+## Methods
 
+Nothing yet!
 
 ## Examples
 
