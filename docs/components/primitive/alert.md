@@ -9,14 +9,14 @@
 
 ### type
 
-* type: String (success/info/warning/error)
+* type: String (success/info/warning/error/secondary/primary/danger)
 * default: "info" 
 
 ### visible
 * type: boolean
 * default: true
 
-### closable/hideable/???
+### closable
 * type: boolean
 * default: false
 
@@ -28,7 +28,7 @@
 ```html
 <u-alert text="Alert text will be shown!" visible="true" />
 
-<u-alert :visible="!isMobile()">
+<u-alert>
 ...
 </u-alert>
 ```
