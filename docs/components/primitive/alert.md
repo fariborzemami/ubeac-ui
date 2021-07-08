@@ -24,6 +24,10 @@
 
 Nothing yet!
 
+## Slots
+
+* default
+
 ## Examples
 
 ```html
