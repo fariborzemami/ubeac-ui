@@ -39,10 +39,6 @@
 
 ### click
 
-### beforeClick
-
-### afterClick
-
 ## Examples
 
 ```html
