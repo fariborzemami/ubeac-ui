@@ -7,7 +7,7 @@
 * type: String
 * default: ""
 
-### type
+### variant
 
 * type: String (success/info/warning/error/secondary/primary/danger)
 * default: "info" 
