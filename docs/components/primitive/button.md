@@ -12,9 +12,8 @@
 
 ### variant
 
-* type: String
-* default: primary
-* available values: primary, secondary, danger, alert, warning, ...
+* type: String (success/info/warning/error/secondary/primary/danger)
+* default: "info"
 
 ### autofocus
 
