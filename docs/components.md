@@ -34,3 +34,6 @@
 * BarChart
 * PieChart
 * DataList/Repeater
+
+## PendingList
+* [Pending components](/docs/components/pendingComponents.md)
