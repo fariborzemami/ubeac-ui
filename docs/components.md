@@ -6,7 +6,7 @@
 * [Button](/docs/components/primitive/button.md)
 * [CheckBox](/docs/components/primitive/checkBox.md)
 * [ColorPicker](/docs/components/primitive/colorPicker.md)
-* [dateTimePicker](/docs/components/primitive/dateTimePicker.md)
+* [DateTimePicker](/docs/components/primitive/dateTimePicker.md)
 * [Input](/docs/components/primitive/input.md)
 * [Radio](/docs/components/primitive/radio.md)
 * [Select](/docs/components/primitive/select.md)
