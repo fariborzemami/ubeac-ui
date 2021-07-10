@@ -36,4 +36,4 @@
 * DataList/Repeater
 
 ## PendingList
-* [Pending components](/docs/components/pendingComponents.md)
+* [Pending components](pendingComponents.md)
