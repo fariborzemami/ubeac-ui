@@ -30,5 +30,7 @@
 
 ## Reports
 * Grid
-* Chart
+* LineChart
+* BarChart
+* PieChart
 * DataList/Repeater
