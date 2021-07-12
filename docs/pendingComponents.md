@@ -13,7 +13,7 @@
 * [RadioList](/docs/components/primitive/radioList.md)
 * FileUploader
 * FileDownloader
-* Switch ( can be replcaed by type on checkbox )
+* Switch ( can be replcaed by type on checkbox https://getbootstrap.com/docs/5.0/forms/checks-radios/#switches )
 * Range ( Like bootstrap range https://getbootstrap.com/docs/5.0/forms/range/)
 ## Containers
 
