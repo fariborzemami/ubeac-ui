@@ -23,7 +23,7 @@
 * Form
 * Dialogs
 * [Captcha](/docs/components/from/form-captcha.md)
-* [Selector](/docs/components/from/form-selector.md)
+* [Selector](/docs/components/form/from-selector.md)
 * TreeView
 
 ## Reports
