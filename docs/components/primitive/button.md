@@ -35,9 +35,9 @@
 * type: boolean
 * default: false
 
-### Icon
-type: String
-default: ""
+### icon
+* type: String
+* default: ""
 
 
 ## Methods
