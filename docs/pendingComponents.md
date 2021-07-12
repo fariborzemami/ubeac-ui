@@ -11,7 +11,10 @@
 * [Link](/docs/components/primitive/link.md)
 * [Pagination](/docs/components/primitive/pagination.md)
 * [RadioList](/docs/components/primitive/radioList.md)
-
+* FileUploader
+* FileDownloader
+* Switch ( can be replcaed by type on checkbox )
+* Range ( Like bootstrap range https://getbootstrap.com/docs/5.0/forms/range/)
 ## Containers
 
 ## Forms
