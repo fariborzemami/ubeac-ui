@@ -11,8 +11,7 @@
 * [Radio](/docs/components/primitive/radio.md)
 * [Select](/docs/components/primitive/select.md)
 * FileUploader
-* Slider
-* Switch
+* Range
 * ProgressBar
 
 ## Containers
