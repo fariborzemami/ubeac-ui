@@ -35,6 +35,11 @@
 * type: boolean
 * default: false
 
+### Icon
+type: String
+default: ""
+
+
 ## Methods
 
 ### click
