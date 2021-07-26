@@ -1,29 +1,33 @@
-# UInput
+# URadioButton
 
 ## Properties
 
-### type
+### text
 
 * type: String
-* available values: text, number, date, time, datetime, money
 
 ### value
 
-* type: String
-
-### placeholder
-
-* type: String
+* type: number
+* available values: string, datetime, date, time
 
 ### tooltip
 
 * type: String
 
-### format
+### id
 
 * type: String
 
-### mask
+### label
+
+* type: String
+
+### cssClass
+
+* type: String
+
+### toolTip
 
 * type: String
 
@@ -36,6 +40,13 @@
 
 * type: boolean
 * default: false
+
+### type
+
+* type: string
+* default: ""
+* available: "confirm"
+
 
 ### dir
 
@@ -61,19 +72,11 @@
 
 ## Methods
 
-onChange
+onchange
 
-onClick
-
-onFocus
-
-onLeave
-
-formatter
-// TODO: what else do we need?
 
 ## Examples
 
 ```html
-<u-input type="text" />
+<u-radioButton disabled="false" autofocus visible="true" @change=""  loading="true" />
 ```

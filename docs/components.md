@@ -2,15 +2,36 @@
 
 ## Primitives
 
-* [Button](/docs/components/primitive/button.md)
-* [Input](/docs/components/primitive/input.md)
-* [Icon](/docs/components/primitive/icon.md)
-* [Image](/docs/components/primitive/image.md)
 * [Alert](/docs/components/primitive/alert.md)
-* [Label](/docs/components/primitive/label.md)
+* [Button](/docs/components/primitive/button.md)
+* [CheckBox](/docs/components/primitive/checkBox.md)
+* [ColorPicker](/docs/components/primitive/colorPicker.md)
+* [DateTimePicker](/docs/components/primitive/dateTimePicker.md)
+* [Input](/docs/components/primitive/input.md)
+* [Radio](/docs/components/primitive/radio.md)
+* [Select](/docs/components/primitive/select.md)
+* Range
+* ProgressBar
 
 ## Containers
+* Card
+* Expansion-Panel/Accordion panel
+* Stepper/Wizard
+* Tab
 
 ## Forms
+* Form
+* Dialogs
+* [Captcha]( /docs/components/form/from-captcha.md)
+* [Selector](/docs/components/form/from-selector.md)
+* TreeView
 
 ## Reports
+* Grid
+* LineChart
+* BarChart
+* PieChart
+* DataList/Repeater
+
+## PendingList
+* [Pending components](pendingComponents.md)

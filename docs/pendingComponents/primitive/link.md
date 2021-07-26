@@ -1,36 +1,32 @@
-# UInput
+# Ulink(must confirm!!!!)
 
 ## Properties
 
-### type
-
-* type: String
-* available values: text, number, date, time, datetime, money
-
-### value
+### href
 
 * type: String
 
-### placeholder
+### target 
+
+* type: String
+* available values: _self,_blank,_parent,_top
+
+### title
 
 * type: String
 
-### tooltip
+### id
 
 * type: String
 
-### format
+### text
 
 * type: String
 
-### mask
+### cssClass
 
 * type: String
 
-### autofocus
-
-* type: boolean
-* default: false
 
 ### disable
 
@@ -48,10 +44,6 @@
 * type: boolean
 * default: true
 
-### readonly
-
-* type: boolean
-* default: false
 
 ### language
 
@@ -61,19 +53,11 @@
 
 ## Methods
 
-onChange
+onclick
 
-onClick
-
-onFocus
-
-onLeave
-
-formatter
-// TODO: what else do we need?
 
 ## Examples
 
 ```html
-<u-input type="text" />
+<u-link href="https://www.google.com" title="Click Me" target="_blank" text="Google" @click="" />
 ```

@@ -1,17 +1,12 @@
-# UInput
+# UImagebutton
 
 ## Properties
 
-### type
-
-* type: String
-* available values: text, number, date, time, datetime, money
-
-### value
+### src
 
 * type: String
 
-### placeholder
+### alt
 
 * type: String
 
@@ -19,15 +14,19 @@
 
 * type: String
 
-### format
+### id
 
 * type: String
 
-### mask
+### text
 
 * type: String
 
-### autofocus
+### cssClass
+
+* type: String
+
+### isreload
 
 * type: boolean
 * default: false
@@ -48,10 +47,6 @@
 * type: boolean
 * default: true
 
-### readonly
-
-* type: boolean
-* default: false
 
 ### language
 
@@ -61,19 +56,11 @@
 
 ## Methods
 
-onChange
+click
 
-onClick
-
-onFocus
-
-onLeave
-
-formatter
-// TODO: what else do we need?
 
 ## Examples
 
 ```html
-<u-input type="text" />
+<u-imagebutton src="~/image.png" id="btnSubmit" dir="right" isreload="true" tooltip="Click Me" @click="" />
 ```

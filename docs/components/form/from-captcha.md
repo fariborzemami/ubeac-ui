@@ -1,29 +1,27 @@
-# UInput
+# UCaptcha
 
 ## Properties
 
-### type
-
-* type: String
-* available values: text, number, date, time, datetime, money
 
 ### value
 
-* type: String
+* type: string
 
-### placeholder
+### isvalid
 
-* type: String
+* type: boolean
+* default: false
 
-### tooltip
-
-* type: String
-
-### format
+### id
 
 * type: String
 
-### mask
+
+### cssClass
+
+* type: String
+
+### toolTip
 
 * type: String
 
@@ -59,21 +57,17 @@
 * default: null
 * available values: en-US, fa-IR, ...
 
+
 ## Methods
 
-onChange
+onrefresh
 
-onClick
+validate
 
-onFocus
-
-onLeave
-
-formatter
-// TODO: what else do we need?
+onload
 
 ## Examples
 
 ```html
-<u-input type="text" />
+<u-captcha visible="true" @refresh=""  @validate="" />
 ```

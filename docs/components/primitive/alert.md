@@ -1,3 +1,40 @@
 # UAlert
 
-// TODO: do we need this or we should use ULabel?
+## Properties
+
+### text
+
+* type: String
+* default: ""
+
+### variant
+
+* type: String (success/info/warning/error/secondary/primary/danger)
+* default: "info" 
+
+### visible
+* type: boolean
+* default: true
+
+### closable
+* type: boolean
+* default: false
+
+## Methods
+
+Nothing yet!
+
+## Slots
+
+* default
+
+## Examples
+
+```html
+<u-alert text="Alert text will be shown!" visible="true" />
+
+<u-alert>
+...
+</u-alert>
+```
+
