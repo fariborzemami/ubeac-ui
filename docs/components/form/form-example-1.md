@@ -1,6 +1,8 @@
 ```
+<u-page>
 
 <u-form
+  @onload="formOnLoad"
   model="filteringObject">
   <u-form-input></u-form-input>
   <u-btn></u-btn>
@@ -95,109 +97,63 @@
   </u-form-message>
 
 </u-form>
+</u-page>
 
-<script>
-export default {
-  methods: {
-     
-  },
-  computed: {
-     sum () {
-       this.list = []
-     }
-  },
-  props () {
-    myAttra: {
-       type: String,
-    }
-  },
-  data () {
-    return {
-      list: []
-    }
-  },
-  computed: {
-   isDisabled: () => this.model.createDate > somthing,
-  },
-  methods: {
-    reject () {
-      server.rejectBranchRequest(model.id).then((res) => {
-        this.response = res.result
-      })
-    },
-    approve () {
-      server.approveBranchRequest(model)
-    },
-    formLoad () {
-      server.loadBranchrequets(this.route.id).then((response) => {
-         helperfunction()`
-         this.model = response
-      })
-    }
-  }
+<sciprt>
+
+</sciprt>
+
+<script setup>
+export deafult {
+
 }
 </script>
 
-<script>
+
+<script ubeac>
 
 let data = {
-  loading: false
+  searchKey: '',
+  loading: false,
+  folan: 1,
 }
 
-let loading = false
+let computed = {
+  sum (a, b) {
+     return a + b
+  },
+  folan () {
 
-mounted () {
-
+  },
+  filteredData () {
+    return this.products.filter((item) => {
+       return item.title.includes(this.searchKey)
+    })
+  }
 }
 
-loadReportData () {
-  server.gerReport().then((response) => {
-    this.reportData = response.data
-    this.mainData = response.data
-  })
+let methods = {
+  sampleFunction () {
+
+    this.sampleFunction1()
+
+    this.folan = 5
+
+  },
+  sampleFunction1 () {
+    this.folan = 5
+  },
+  sampleFunction2 () {
+    this.folan = 5
+  }
 }
 
-
-this.isDisabled = () => this.model.createDate > somthing
-
-helperfunction () {
-
-}
-
-const list = []
-
-formLoad () {
-  server.loadBranchrequets(this.route.id).then((response) => {
-     helperfunction()
-     this.model = response
-  })
-}
-
-isOthertDisabled = () => this.model.createDate > somthing
-
-reject () {
-  server.rejectBranchRequest(model.id).then((res) => {
-    this.response = res.result
-  })
-}
-
-approve () {
-  server.approveBranchRequest(model)
-}
-
-formLoad () {
-  server.loadBranchrequets(this.route.id).then((response) => {
-     helperfunction()
-     this.model = response
-  })
-}
-
-// export default {
-//   reject,
-//   formLoad
-// }
-
+// Note: Will be add by core
+//export default {
+//  data: data,
+//  methods: methods,
+//  computed: computed,
+//}
 </script>
-
 
 ```
