@@ -1,14 +1,14 @@
 <template>
 <nav 
-  class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" 
+  class="navbar navbar-expand-lg fixed-top navbar-light bg-light" 
   aria-label="Main navigation">
   <div 
     class="container-fluid">
-    <a 
+    <router-link 
       class="navbar-brand" 
-      href="/">
+      to="/">
       uBeac UI 
-    </a>
+    </router-link>
     <button 
       class="navbar-toggler p-0 border-0" 
       type="button" 
@@ -28,24 +28,12 @@
           v-for="m in mainMenu"
           class="nav-item">
           <router-link 
+            class="nav-link"
             :to="m.route">
             {{m.title}}
           </router-link>
         </li>
       </ul>
-      <form 
-        class="d-flex">
-        <input 
-          class="form-control me-2" 
-          type="search" 
-          placeholder="Search" 
-          aria-label="Search">
-        <button 
-          class="btn btn-outline-success" 
-          type="submit">
-          Search
-        </button>
-      </form>
     </div>
   </div>
 </nav>

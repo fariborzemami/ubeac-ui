@@ -10,16 +10,28 @@ meta:
     Components
   </h1>
   <ul class="list-group">
-    <li class="list-group-item">
+    <li
+      v-for="item in componentsList"
+      :key="item"
+      @click="this.$router.push(item.optionsRoute)"
+      class="list-group-item list-group-item-action p-3">
       <router-link 
-        class="h6"
-        to="/kitchen/button">Button</router-link>
+        class="text-decoration-none text-dark h6"
+        :to="item.optionsRoute">
+        {{ item.name }}
+      </router-link>
       <router-link 
-        class="mx-3"
-        to="/kitchen/button?tab=playground">Playground</router-link>
-    </li>
-    <li class="list-group-item">
-      <router-link to="/kitchen/alert">Alert</router-link>
+        v-if="item.playground"
+        class="ms-3 text-decoration-none text-dark"
+        :to="item.playground">
+        Playground
+      </router-link>
+      <router-link 
+        v-if="item.editor"
+        class="ms-3 text-decoration-none text-dark"
+        :to="item.editor">
+        Editor
+      </router-link>
     </li>
   </ul>
   </div>
@@ -33,6 +45,21 @@ defineProps({
 })
 
 const state = reactive({ count: 0 })
+
+const componentsList = [
+  {
+    name: 'Button',
+    optionsRoute: '/kitchen/button',
+    playground: '/kitchen/button?tab=playground',
+    editor: '/kitchen/button?tab=editor'
+  },
+  {
+    name: 'Alert',
+    optionsRoute: '/kitchen/alert',
+    playground: '/kitchen/alert?tab=playground',
+    editor: '/kitchen/alert?tab=editor'
+  }
+]
 </script>
 
 <style lang="sass">
