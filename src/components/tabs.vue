@@ -1,23 +1,52 @@
 <template>
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li
-      class="nav-item"
+  <div>
+    <ul 
+      ref="tabheader"
+      class="nav nav-pills" 
+      role="tablist">
+      <li 
+      v-for="item in headerLink"
+      class="nav-item" 
       role="presentation">
-      <button
-        class="nav-link active"
-        id="pills-home-tab"
-        data-bs-toggle="pill"
-        data-bs-target="#pills-home"
-        type="button"
-        role="tab"
-        aria-controls="pills-home"
-        aria-selected="true">
-        Options
-      </button>
-    </li>
-  </ul>
-  <slot/>
+        <button 
+      class="nav-link" 
+      data-bs-toggle="pill"
+      :data-bs-target="`#${item.id}`" 
+      type="button" 
+      role="tab" >
+      {{ item.title }}
+        </button>
+      </li>
+    </ul>
+    <div
+      ref="tabcontent"
+      class="tab-content" 
+      id="pills-tabContent">
+      <slot />
+    </div>
+  </div>
 </template>
 
-<script setup>
+<script>
+// NOTE: Zero version, created because of need in demo pages
+import { onMounted, ref, watchEffect } from 'vue'
+export default {
+  data () {
+    return {
+      headerLink: []
+    }
+  },
+  mounted () {
+    const content = this.$refs.tabcontent;
+    let child;
+    for(child of content.children) {
+      this.headerLink.push({
+        title: child.getAttribute('data-title'),
+        id: child.getAttribute('id'),
+      })
+    }
+  },
+  setup() {
+  }
+}
 </script>

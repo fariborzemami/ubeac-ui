@@ -30,7 +30,7 @@ meta:
         v-if="item.editor"
         class="ms-3 text-decoration-none text-dark"
         :to="item.editor">
-        Editor
+        Examples
       </router-link>
     </li>
   </ul>
