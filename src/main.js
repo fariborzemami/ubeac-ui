@@ -9,6 +9,9 @@ import 'material-icons/iconfont/material-icons.scss';
 // Global Compoenents References
 import uForm from './components/form.vue'
 import uButton from './components/button.vue'
+import uTabs from './components/tabs.vue'
+import uTab from './components/tab.vue'
+import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import { VueLive, VueLiveEditor, VueLivePreview } from "vue-live";
 
@@ -20,7 +23,6 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/themes/prism-dark.css'; // import syntax highlighting styles
 
-
 const app = createApp(App)
 //
 // Global Compoenents
@@ -29,7 +31,12 @@ app.component('ULive', VueLive)
 app.component('PrismEditor', PrismEditor)
 app.component('ULiveEditor', VueLiveEditor)
 app.component('ULivePreview', VueLivePreview)
+
 app.component('uButton', uButton)
+app.component('uTabs', uTabs)
+app.component('uTab', uTab)
+app.component('uButton', uButton)
+app.component('uBreadCrumb', uBreadCrumb)
 app.component('uForm', uForm)
 app.component('u-icon', MaterialIcon);
 

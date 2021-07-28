@@ -4,13 +4,8 @@ meta:
 </route>
 
 <template>
-
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Componenets</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Button</li>
-    </ol>
-  </nav>
+  <h1>Button</h1>
+  <hr>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li 
       class="nav-item" 
@@ -39,7 +34,7 @@ meta:
         role="tab" 
         aria-controls="pills-profile" 
         aria-selected="false">
-        Examples
+        Playground
       </button>
     </li>
     <li class="nav-item" role="presentation">
@@ -52,51 +47,38 @@ meta:
         role="tab" 
         aria-controls="pills-contact" 
         aria-selected="false">
-        PLayground
+        Examples
       </button>
     </li>
   </ul>
 
-  <div class="tab-content" id="pills-tabContent">
+  <div
+    class="tab-content" 
+    id="pills-tabContent">
     <div 
-      class="tab-pane fade show active" 
-      id="pills-home" 
-      role="tabpanel" 
-      aria-labelledby="pills-home-tab">
+    class="tab-pane fade show active" 
+    id="pills-home" 
+    role="tabpanel" 
+    aria-labelledby="pills-home-tab">
       <p 
-      class="mt-3 text-start">
+    class="mt-3 text-start">
       <markdown></markdown>
       </p>
     </div>
     <div 
-      class="tab-pane fade" 
-      id="pills-profile" 
-      role="tabpanel" 
-      aria-labelledby="pills-profile-tab">
-      <h2
-        class="mt-5 text-start">
-        Live Editor
-      </h2>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <u-live 
-               :code="code">
-            </u-live>
-          </div>
-        </div>
-      </div>
+    class="tab-pane fade" 
+    id="pills-profile" 
+    role="tabpanel" 
+    aria-labelledby="pills-profile-tab">
+      <u-live 
+    :code="code">
+      </u-live>
     </div>
     <div 
-      class="tab-pane fade" 
-      id="pills-contact" 
-      role="tabpanel" 
-      aria-labelledby="pills-contact-tab">
-      Play Ground
-      <h2
-        class="mt-5 text-start">
-        Samples Preview
-      </h2>
+    class="tab-pane fade" 
+    id="pills-contact" 
+    role="tabpanel" 
+    aria-labelledby="pills-contact-tab">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -179,7 +161,6 @@ meta:
         </div>
       </div>
     </div>
-
 
   </div>
 </template>

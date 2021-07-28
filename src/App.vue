@@ -12,10 +12,12 @@ code[class*="language-"], pre[class*="language-"]
   background: #000 !important
   border-radius: 10px
 
+.VueLive-editor 
+  margin-right: 2%
 .VueLivePreview,
 .VueLive-editor 
   height: 400px
-  width: 50%
+  width: 49%
   float: left
 
 </style>
