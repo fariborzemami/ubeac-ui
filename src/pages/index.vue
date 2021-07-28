@@ -11,7 +11,15 @@ meta:
   </h1>
   <ul class="list-group">
     <li class="list-group-item">
-      <router-link to="/kitchen/button">Button</router-link>
+      <router-link 
+        class="h6"
+        to="/kitchen/button">Button</router-link>
+      <router-link 
+        class="mx-3"
+        to="/kitchen/button?tab=playground">Playground</router-link>
+    </li>
+    <li class="list-group-item">
+      <router-link to="/kitchen/alert">Alert</router-link>
     </li>
   </ul>
   </div>

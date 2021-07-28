@@ -77,7 +77,7 @@
 <!--</div>-->
 
 <main 
-  class="container">
+  class="container pt-5 mt-2">
   <router-view/>
 </main>
 </template>
