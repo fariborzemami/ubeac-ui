@@ -124,17 +124,16 @@ const code = reactive(
 </u-button>
 `
 )
-
 const doSomthing = () => {alert("Somthing");}
 const buttonSizes = ['lg', 'md', 'sm']
 const buttonVariants = [
-        'primary', 
-        'secondary', 
-        'success', 
-        'danger', 
-        'warning', 
-        'info', 
-        'light',
-        'dark'
-      ]
+  'primary', 
+  'secondary', 
+  'success', 
+  'danger', 
+  'warning', 
+  'info', 
+  'light',
+  'dark'
+]
 </script>

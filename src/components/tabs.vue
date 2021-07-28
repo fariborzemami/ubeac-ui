@@ -2,19 +2,20 @@
   <div>
     <ul 
       ref="tabheader"
-      class="nav nav-pills" 
+      class="nav nav-pills mb-3" 
       role="tablist">
       <li 
       v-for="item in headerLink"
-      class="nav-item" 
+      class="nav-item " 
       role="presentation">
         <button 
-      class="nav-link" 
-      data-bs-toggle="pill"
-      :data-bs-target="`#${item.id}`" 
-      type="button" 
-      role="tab" >
-      {{ item.title }}
+          :class="{ 'active': item.active }"
+          class="nav-link " 
+          data-bs-toggle="pill"
+          :data-bs-target="`#${item.id}`" 
+          type="button" 
+          role="tab" >
+          {{ item.title }}
         </button>
       </li>
     </ul>
@@ -40,13 +41,13 @@ export default {
     const content = this.$refs.tabcontent;
     let child;
     for(child of content.children) {
+      console.log(child.getAttribute('data-active'))
       this.headerLink.push({
+        active: child.getAttribute('data-active') === 'true',
         title: child.getAttribute('data-title'),
         id: child.getAttribute('id'),
       })
     }
-  },
-  setup() {
   }
 }
 </script>

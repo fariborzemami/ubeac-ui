@@ -1,6 +1,7 @@
 <template>
   <div 
     :data-title="title"
+    :data-active="active"
     :id="title"
     :class="{'show': active, 'active': active}"
     role="tabpanel"
@@ -9,22 +10,19 @@
   </div>
 </template>
 
-<script setup>
+<script>
 // NOTE: Zero version, created because of need in demo pages
-import { defineProps, computed, toRefs } from 'vue'
-
-const props = defineProps({
-  title: {
-    type: [String],
-    default: false
-  },
-  active: {
-    type: [Boolean],
-    default: false
-  },
-})
-
-const { title, active } = toRefs(props);
-
+import { onMounted, ref, watchEffect } from 'vue'
+export default {
+  props: {
+    title: {
+      type: [String],
+      default: false
+    },
+    active: {
+      type: [Boolean],
+      default: false
+    },
+  }
+}
 </script>
-
