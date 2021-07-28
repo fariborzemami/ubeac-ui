@@ -116,7 +116,7 @@ meta:
 
 <script setup>
 import { reactive } from 'vue'
-import { VueComponent } from '/docs/button.md'
+import { VueComponent } from '../../../docs/components/primitive/button.md'
 const markdown = VueComponent
 const code = reactive(
 `
