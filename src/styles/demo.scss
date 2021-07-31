@@ -1,7 +1,19 @@
 .document-section {
   color: #333333;
   font-size: 1em;
+  h1 {
+    display: none;
+  }
 
+  h2 {
+    font-size: 1.2em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  li {
+    font-size: .9em;
+  }
   pre {
      padding: 2em;
      background: #333333;
