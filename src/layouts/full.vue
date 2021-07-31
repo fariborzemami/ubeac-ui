@@ -1,12 +1,12 @@
 <template>
   <header 
-    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow"
     aria-label="Main navigation">
     <div 
-    class="container-fluid">
+      class="container-fluid">
       <router-link 
-    class="navbar-brand" 
-    to="/">
+        class="navbar-brand" 
+        to="/">
         uBeac UI 
       </router-link>
     </div>
@@ -22,10 +22,15 @@
           <ul class="nav flex-column">
             <li 
               v-for="route in routesListSortedByName"
-              class="nav-item">
+              class="nav-item ">
               <router-link
-                class="nav-link active"
+                :class="{active: $route.path === route.path }"
+                class="nav-link"
                 :to="route.path">
+              <u-icon 
+                class="float-start ms-2 me-1"
+                size="small"
+                icon="outlined_flag" />
                 {{route.name}}
               </router-link>
             </li>
@@ -33,7 +38,7 @@
         </div>
       </nav>
       <main 
-                class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <router-view/>
       </main>
     </div>
@@ -70,7 +75,7 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -85,16 +90,33 @@ export default {
   }
 }
 .sidebar {
+  font-size: 0.9em;
   position: fixed;
   top: 0;
-  /* rtl:raw:
-  right: 0;
-  */
   bottom: 0;
-  /* rtl:remove */
   left: 0;
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+
+  .material-icons {
+    color: inherit !important;
+    font-size: 1.5em !important;
+  }
 }
+
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-item {
+  height: 38px;
+}
+
 </style>

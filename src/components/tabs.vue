@@ -2,7 +2,7 @@
   <div>
     <ul 
       ref="tabheader"
-      class="nav nav-pills mb-3" 
+      class="nav nav-pills mb-3 bg-light p-2" 
       role="tablist">
       <li 
       v-for="item in headerLink"
