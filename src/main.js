@@ -9,6 +9,7 @@ import 'material-icons/iconfont/material-icons.scss';
 // Global Compoenents References
 import uForm from './components/form.vue'
 import uButton from './components/button.vue'
+import uRadioButton from './components/radio.vue'
 import uCheckBox from './components/checkbox.vue'
 import uAlert from './components/alert.vue'
 import uTabs from './components/tabs.vue'
@@ -35,6 +36,7 @@ app.component('ULiveEditor', VueLiveEditor)
 app.component('ULivePreview', VueLivePreview)
 
 app.component('uButton', uButton)
+app.component('uRadioButton', uRadioButton)
 app.component('uAlert', uAlert)
 app.component('uTabs', uTabs)
 app.component('uTab', uTab)

@@ -106,6 +106,14 @@ const componentsList = [
     editor: '/components/icon?tab=editor',
     is_inprogress: true,
     document_is_completed: false 
+  },
+  {
+    name: 'Radio',
+    optionsRoute: '/components/radio',
+    playground: '/components/radio?tab=playground',
+    editor: '/components/radio?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
   }
 ]
 </script>
