@@ -4,8 +4,14 @@
     :class="`alert alert-${ variant } ${ closable ? `alert-dismissible fade show` : `` } `"
     role="alert"
     >
-      {{ text }}
-    <slot></slot>
+    <template v-if="text">
+      <div>
+        {{ text }}
+      </div>
+    </template>
+    <template v-else>
+      <slot></slot>
+    </template>
     <button
         v-if="closable"
         type="button"
@@ -36,8 +42,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  methods: {
   }
 }
 </script>

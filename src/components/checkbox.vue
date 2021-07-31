@@ -81,8 +81,6 @@ export default {
       type: String,
       default: null
     }
-  },
-  methods: {
   }
 }
 </script>
