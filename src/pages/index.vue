@@ -58,6 +58,12 @@ const componentsList = [
     optionsRoute: '/kitchen/alert',
     playground: '/kitchen/alert?tab=playground',
     editor: '/kitchen/alert?tab=editor'
+  },
+  {
+    name: 'Checkbox',
+    optionsRoute: '/kitchen/checkbox',
+    playground: '/kitchen/checkbox?tab=playground',
+    editor: '/kitchen/checkbox?tab=editor'
   }
 ]
 </script>

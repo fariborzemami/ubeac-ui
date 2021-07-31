@@ -9,6 +9,7 @@ import 'material-icons/iconfont/material-icons.scss';
 // Global Compoenents References
 import uForm from './components/form.vue'
 import uButton from './components/button.vue'
+import uCheckBox from './components/checkbox.vue'
 import uAlert from './components/alert.vue'
 import uTabs from './components/tabs.vue'
 import uTab from './components/tab.vue'
@@ -38,6 +39,7 @@ app.component('uAlert', uAlert)
 app.component('uTabs', uTabs)
 app.component('uTab', uTab)
 app.component('uButton', uButton)
+app.component('uCheckBox', uCheckBox)
 app.component('uBreadCrumb', uBreadCrumb)
 app.component('uForm', uForm)
 app.component('u-icon', MaterialIcon);

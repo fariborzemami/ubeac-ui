@@ -5,6 +5,7 @@ meta:
 
 <template>
   <h1>Button</h1>
+  <hr>
   <u-tabs>
     <u-tab
       :active="true"
