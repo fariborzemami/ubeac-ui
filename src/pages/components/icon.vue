@@ -18,22 +18,55 @@ meta:
     </u-tab>
     <u-tab
       title="playground">
-      Need Document
       <u-live 
       :code="code">
       </u-live>
     </u-tab>
     <u-tab
       title="examples">
-      Need Document
+
+      <div 
+        class="input-group">
+        <div 
+          class="form-outline">
+          <input 
+            placeholder="Search"
+            type="search" 
+            class="form-control" 
+            v-model="iconSearchQuery" />
+        </div>
+      </div>
+
+      <template
+        v-for="iconKey in iconData">
+        <div 
+          class="card float-start m-2" 
+          style="width: 8rem;height: 100px;">
+          <div 
+            class="card-body">
+            <u-icon
+              class="w-100 text-center"
+              :icon="iconKey" >
+            </u-icon>
+            <span
+              class="w-100 d-block text-center" >
+              {{ iconKey }}
+            </span>
+          </div>
+        </div>
+      </template>
     </u-tab>
   </u-tabs>
 </template>
 
-<script setup>
-import { reactive } from 'vue'
-const code = reactive(
-`
+<script>
+import IconData from '../../assets/icons.json'
+export default {
+  data () {
+    return {
+      iconSearchQuery: '',
+       code: 
+      `
 <u-icon
   size="small"
   style="float: left;"
@@ -41,6 +74,15 @@ const code = reactive(
   icon="camera" 
   >
 </u-icon>
-`
-)
+      `
+    }
+  },
+  computed: {
+    iconData () {
+      return Object.keys(IconData).filter((key) => {
+        return key.indexOf(this.iconSearchQuery) >= 0
+      })
+    }
+  }
+}
 </script>
