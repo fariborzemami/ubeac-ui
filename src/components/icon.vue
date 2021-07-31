@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// NOTE: Zero version, created because of need to use in demo pages
 export default {
   name: "MaterialIcon",
   props: {

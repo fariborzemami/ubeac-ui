@@ -11,7 +11,7 @@
 </template>
 
 <script>
-// NOTE: Zero version, created because of need in demo pages
+// NOTE: Zero version, created because of need to use in demo pages
 import { onMounted, ref, watchEffect } from 'vue'
 export default {
   props: {
