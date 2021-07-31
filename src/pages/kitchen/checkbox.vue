@@ -1,7 +1,7 @@
 <route lang="yaml">
 name: Checkbox
 meta:
-  layout: master
+  layout: full
 </route>
 
 <template>

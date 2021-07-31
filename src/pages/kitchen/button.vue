@@ -1,7 +1,7 @@
 <route lang="yaml">
 name: Button
 meta:
-  layout: master
+  layout: full
 </route>
 
 <template>

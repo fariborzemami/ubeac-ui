@@ -1,6 +1,6 @@
 <route lang="yaml">
 meta:
-  layout: master 
+  layout: full 
 </route>
 
 <template>

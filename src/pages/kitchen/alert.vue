@@ -1,7 +1,7 @@
 <route lang="yaml">
 name: Alert
 meta:
-  layout: master
+  layout: full
 </route>
 
 <template>
