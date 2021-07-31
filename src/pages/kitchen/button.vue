@@ -1,17 +1,17 @@
 <route lang="yaml">
+name: Button
 meta:
   layout: master
 </route>
 
 <template>
   <h1>Button</h1>
-  <hr>
   <u-tabs>
     <u-tab
       :active="true"
       title="options">
       <p 
-      class="mt-3 text-start">
+      class="mt-3 text-start document-section">
       <markdown></markdown>
       </p>
     </u-tab>

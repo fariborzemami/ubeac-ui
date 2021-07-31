@@ -1,0 +1,30 @@
+.document-section {
+  color: #333333;
+  font-size: 1em;
+
+  pre {
+     padding: 2em;
+     background: #333333;
+     max-width: 800px;
+  }
+}
+
+.VueLive-editor,
+pre,
+code[class*="language-"], pre[class*="language-"]{
+  background: #f1f1f1;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.VueLive-editor {
+  margin-right: 2%;
+}
+
+.VueLivePreview,
+.VueLive-editor{
+  height: 400px;
+  width: 49%;
+  float: left;
+}
+
