@@ -24,86 +24,83 @@ meta:
     <u-tab
       title="examples">
       <div 
-        class="container">
-        <div 
-          class="row">
-          <div class="col">
-            <h4>Normal View</h4>
+        class="row">
+        <div class="col">
+          <h4>Normal View</h4>
+          <template
+            v-for="s in buttonSizes">
             <template
-              v-for="s in buttonSizes">
-              <template
-                v-for="v in buttonVariants">
-                <u-button
-                  :variant="v"
-                  @click="doSomthing()"
-                  text="this is button text"
-                  :disabled="false"
-                  :size="s"
-                  icon="camera"
-                  :autofocus="true"
-                  :loading="false">
-                </u-button>
-                <div class="my-3"></div>
-              </template>
+              v-for="v in buttonVariants">
+              <u-button
+                :variant="v"
+                @click="doSomthing()"
+                text="this is button text"
+                :disabled="false"
+                :size="s"
+                icon="camera"
+                :autofocus="true"
+                :loading="false">
+              </u-button>
+              <div class="my-3"></div>
             </template>
-          </div>
-          <div class="col">
-            <h4>Loading</h4>
+          </template>
+        </div>
+        <div class="col">
+          <h4>Loading</h4>
+          <template
+            v-for="s in buttonSizes">
             <template
-              v-for="s in buttonSizes">
-              <template
-                v-for="v in buttonVariants">
-                <u-button
-                  :variant="v"
-                  @click="doSomthing()"
-                  text="this is button text"
-                  :disabled="false"
-                  :size="s"
-                  icon="camera"
-                  :autofocus="true"
-                  :loading="true">
-                </u-button>
-                <div class="my-3"></div>
-              </template>
+              v-for="v in buttonVariants">
+              <u-button
+                :variant="v"
+                @click="doSomthing()"
+                text="this is button text"
+                :disabled="false"
+                :size="s"
+                icon="camera"
+                :autofocus="true"
+                :loading="true">
+              </u-button>
+              <div class="my-3"></div>
             </template>
-          </div>
-          <div class="col">
-            <h4>Disabled</h4>
+          </template>
+        </div>
+        <div class="col">
+          <h4>Disabled</h4>
+          <template
+            v-for="s in buttonSizes">
             <template
-              v-for="s in buttonSizes">
-              <template
-                v-for="v in buttonVariants">
-                <u-button
-                  :variant="v"
-                  @click="doSomthing()"
-                  text="this is button text"
-                  :disabled="true"
-                  :size="s"
-                  icon="camera"
-                  :autofocus="true"
-                  :loading="false">
-                </u-button>
-                <div class="my-3"></div>
-              </template>
+              v-for="v in buttonVariants">
+              <u-button
+                :variant="v"
+                @click="doSomthing()"
+                text="this is button text"
+                :disabled="true"
+                :size="s"
+                icon="camera"
+                :autofocus="true"
+                :loading="false">
+              </u-button>
+              <div class="my-3"></div>
             </template>
-          </div>
-          <div class="col">
-            <h4>No Icon</h4>
+          </template>
+        </div>
+        <div class="col">
+          <h4>No Icon</h4>
+          <template
+            v-for="s in buttonSizes">
             <template
-              v-for="s in buttonSizes">
-              <template
-                v-for="v in buttonVariants">
-                <u-button
-                  :variant="v"
-                  @click="doSomthing()"
-                  text="this is button text"
-                  :size="s"
-                  :loading="false">
-                </u-button>
-                <div class="my-3"></div>
-              </template>
+              v-for="v in buttonVariants">
+              <u-button
+                :variant="v"
+                @click="doSomthing()"
+                text="this is button text"
+                :size="s"
+                :loading="false">
+              </u-button>
+              <div class="my-3"></div>
             </template>
-          </div>
+          </template>
         </div>
       </div>
     </u-tab>

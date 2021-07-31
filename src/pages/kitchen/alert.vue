@@ -23,34 +23,32 @@ meta:
     </u-tab>
     <u-tab
       title="examples">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h4>Normal View</h4>
-            <template
-              v-for="v in alertVariants">
-              <u-alert
-                :variant="v"
-                @click="doSomthing()"
-                text="Alert text will be shown!"
-                >
-              </u-alert>
-                <div class="my-3"></div>
-            </template>
-          </div>
-          <div class="col">
-            <h4>Closable</h4>
-            <template
-              v-for="v in alertVariants">
-              <u-alert
-                :variant="v"
-                text="This is a closable alert!"
-                :closable="true"
-                >
-              </u-alert>
-                <div class="my-3"></div>
-            </template>
-          </div>
+      <div class="row">
+        <div class="col">
+          <h4>Normal View</h4>
+          <template
+            v-for="v in alertVariants">
+            <u-alert
+              :variant="v"
+              @click="doSomthing()"
+              text="Alert text will be shown!"
+              >
+            </u-alert>
+              <div class="my-3"></div>
+          </template>
+        </div>
+        <div class="col">
+          <h4>Closable</h4>
+          <template
+            v-for="v in alertVariants">
+            <u-alert
+              :variant="v"
+              text="This is a closable alert!"
+              :closable="true"
+              >
+            </u-alert>
+              <div class="my-3"></div>
+          </template>
         </div>
       </div>
     </u-tab>

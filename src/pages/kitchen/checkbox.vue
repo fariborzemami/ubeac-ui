@@ -23,48 +23,46 @@ meta:
     </u-tab>
     <u-tab
       title="examples">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h4>Normal View</h4>
-            <u-checkBox
-              v-for="i in 5"
-              :key="i"
-              text="This is a checkbox"
-              >
-            </u-checkBox>
-              <div class="my-3"></div>
-          </div>
-          <div class="col">
-            <h4>Checked</h4>
-            <u-checkBox
-              text="This is a checked checkbox!"
-              checked
-              >
-            </u-checkBox>
-              <div class="my-3"></div>
-          </div>
-          <div class="col">
-            <h4>Disable</h4>
-            <u-checkBox
-              text="This is a disable checkbox!"
-              checked
-              disabled
-              >
-            </u-checkBox>
-              <div class="my-3"></div>
-          </div>
-          <div class="col">
-            <h4>onChange trigger Alert</h4>
-            <u-checkBox
-              v-for="i in 5"
-              :key="i"
-              @click="doSomthing()"
-              text="This is a checkbox"
-              >
-            </u-checkBox>
-              <div class="my-3"></div>
-          </div>
+      <div class="row">
+        <div class="col">
+          <h4>Normal View</h4>
+          <u-checkBox
+            v-for="i in 5"
+            :key="i"
+            text="This is a checkbox"
+            >
+          </u-checkBox>
+            <div class="my-3"></div>
+        </div>
+        <div class="col">
+          <h4>Checked</h4>
+          <u-checkBox
+            text="This is a checked checkbox!"
+            checked
+            >
+          </u-checkBox>
+            <div class="my-3"></div>
+        </div>
+        <div class="col">
+          <h4>Disable</h4>
+          <u-checkBox
+            text="This is a disable checkbox!"
+            checked
+            disabled
+            >
+          </u-checkBox>
+            <div class="my-3"></div>
+        </div>
+        <div class="col">
+          <h4>onChange trigger Alert</h4>
+          <u-checkBox
+            v-for="i in 5"
+            :key="i"
+            @click="doSomthing()"
+            text="This is a checkbox"
+            >
+          </u-checkBox>
+            <div class="my-3"></div>
         </div>
       </div>
     </u-tab>
