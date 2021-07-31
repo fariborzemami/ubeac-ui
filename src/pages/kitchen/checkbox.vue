@@ -4,7 +4,7 @@ meta:
 </route>
 
 <template>
-  <h1>Alert</h1>
+  <h1>CheckBox</h1>
   <hr>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li 
@@ -71,7 +71,7 @@ meta:
     role="tabpanel" 
     aria-labelledby="pills-profile-tab">
       <u-live 
-    :code="code">
+        :code="code">
       </u-live>
     </div>
     <div 
@@ -83,29 +83,43 @@ meta:
         <div class="row">
           <div class="col">
             <h4>Normal View</h4>
-              <template
-                v-for="v in alertVariants">
-                <u-alert
-                  :variant="v"
-                  @click="doSomthing()"
-                  text="Alert text will be shown!"
+                <u-checkBox
+                  v-for="i in 5"
+                  :key="i"
+                  text="This is a checkbox"
                   >
-                </u-alert>
+                </u-checkBox>
                 <div class="my-3"></div>
-            </template>
           </div>
           <div class="col">
-            <h4>Closable</h4>
-              <template
-                v-for="v in alertVariants">
-                <u-alert
-                  :variant="v"
-                  text="This is a closable alert!"
-                  :closable="true"
+            <h4>Checked</h4>
+                <u-checkBox
+                  text="This is a checked checkbox!"
+                  checked
                   >
-                </u-alert>
+                </u-checkBox>
                 <div class="my-3"></div>
-              </template>
+          </div>
+          <div class="col">
+            <h4>Disable</h4>
+                <u-checkBox
+                  text="This is a disable checkbox!"
+                  checked
+                  disabled
+                  >
+                </u-checkBox>
+                <div class="my-3"></div>
+          </div>
+          <div class="col">
+            <h4>onChange trigger Alert</h4>
+                <u-checkBox
+                  v-for="i in 5"
+                  :key="i"
+                  @click="doSomthing()"
+                  text="This is a checkbox"
+                  >
+                </u-checkBox>
+                <div class="my-3"></div>
           </div>
         </div>
       </div>
@@ -116,29 +130,16 @@ meta:
 
 <script setup>
 import { reactive } from 'vue'
-import { VueComponent } from '../../../docs/components/primitive/alert.md'
+import { VueComponent } from '../../../docs/components/primitive/checkBox.md'
 const markdown = VueComponent
 const code = reactive(
 `
-<u-alert
-  variant="success"
-  @click="doSomthing()"
-  text="this is an alert!"
-  closable
+<u-checkBox
+  text="this is a checkbox!"
   >
-</u-alert>
+</u-checkBox>
 `
 )
 
 const doSomthing = () => {alert("Somthing");}
-const alertVariants = [
-        'primary', 
-        'secondary', 
-        'success', 
-        'danger', 
-        'warning', 
-        'info', 
-        'light',
-        'dark'
-      ]
 </script>
