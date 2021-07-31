@@ -69,41 +69,41 @@ const state = reactive({ count: 0 })
 const componentsList = [
   {
     name: 'Button',
-    optionsRoute: '/kitchen/button',
-    playground: '/kitchen/button?tab=playground',
-    editor: '/kitchen/button?tab=editor',
+    optionsRoute: '/components/button',
+    playground: '/components/button?tab=playground',
+    editor: '/components/button?tab=editor',
     is_inprogress: true,
     document_is_completed: true 
   },
   {
     name: 'Alert',
-    optionsRoute: '/kitchen/alert',
-    playground: '/kitchen/alert?tab=playground',
-    editor: '/kitchen/alert?tab=editor',
+    optionsRoute: '/components/alert',
+    playground: '/components/alert?tab=playground',
+    editor: '/components/alert?tab=editor',
     is_inprogress: true,
     document_is_completed: true 
   },
   {
     name: 'Checkbox',
-    optionsRoute: '/kitchen/checkbox',
-    playground: '/kitchen/checkbox?tab=playground',
-    editor: '/kitchen/checkbox?tab=editor',
+    optionsRoute: '/components/checkbox',
+    playground: '/components/checkbox?tab=playground',
+    editor: '/components/checkbox?tab=editor',
     is_inprogress: true,
     document_is_completed: true 
   },
   {
     name: 'Tabs',
-    optionsRoute: '/kitchen/tabs',
-    playground: '/kitchen/tabs?tab=playground',
-    editor: '/kitchen/tabs?tab=editor',
+    optionsRoute: '/components/tabs',
+    playground: '/components/tabs?tab=playground',
+    editor: '/components/tabs?tab=editor',
     is_inprogress: true,
     document_is_completed: false 
   },
   {
     name: 'Icon',
-    optionsRoute: '/kitchen/icon',
-    playground: '/kitchen/icon?tab=playground',
-    editor: '/kitchen/icon?tab=editor',
+    optionsRoute: '/components/icon',
+    playground: '/components/icon?tab=playground',
+    editor: '/components/icon?tab=editor',
     is_inprogress: true,
     document_is_completed: false 
   }
