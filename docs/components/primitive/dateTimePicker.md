@@ -14,29 +14,12 @@
 
 * type: Date|String
 
-### pattern
-* type: Regex, String
-* Available: phone, email
-
 ### format
 
 * type: String
 * default: yyyy MM dd
 
-### full-month-name
-
-* type: Boolean
-* default: false
-
 ### placeholder
-
-* type: String
-
-### cssclass	
-
-* type: String
-
-### input-cssClass
 
 * type: String
 
