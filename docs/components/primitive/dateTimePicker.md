@@ -14,6 +14,10 @@
 
 * type: Date|String
 
+### pattern
+* type: Regex, String
+* Available: phone, email
+
 ### format
 
 * type: String
