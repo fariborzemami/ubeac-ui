@@ -23,6 +23,10 @@
 
 * type: String
 
+### formatter
+
+* type: Function
+
 ### mask
 
 * type: String
@@ -68,9 +72,6 @@ onClick
 onFocus
 
 onLeave
-
-formatter
-// TODO: what else do we need?
 
 ## Examples
 
