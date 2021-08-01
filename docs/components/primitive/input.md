@@ -4,8 +4,8 @@
 
 ### type
 
-* type: String
-* available values: text, number, date, time, datetime, money
+* type: string
+* available values: text, number
 
 ### value
 
