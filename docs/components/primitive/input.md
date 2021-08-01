@@ -7,6 +7,10 @@
 * type: string
 * available values: text, number
 
+### pattern
+* type: Regex, String
+* Available: phone, email
+
 ### value
 
 * type: String
