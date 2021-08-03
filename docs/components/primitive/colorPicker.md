@@ -10,7 +10,7 @@
 
 * type: String
 
-### isrequired
+### isRequired
 
 * type: boolean
 * default: false
