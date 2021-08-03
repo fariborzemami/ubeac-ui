@@ -27,8 +27,6 @@ meta:
         <div class="col">
           <h4>Normal View</h4>
           <u-checkBox
-            v-for="i in 5"
-            :key="i"
             text="This is a checkbox"
             >
           </u-checkBox>
@@ -56,8 +54,6 @@ meta:
         <div class="col">
           <h4>onChange trigger Alert</h4>
           <u-checkBox
-            v-for="i in 5"
-            :key="i"
             @click="doSomthing()"
             text="This is a checkbox"
             >

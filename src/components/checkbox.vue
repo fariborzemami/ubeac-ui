@@ -13,6 +13,7 @@
        :checked="checked"
        :disabled="disabled"
        :autofocus="autofocus"
+       @change="onChangeCheckbox"
        >
     <template v-if="text">
       <label class="form-check-label" for="flexCheckDefault">
@@ -29,6 +30,17 @@
 
 <script>
 export default {
+  data () {
+    return {
+      selectedCheckbox: null
+    }
+  },
+  watch: {
+    deep: true,
+    value () {
+      this.selectedCheckbox = this.value
+    }
+  },
   props: {
     text: {
       type: String,
@@ -80,6 +92,11 @@ export default {
     language: {
       type: String,
       default: null
+    }
+  }, 
+  methods: {
+    onChangeCheckbox () {
+    this.$emit('onChange', this.selectedCheckbox)
     }
   }
 }
