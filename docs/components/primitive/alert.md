@@ -20,10 +20,6 @@
 * type: boolean
 * default: false
 
-## Methods
-
-Nothing yet!
-
 ## Slots
 
 * default
