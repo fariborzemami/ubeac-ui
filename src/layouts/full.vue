@@ -27,10 +27,6 @@
                 :class="{active: $route.path === route.path }"
                 class="nav-link"
                 :to="route.path">
-              <u-icon 
-                class="float-start ms-2 me-1"
-                size="small"
-                icon="outlined_flag" />
                 {{route.name}}
               </router-link>
             </li>

@@ -62,7 +62,7 @@ const code = reactive(
 
 `
 )
-const doSomthing = () => {alert("Somthing");}
+const doSomthing = () => {alert("Something");}
 const buttonSizes = ['lg', 'md', 'sm']
 const buttonVariants = [
   'primary', 

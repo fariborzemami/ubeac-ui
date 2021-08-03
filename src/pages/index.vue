@@ -45,7 +45,7 @@ meta:
       <span 
         v-else
         class="badge bg-danger me-2">
-        need_docuemnt
+        need_document
       </span>
       <span 
         v-if="item.is_inprogress"    
@@ -109,6 +109,3 @@ const componentsList = [
   }
 ]
 </script>
-
-<style lang="sass">
-</style>

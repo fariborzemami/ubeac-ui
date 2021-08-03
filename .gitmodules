@@ -1,0 +1,3 @@
+[submodule "src/modules/vue-color"]
+	path = src/modules/vue-color
+	url = https://github.com/ckpack/vue-color
