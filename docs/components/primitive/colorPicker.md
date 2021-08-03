@@ -19,52 +19,27 @@
 
 * type: String
 
-
-### cssClass
-
-* type: String
-
-### toolTip
-
-* type: String
-
-### autofocus
+### disabled
 
 * type: boolean
 * default: false
-
-### disable
-
-* type: boolean
-* default: false
-
-### dir
-
-* type: string
-* default: left
-* available values: left, right
 
 ### visible
 
 * type: boolean
 * default: true
 
-### readonly
+## Events
 
-* type: boolean
-* default: false
+change
 
-## Methods
+select
 
-onchange
-
-onselect
-
-onload
+load
 
 
 ## Examples
 
 ```html
-<u-colorPicker dir="left" visible="true" @change=""  />
+<u-colorPicker visible="true" @change=""  />
 ```
