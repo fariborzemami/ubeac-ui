@@ -68,5 +68,5 @@ formatter
 ## Examples
 
 ```html
-<u-datePicker isRequired="false" label="" disable="false" visible="true" @opened="" @closed="" @onselecte="" />
+<u-datePicker isRequired="false" label="" disabled="false" visible="true" @opened="" @closed="" @select="" />
 ```
