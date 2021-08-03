@@ -58,5 +58,5 @@ change
 ## Examples
 
 ```html
-<u-checkBox disable="false" visible="true" @change=""  loading="true" />
+<u-checkBox disable="false" visible="true" @change=""  />
 ```
