@@ -50,12 +50,6 @@
 * type: boolean
 * default: true
 
-### language
-
-* type: String
-* default: null
-* available values: en-US, fa-IR, ...
-
 ## Events
 
 change
