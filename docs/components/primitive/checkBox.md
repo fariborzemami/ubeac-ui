@@ -23,10 +23,6 @@
 
 * type: String
 
-### cssClass
-
-* type: String
-
 ### toolTip
 
 * type: String
@@ -36,7 +32,7 @@
 * type: boolean
 * default: false
 
-### disable
+### disabled
 
 * type: boolean
 * default: false
@@ -59,24 +55,19 @@
 * type: boolean
 * default: true
 
-### readonly
-
-* type: boolean
-* default: false
-
 ### language
 
 * type: String
 * default: null
 * available values: en-US, fa-IR, ...
 
-## Methods
+## Events
 
-onchange
+change
 
 
 ## Examples
 
 ```html
-<u-checkBox disable="false" autofocus visible="true" @change=""  loading="true" />
+<u-checkBox disable="false" visible="true" @change=""  loading="true" />
 ```
