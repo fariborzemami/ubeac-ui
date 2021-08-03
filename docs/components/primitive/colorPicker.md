@@ -10,7 +10,7 @@
 
 * type: String
 
-### isrequired
+### isRequired
 
 * type: boolean
 * default: false
@@ -19,52 +19,35 @@
 
 * type: String
 
+### hide-sliders
+ * type: boolean
 
-### cssClass
-
-* type: String
-
-### toolTip
+### mode
 
 * type: String
+* avalable values : (rgb,hex)
 
-### autofocus
+### disabled
 
 * type: boolean
 * default: false
-
-### disable
-
-* type: boolean
-* default: false
-
-### dir
-
-* type: string
-* default: left
-* available values: left, right
 
 ### visible
 
 * type: boolean
 * default: true
 
-### readonly
+## Events
 
-* type: boolean
-* default: false
+change
 
-## Methods
+select
 
-onchange
-
-onselect
-
-onload
+load
 
 
 ## Examples
 
 ```html
-<u-colorPicker dir="left" visible="true" @change=""  />
+<u-colorPicker visible="true" @change=""  />
 ```

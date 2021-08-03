@@ -15,12 +15,7 @@
 * type: String (success/info/warning/error/secondary/primary/danger)
 * default: "info"
 
-### autofocus
-
-* type: boolean
-* default: false
-
-### disable
+### disabled
 
 * type: boolean
 * default: false
@@ -40,12 +35,12 @@
 * default: ""
 
 
-## Methods
+## Events
 
 ### click
 
 ## Examples
 
 ```html
-<u-button variant="danger" disabled="false" autofocus text="Submit" visible="true" @click="" @beforeClick="" @afterClick="" loading="true" />
+<u-button variant="danger" disabled="false" autofocus text="Submit" visible="true" @click="" loading="true" />
 ```
