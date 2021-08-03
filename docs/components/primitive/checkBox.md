@@ -27,11 +27,6 @@
 
 * type: String
 
-### autofocus
-
-* type: boolean
-* default: false
-
 ### disabled
 
 * type: boolean
