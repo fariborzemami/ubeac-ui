@@ -2,6 +2,10 @@
 
 ## Properties
 
+### text
+
+* type: String
+
 ### type
 
 * type: string
@@ -11,10 +15,6 @@
 * type: Regex, String
 * Available: phone, email
 
-### value
-
-* type: String
-
 ### placeholder
 
 * type: String
@@ -23,62 +23,35 @@
 
 * type: String
 
-### format
-
-* type: String
-
-### formatter
-
-* type: Function
-
 ### mask
 
 * type: String
 
-### autofocus
+### format
+ * type: String
+ 
+### disabled
 
 * type: boolean
 * default: false
-
-### disable
-
-* type: boolean
-* default: false
-
-### dir
-
-* type: string
-* default: left
-* available values: left, right
 
 ### visible
 
 * type: boolean
 * default: true
 
-### readonly
+## Events
 
-* type: boolean
-* default: false
+change
 
-### language
+click
 
-* type: String
-* default: null
-* available values: en-US, fa-IR, ...
+focus
 
-## Methods
-
-onChange
-
-onClick
-
-onFocus
-
-onLeave
+leave
 
 ## Examples
 
 ```html
-<u-input type="text" />
+<u-input type="text" mask="{8}000000" format="0,0"  />
 ```
