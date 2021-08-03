@@ -53,5 +53,8 @@ leave
 ## Examples
 
 ```html
-<u-input type="text" mask="{8}000000" format="0,0"  />
+<u-input type="text" mask="{8}000000"  />
+<u-input type="text" format="0,0" />
+<u-input type="text" pattern="email" />
+
 ```
