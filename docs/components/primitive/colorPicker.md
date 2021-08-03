@@ -19,6 +19,14 @@
 
 * type: String
 
+### hide-sliders
+ * type: boolean
+
+### mode
+
+* type: String
+* avalable values : (rgb,hex)
+
 ### disabled
 
 * type: boolean
