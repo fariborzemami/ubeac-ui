@@ -28,12 +28,7 @@
 * type: number
 * default: 6 >> شنبه
 
-### autofocus
-
-* type: boolean
-* default: false
-
-### disable
+### disabled
 
 * type: boolean
 * default: false
@@ -42,11 +37,6 @@
 
 * type: boolean
 * default: true
-
-### readonly
-
-* type: boolean
-* default: false
 
 ### isRequired
 
@@ -62,21 +52,21 @@
 * type: String
 
 
-## Methods
+## Events
 
-onload
+load
 
 opened
 
-onclosed
+closed
 
-onselecte
+select
 
-formater
-
+## Method
+formatter
 
 ## Examples
 
 ```html
-<u-datePicker isRequired="false" label="" disable="false" autofocus="false" visible="true" @opened="" @closed="" @onselecte="" />
+<u-datePicker isRequired="false" label="" disable="false" visible="true" @opened="" @closed="" @onselecte="" />
 ```
