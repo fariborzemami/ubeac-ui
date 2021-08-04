@@ -15,6 +15,7 @@ import uCheckBox from './components/checkbox.vue'
 import uAlert from './components/alert.vue'
 import uTabs from './components/tabs.vue'
 import uTab from './components/tab.vue'
+import uInput from './components/input.vue'
 import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import ColorPicker from './components/colorpicker.vue'
@@ -43,6 +44,7 @@ app.component('uRadioButton', uRadioButton)
 app.component('uAlert', uAlert)
 app.component('uTabs', uTabs)
 app.component('uTab', uTab)
+app.component('uInput', uInput)
 app.component('uButton', uButton)
 app.component('uCheckBox', uCheckBox)
 app.component('uBreadCrumb', uBreadCrumb)
