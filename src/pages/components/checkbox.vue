@@ -36,7 +36,6 @@ meta:
           <h4>Checked</h4>
           <u-checkBox
             text="This is a checked checkbox!"
-            checked
             >
           </u-checkBox>
             <div class="my-3"></div>
