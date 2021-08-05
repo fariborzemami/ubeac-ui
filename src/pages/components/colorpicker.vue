@@ -42,7 +42,7 @@ export default {
 
 <script setup>
 import { reactive } from 'vue'
-import { VueComponent } from '../../../docs/components/primitive/colorPicker.md'
+import { VueComponent } from '../../../docs/components/primitive/colorpicker.md'
 const markdown = VueComponent
 const code = reactive(
 `
