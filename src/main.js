@@ -6,6 +6,8 @@ import 'bootstrap/js/dist/dropdown.js'
 import 'bootstrap/js/dist/tooltip.js'
 import Router from './router.js'
 import 'material-icons/iconfont/material-icons.scss';
+import numeral from 'numeral'
+import IMask from 'imask'
 
 // Global Compoenents References
 import uForm from './components/form.vue'
