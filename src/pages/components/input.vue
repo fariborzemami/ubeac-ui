@@ -51,6 +51,16 @@ meta:
           </u-input>
             <div class="my-3"></div>
         </div>
+        <div class="col">
+          <h4>warning</h4>
+          <u-input
+            @click="doSomthing()"
+            text="This is a input"
+            borderColor="warning"
+            >
+          </u-input>
+            <div class="my-3"></div>
+        </div>
       </div>
     </u-tab>
   </u-tabs>
