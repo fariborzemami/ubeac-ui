@@ -4,25 +4,30 @@
     class="form-check">
     <input 
        v-model="isChecked"
-       @change="onChangeCheckbox"
+       @change="onChange"
        class="form-check-input" 
        :class="cssClass"
        :type="type" 
        :value="value"
        :id="id"
        :dir="dir"
-       :lang="language"
        :checked="checked"
        :disabled="disabled"
        :autofocus="autofocus"
-       >
-    <template v-if="text">
-      <label class="form-check-label" for="flexCheckDefault">
+       />
+    <template 
+      v-if="text">
+      <label 
+        class="form-check-label" 
+        :for="id">
         {{ text }}
       </label>
     </template>
-    <template v-else>
-      <label class="form-check-label" for="flexCheckDefault">
+    <template 
+      v-else>
+      <label 
+        class="form-check-label" 
+        :for="id">
         <slot></slot>
       </label>
     </template>
@@ -64,7 +69,11 @@ export default {
       type: String
     },
     id: {
-      type: String
+      type: String,
+      default () {
+        // TODO: need id generator helper
+        return 'checkboxGeneratedId' + Math.random().toString().split('.')[1]
+      }
     },
     label: {
       type: String
@@ -87,15 +96,11 @@ export default {
     readonly: {
       type: Boolean,
       default: false
-    },
-    language: {
-      type: String,
-      default: null
     }
   },
   emits: ['update:modelValue'],
   methods: {
-    onChangeCheckbox(event) {
+    onChange(event) {
       this.$emit('update:modelValue', event.target.value)
     }
   }
