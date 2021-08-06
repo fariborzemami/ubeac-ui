@@ -8,7 +8,6 @@
        :value="value"
        @change="onChange"
        class="form-check-input" 
-       :class="cssClass"
        :id="id"
        :dir="dir"
        :disabled="disabled"
@@ -60,21 +59,12 @@ export default {
       type: [String, Boolean],
       required: false
     },
-    tooltip: {
-      type: String
-    },
     id: {
       type: String,
       default () {
         // TODO: need id generator helper
         return 'checkboxGeneratedId' + Math.random().toString().split('.')[1]
       }
-    },
-    label: {
-      type: String
-    },
-    cssClass: {
-      type: String
     },
     autofocus: {
       type: Boolean,
