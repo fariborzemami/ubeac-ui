@@ -115,7 +115,6 @@ const code = reactive(
   <u-radioButton
     text="foo"
     v-model="selectedValue3"
-    dir="rtl"
     name="radioBtnExample3"
     value="foo"
     >
