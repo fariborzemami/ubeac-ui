@@ -3,15 +3,14 @@
     v-show="visible"
     class="form-check">
     <input 
+       type="checkbox"
        v-model="isChecked"
+       :value="value"
        @change="onChange"
        class="form-check-input" 
        :class="cssClass"
-       :type="type" 
-       :value="value"
        :id="id"
        :dir="dir"
-       :checked="checked"
        :disabled="disabled"
        :autofocus="autofocus"
        />
@@ -43,15 +42,11 @@ export default {
   },
   props: {
     modelValue: {
-      type: String
+      type: [String, Boolean, Array]
     },
     text: {
       type: String,
       default: ''
-    },
-    checked: {
-      type: [Boolean, String],
-      default: false
     },
     visible: {
       type: Boolean,
@@ -62,8 +57,8 @@ export default {
       default: false
     },
     value: {
-      type: String,
-      required: true
+      type: [String, Boolean],
+      required: false
     },
     tooltip: {
       type: String
@@ -85,10 +80,6 @@ export default {
       type: Boolean,
       default: false
     },
-    type: {
-      type: String,
-      default: "checkbox"
-    },
     dir: {
       type: String,
       default: "ltr"
@@ -100,8 +91,8 @@ export default {
   },
   emits: ['update:modelValue'],
   methods: {
-    onChange(event) {
-      this.$emit('update:modelValue', event.target.value)
+    onChange() {
+      this.$emit('update:modelValue', this.isChecked)
     }
   }
 }
