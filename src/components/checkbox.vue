@@ -1,8 +1,10 @@
 <template>
   <div
-    v-if="visible"
+    v-show="visible"
     class="form-check">
     <input 
+       v-model="isChecked"
+       @change="onChangeCheckbox"
        class="form-check-input" 
        :class="cssClass"
        :type="type" 
@@ -13,7 +15,6 @@
        :checked="checked"
        :disabled="disabled"
        :autofocus="autofocus"
-       @change="onChangeCheckbox"
        >
     <template v-if="text">
       <label class="form-check-label" for="flexCheckDefault">
@@ -32,34 +33,32 @@
 export default {
   data () {
     return {
-      selectedCheckbox: null
-    }
-  },
-  watch: {
-    deep: true,
-    value () {
-      this.selectedCheckbox = this.value
+      isChecked: this.modelValue
     }
   },
   props: {
+    modelValue: {
+      type: String
+    },
     text: {
       type: String,
       default: ''
     },
+    checked: {
+      type: [Boolean, String],
+      default: false
+    },
     visible: {
       type: Boolean,
       default: true
-    },
-    checked: {
-      type: Boolean,
-      default: false
     },
     disabled: {
       type: Boolean,
       default: false
     },
     value: {
-      type: Number
+      type: String,
+      required: true
     },
     tooltip: {
       type: String
@@ -93,10 +92,11 @@ export default {
       type: String,
       default: null
     }
-  }, 
+  },
+  emits: ['update:modelValue'],
   methods: {
-    onChangeCheckbox () {
-    this.$emit('onChange', this.selectedCheckbox)
+    onChangeCheckbox(event) {
+      this.$emit('update:modelValue', event.target.value)
     }
   }
 }
