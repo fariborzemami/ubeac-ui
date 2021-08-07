@@ -11,15 +11,15 @@
 * type: number
 * available values: string, datetime, date, time
 
+### name
+
+* type: String
+
 ### tooltip
 
 * type: String
 
 ### id
-
-* type: String
-
-### label
 
 * type: String
 
@@ -38,6 +38,7 @@
 
 change
 
+click
 
 ## Examples
 
