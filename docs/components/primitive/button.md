@@ -43,4 +43,5 @@
 
 ```html
 <u-button variant="danger" disabled="false" autofocus text="Submit" visible="true" @click="" loading="true" />
+<u-button variant="danger" disabled="false" autofocus visible="true" @click="" loading="true" > Submit </u-button>
 ```
