@@ -19,9 +19,10 @@
 
 * type: String
 
-### label
+### name
 
 * type: String
+
 
 ### toolTip
 
