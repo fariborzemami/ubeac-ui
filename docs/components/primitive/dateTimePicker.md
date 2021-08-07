@@ -10,7 +10,7 @@
 
 * type: String
 
-### value
+### v-model
 
 * type: Date|String
 
