@@ -5,24 +5,27 @@ meta:
 </route>
 
 <template>
-  <h1>Button</h1>
+  <DemoHeader
+    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/button.md"
+    title="Button"
+  ></DemoHeader>
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API">
       <p 
       class="mt-3 text-start document-section">
       <markdown></markdown>
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground">
       <u-live 
       :code="code">
       </u-live>
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples">
       <div 
         class="row">
         <div class="col">
@@ -112,15 +115,14 @@ import { reactive } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/button.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<u-button
+`<u-button
   variant="success"
   @click="doSomthing()"
   text="this is button text"
   size="lg"
-  icon="camera">
-</u-button>
-`
+  icon="camera"
+  >
+</u-button>`
 )
 const doSomthing = () => {alert("Somthing");}
 const buttonSizes = ['lg', 'md', 'sm']

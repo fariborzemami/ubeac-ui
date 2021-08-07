@@ -5,24 +5,27 @@ meta:
 </route>
 
 <template>
-  <h1>Alert</h1>
+  <DemoHeader
+    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/alert.md"
+    title="Alert"
+  ></DemoHeader>
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API">
       <p 
       class="mt-3 text-start document-section">
       <markdown></markdown>
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground">
       <u-live 
       :code="code">
       </u-live>
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples">
       <div class="row">
         <div class="col">
           <h4>Normal View</h4>
@@ -60,15 +63,12 @@ import { reactive } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/alert.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<u-alert
+`<u-alert
   variant="success"
-  @click="doSomthing()"
   text="this is an alert!"
   closable
   >
-</u-alert>
-`
+</u-alert>`
 )
 
 const doSomthing = () => {alert("Somthing");}

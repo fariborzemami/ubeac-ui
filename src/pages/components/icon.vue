@@ -5,11 +5,14 @@ meta:
 </route>
 
 <template>
-  <h1>Icon</h1>
+  <DemoHeader
+    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/icon.md"
+    title="Icon"
+  ></DemoHeader>
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API">
       <p 
       class="mt-3 text-start document-section">
       // NOTE: Zero version, created because of need to use in demo pages
@@ -17,13 +20,13 @@ meta:
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground">
       <u-live 
       :code="code">
       </u-live>
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples">
 
       <div 
         class="input-group">
@@ -66,15 +69,13 @@ export default {
     return {
       iconSearchQuery: '',
        code: 
-      `
-<u-icon
+      `<u-icon
   size="small"
   style="float: left;"
   class="mx-2 float-start"
   icon="camera" 
   >
-</u-icon>
-      `
+</u-icon>`
     }
   },
   computed: {

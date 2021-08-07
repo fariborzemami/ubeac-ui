@@ -22,26 +22,18 @@ import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import ColorPicker from './components/colorpicker.vue'
 import Select from './components/select.vue'
-import { VueLive, VueLiveEditor, VueLivePreview } from "vue-live";
-
-// Code Editor
-import { PrismEditor } from 'vue-prism-editor';
-import 'vue-prism-editor/dist/prismeditor.min.css'; // import the styles somewhere
-import { highlight, languages } from 'prismjs/components/prism-core';
-import 'prismjs/components/prism-clike';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/themes/prism-dark.css'; // import syntax highlighting styles
-
+import Live from './components/Live.vue'
+import Link from './components/Link.vue'
+import DemoHeader from './demo_components/header.vue'
 
 const app = createApp(App)
-//
-// Global Compoenents
-app.use(Router)
-app.component('ULive', VueLive)
-app.component('PrismEditor', PrismEditor)
-app.component('ULiveEditor', VueLiveEditor)
-app.component('ULivePreview', VueLivePreview)
 
+app.use(Router)
+
+// Global Compoenents
+app.component('DemoHeader', DemoHeader)
+app.component('ULive', Live)
+app.component('ULink', Link)
 app.component('uButton', uButton)
 app.component('uRadioButton', uRadioButton)
 app.component('uAlert', uAlert)
@@ -54,7 +46,6 @@ app.component('uForm', uForm)
 app.component('u-icon', MaterialIcon)
 app.component('u-select', Select)
 app.component('u-colorpicker', ColorPicker)
-
 
 app.mount('#app')
 

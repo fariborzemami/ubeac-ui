@@ -5,11 +5,14 @@ meta:
 </route>
 
 <template>
-  <h1>Select</h1>
+  <DemoHeader
+    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/select.md"
+    title="Select"
+  ></DemoHeader>
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API">
       <p 
         class="mt-3 text-start document-section"
       >
@@ -17,13 +20,13 @@ meta:
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground">
       <u-live 
       :code="code">
       </u-live>
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples">
       <div 
         class="container"
         >
@@ -82,8 +85,7 @@ import { reactive, ref } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/select.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<template>
+`<template>
   <pre> {{ selectedExample1 }}</pre>
   <u-select
     v-model="selectedExample1"
@@ -133,8 +135,7 @@ export default {
      }
    }
 }
-<\/script>
-`
+<\/script>`
 )
 
 const doSomthing = () => {alert("Somthing");}

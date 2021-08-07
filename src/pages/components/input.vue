@@ -5,24 +5,27 @@ meta:
 </route>
 
 <template>
-  <h1>input</h1>
+  <DemoHeader
+    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/input.md"
+    title="Input"
+  ></DemoHeader>
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API">
       <p
         class="mt-3 text-start document-section">
         <markdown></markdown>
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground">
       <u-live
         :code="code">
       </u-live>
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples">
       <div class="row">
         <div class="col">
           <h4>Default Value</h4>
@@ -73,8 +76,7 @@ import { reactive, ref } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/input.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<template>
+`<template>
   <h6>Placeholder</h6>
   <pre> text: {{ inputValue1 }} </pre>
   <u-input
@@ -111,8 +113,7 @@ export default {
      }
    }
  }
-<\/script>
-`
+<\/script>`
 )
 
 const doSomthing = () => {alert("Somthing");}

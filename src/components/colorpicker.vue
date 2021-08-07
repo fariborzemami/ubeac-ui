@@ -18,7 +18,7 @@
       @select="onSelect"
       />
     <div 
-      class="dropdown-menu" >
+      class="dropdown-menu p-0" >
       <sketch-picker 
         v-model="colors" />
     </div>

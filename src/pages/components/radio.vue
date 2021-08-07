@@ -5,24 +5,27 @@ meta:
 </route>
 
 <template>
-  <h1>Radio</h1>
+  <DemoHeader
+    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/radio.md"
+    title="Radio"
+  ></DemoHeader>
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API">
       <p 
       class="mt-3 text-start document-section">
       <markdown></markdown>
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground">
       <u-live 
       :code="code">
       </u-live>
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -85,8 +88,7 @@ import { reactive, ref } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/radio.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<template>
+`<template>
   <pre> selected: {{ selectedValue }} </pre>
   <u-radioButton
     text="foo"
@@ -131,8 +133,7 @@ export default {
      }
    }
  }
-<\/script>
-`
+<\/script>`
 )
 const examples = [
   {

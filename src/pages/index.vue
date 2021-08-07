@@ -6,7 +6,8 @@ meta:
 <template>
   <div
     class="text-start">
-  <h1>
+  <h1 
+    class="h2 mt-1">
     Components
   </h1>
   <ul class="list-group">
@@ -58,14 +59,6 @@ meta:
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
-
-defineProps({
-  msg: String
-})
-
-const state = reactive({ count: 0 })
-
 const componentsList = [
   {
     name: 'Button',
@@ -123,6 +116,7 @@ const componentsList = [
     is_inprogress: true,
     document_is_completed: true
   },
+  {
     name: 'Select',
     optionsRoute: '/components/select',
     playground: '/components/select?tab=playground',
@@ -130,6 +124,7 @@ const componentsList = [
     is_inprogress: true,
     document_is_completed: true
   },
+  {
     name: 'ColorPicker',
     optionsRoute: '/components/colorpicker',
     playground: '/components/colorpicker?tab=playground',
