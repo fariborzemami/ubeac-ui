@@ -45,7 +45,7 @@ export default {
       type: String
     },
     items: {
-      type: [Array],
+      type: [Array, Object],
       default: []
     },
     id: {
@@ -69,6 +69,10 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    multiple: {
+      type: Boolean,
+      default: false
     }
   },
   emits: ['update:modelValue', 'load'],
