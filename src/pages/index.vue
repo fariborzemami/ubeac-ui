@@ -116,6 +116,13 @@ const componentsList = [
     document_is_completed: true
   },
   {
+    name: 'Input',
+    optionsRoute: '/components/input',
+    playground: '/components/input?tab=playground',
+    editor: '/components/input?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
+  },
     name: 'Select',
     optionsRoute: '/components/select',
     playground: '/components/select?tab=playground',
