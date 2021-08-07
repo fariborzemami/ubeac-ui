@@ -11,7 +11,8 @@ meta:
       :active="true"
       title="options">
       <p 
-      class="mt-3 text-start document-section">
+        class="mt-3 text-start document-section"
+      >
       <markdown></markdown>
       </p>
     </u-tab>
@@ -23,8 +24,12 @@ meta:
     </u-tab>
     <u-tab
       title="examples">
-      <div class="row">
-        <div class="col">
+      <div 
+        class="row"
+        >
+        <div 
+          class="col"
+          >
           <h4>Normal View</h4>
           <template
             v-for="v in alertVariants"
@@ -35,10 +40,15 @@ meta:
               text="Alert text will be shown!"
               >
             </u-alert>
-              <div class="my-3"></div>
+              <div 
+                class="my-3"
+              >
+              </div>
           </template>
         </div>
-        <div class="col">
+        <div 
+          class="col"
+        >
           <h4>Closable</h4>
           <template
             v-for="v in alertVariants"
@@ -79,9 +89,16 @@ const code = reactive(
 <u-alert
   variant="success"
   @click="doSomthing()"
-  text="this is an alert!"
+  text="This is an alert!"
   closable
   >
+</u-alert>
+<hr>
+<u-alert
+  variant="warning"
+  @click="doSomthing()"
+  >
+  This is a Example for slot!
 </u-alert>
 `
 )
