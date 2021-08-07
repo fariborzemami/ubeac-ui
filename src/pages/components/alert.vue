@@ -27,7 +27,8 @@ meta:
         <div class="col">
           <h4>Normal View</h4>
           <template
-            v-for="v in alertVariants">
+            v-for="v in alertVariants"
+            :key="v">
             <u-alert
               :variant="v"
               @click="doSomthing()"
@@ -40,12 +41,26 @@ meta:
         <div class="col">
           <h4>Closable</h4>
           <template
-            v-for="v in alertVariants">
+            v-for="v in alertVariants"
+            :key="v">
             <u-alert
               :variant="v"
               text="This is a closable alert!"
               :closable="true"
               >
+            </u-alert>
+              <div class="my-3"></div>
+          </template>
+        </div>
+        <div class="col">
+          <h4>Slot</h4>
+          <template
+            v-for="v in alertVariants"
+            :key="v">
+            <u-alert
+              :variant="v"
+              >
+              This is a Test for slot
             </u-alert>
               <div class="my-3"></div>
           </template>
