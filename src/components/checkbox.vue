@@ -1,27 +1,31 @@
 <template>
   <div
-    v-if="visible"
+    v-show="visible"
     class="form-check">
     <input 
-       class="form-check-input" 
-       :class="cssClass"
-       :type="type" 
+       type="checkbox"
+       v-model="isChecked"
        :value="value"
+       @change="onChange"
+       class="form-check-input" 
        :id="id"
        :dir="dir"
-       :lang="language"
-       :checked="checked"
        :disabled="disabled"
        :autofocus="autofocus"
-       @change="onChangeCheckbox"
-       >
-    <template v-if="text">
-      <label class="form-check-label" for="flexCheckDefault">
+       />
+    <template 
+      v-if="text">
+      <label 
+        class="form-check-label" 
+        :for="id">
         {{ text }}
       </label>
     </template>
-    <template v-else>
-      <label class="form-check-label" for="flexCheckDefault">
+    <template 
+      v-else>
+      <label 
+        class="form-check-label" 
+        :for="id">
         <slot></slot>
       </label>
     </template>
@@ -32,16 +36,13 @@
 export default {
   data () {
     return {
-      selectedCheckbox: null
-    }
-  },
-  watch: {
-    deep: true,
-    value () {
-      this.selectedCheckbox = this.value
+      isChecked: this.modelValue
     }
   },
   props: {
+    modelValue: {
+      type: [String, Boolean, Array]
+    },
     text: {
       type: String,
       default: ''
@@ -50,36 +51,24 @@ export default {
       type: Boolean,
       default: true
     },
-    checked: {
-      type: Boolean,
-      default: false
-    },
     disabled: {
       type: Boolean,
       default: false
     },
     value: {
-      type: Number
-    },
-    tooltip: {
-      type: String
+      type: [String, Boolean],
+      required: false
     },
     id: {
-      type: String
-    },
-    label: {
-      type: String
-    },
-    cssClass: {
-      type: String
+      type: String,
+      default () {
+        // TODO: need id generator helper
+        return 'checkboxGeneratedId' + Math.random().toString().split('.')[1]
+      }
     },
     autofocus: {
       type: Boolean,
       default: false
-    },
-    type: {
-      type: String,
-      default: "checkbox"
     },
     dir: {
       type: String,
@@ -88,15 +77,12 @@ export default {
     readonly: {
       type: Boolean,
       default: false
-    },
-    language: {
-      type: String,
-      default: null
     }
-  }, 
+  },
+  emits: ['update:modelValue'],
   methods: {
-    onChangeCheckbox () {
-    this.$emit('onChange', this.selectedCheckbox)
+    onChange() {
+      this.$emit('update:modelValue', this.isChecked)
     }
   }
 }

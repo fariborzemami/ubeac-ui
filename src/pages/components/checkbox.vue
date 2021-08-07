@@ -36,7 +36,6 @@ meta:
           <h4>Checked</h4>
           <u-checkBox
             text="This is a checked checkbox!"
-            checked
             >
           </u-checkBox>
             <div class="my-3"></div>
@@ -71,10 +70,37 @@ import { VueComponent } from '../../../docs/components/primitive/checkBox.md'
 const markdown = VueComponent
 const code = reactive(
 `
-<u-checkBox
-  text="this is a checkbox!"
-  >
-</u-checkBox>
+<template>
+  <pre> {{ checkList }}</pre>
+  <u-checkBox
+    v-model="checkList"
+    value="foo"
+    text="foo"
+    >
+  </u-checkBox>
+  <u-checkBox
+    v-model="checkList"
+    value="bar"
+    text="bar"
+    >
+  </u-checkBox>
+  <pre> {{ isChecked }}</pre>
+  <u-checkBox
+    v-model="isChecked"
+    text="this is a checkbox!"
+    >
+  </u-checkBox>
+</template>
+<script>
+export default {
+   data () {
+     return {
+        checkList: [],
+        isChecked: true
+     }
+   }
+}
+<\/script>
 `
 )
 

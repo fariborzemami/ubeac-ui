@@ -1,62 +1,67 @@
 <template>
   <div
     v-if="visible"
-    class="form-check">
+    class="form-check"
+    >
     <input 
-       v-model="radio"
+       v-model="selectedRadio"
+       type="radio"
        class="form-check-input" 
-       :class="cssClass"
-       :type="type" 
        :value="value"
        :id="id"
-       :name="name"
-       :dir="dir"
-       :lang="language"
-       :checked="checked"
        :disabled="disabled"
        :autofocus="autofocus"
-       >
-    <template v-if="text">
-      <label class="form-check-label" :for="id">
+       @change="onChange"
+       :name="name"
+       />
+    <template 
+      v-if="text"
+      >
+      <label 
+        class="form-check-label" 
+        :for="id"
+        >
         {{ text }} 
       </label>
     </template>
-    <template v-else>
-      <label class="form-check-label" :for="id">
+    <template 
+      v-else
+      >
+      <label 
+        class="form-check-label" 
+        :for="id"
+        >
         <slot></slot>
       </label>
     </template>
-  </div>
+</div>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      radio: null
+      selectedRadio: this.modelValue
     }
   },
   props: {
+    modelValue: {
+      type: [String, Boolean]
+    },
     text: {
       type: String,
       default: ''
     },
     value: {
-      type: Number
-    },
-    // Must implement with bootstrap
-    tooltip: {
-      type: String
+      type: [String, Boolean],
+      required: false,
     },
     id: {
-      type: String
-    },
-    // Ask about this prop
-    label: {
-      type: String
-    },
-    cssClass: {
-      type: String
+      type: String,
+      default () {
+        // TODO: need id generator helper
+        return 'radioGeneratedId' + Math.random().toString().split('.')[1]
+      }
     },
     autofocus: {
       type: Boolean,
@@ -66,29 +71,22 @@ export default {
       type: Boolean,
       default: false
     },
-    type: {
-      type: String,
-      default: "radio"
-    },
-    dir: {
-      type: String,
-      default: "ltr"
-    },
     visible: {
       type: Boolean,
       default: true
     },
-    language: {
-      type: String,
-      default: null
-    },
     name: {
       type: String,
-      required: true
-    },
-    checked: {
-      type: Boolean,
-      default: false
+      default () {
+        // TODO: need name generator helper
+        return 'radioGeneratedName' + Math.random().toString().split('.')[1]
+      }
+    }
+  },
+  emits: ['update:modelValue'],
+  methods: {
+    onChange() {
+      this.$emit('update:modelValue', this.selectedRadio)
     }
   }
 }
