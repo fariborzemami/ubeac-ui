@@ -27,9 +27,6 @@ meta:
         <div class="row">
           <div class="col">
             <h4>Normal View</h4>
-            <pre>
-              selected: {{ selectedRadioExample1 }}
-            </pre>
             <u-radioButton
                v-model="selectedRadioExample1"
                v-for="i in examples"
@@ -43,9 +40,7 @@ meta:
           </div>
           <div class="col">
             <h4>Selected</h4>
-            <pre>
-              selected: {{ selectedRadioExample2 }}
-            </pre>
+            
             <u-radioButton
                v-model="selectedRadioExample2"
                v-for="i in examples"
@@ -59,9 +54,7 @@ meta:
           </div>
           <div class="col">
             <h4>Disabled</h4>
-            <pre>
-              selected: {{ selectedRadioExample3 }}
-            </pre>
+            
             <u-radioButton
                v-model="selectedRadioExample3"
                v-for="i in examples"
