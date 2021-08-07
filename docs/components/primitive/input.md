@@ -2,7 +2,7 @@
 
 ## Properties
 
-### text
+### v-model
 
 * type: String
 
