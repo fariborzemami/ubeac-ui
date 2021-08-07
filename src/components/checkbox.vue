@@ -9,6 +9,7 @@
        @change="onChange"
        class="form-check-input" 
        :id="id"
+       :name="name"
        :dir="dir"
        :disabled="disabled"
        :autofocus="autofocus"
@@ -66,6 +67,9 @@ export default {
         return 'checkboxGeneratedId' + Math.random().toString().split('.')[1]
       }
     },
+    name: {
+      type: String
+    },
     autofocus: {
       type: Boolean,
       default: false
@@ -73,16 +77,13 @@ export default {
     dir: {
       type: String,
       default: "ltr"
-    },
-    readonly: {
-      type: Boolean,
-      default: false
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'change'],
   methods: {
-    onChange() {
+    onChange(e) {
       this.$emit('update:modelValue', this.isChecked)
+      this.$emit('change', e)
     }
   }
 }
