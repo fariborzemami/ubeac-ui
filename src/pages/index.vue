@@ -116,6 +116,13 @@ const componentsList = [
     document_is_completed: true
   },
   {
+    name: 'Select',
+    optionsRoute: '/components/select',
+    playground: '/components/select?tab=playground',
+    editor: '/components/select?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
+  },
     name: 'ColorPicker',
     optionsRoute: '/components/colorpicker',
     playground: '/components/colorpicker?tab=playground',

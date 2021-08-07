@@ -18,6 +18,7 @@ import uTab from './components/tab.vue'
 import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import ColorPicker from './components/colorpicker.vue'
+import Select from './components/select.vue'
 import { VueLive, VueLiveEditor, VueLivePreview } from "vue-live";
 
 // Code Editor
@@ -46,8 +47,10 @@ app.component('uTab', uTab)
 app.component('uCheckBox', uCheckBox)
 app.component('uBreadCrumb', uBreadCrumb)
 app.component('uForm', uForm)
-app.component('u-icon', MaterialIcon);
-app.component('u-colorpicker', ColorPicker);
+app.component('u-icon', MaterialIcon)
+app.component('u-select', Select)
+app.component('u-colorpicker', ColorPicker)
+
 
 app.mount('#app')
 
