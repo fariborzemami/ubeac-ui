@@ -24,7 +24,7 @@
 * type: String
 
 
-### toolTip
+### tooltip
 
 * type: String
 
