@@ -48,7 +48,7 @@
 ## Events
 
 change
-
+click
 
 ## Examples
 
