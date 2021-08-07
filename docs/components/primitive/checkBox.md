@@ -40,12 +40,6 @@
 * available: "confirm"
 
 
-### dir
-
-* type: string
-* default: left
-* available values: left, right
-
 ### visible
 
 * type: boolean
