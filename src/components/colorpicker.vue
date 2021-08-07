@@ -10,7 +10,13 @@
       data-bs-toggle="dropdown" 
       data-bs-auto-close="outside"
       aria-expanded="false"
-      type="text"/>
+      type="text"
+      :id="id"
+      :name="name"
+      @change="onChange"
+      @load="onLoad"
+      @select="onSelect"
+      />
     <div 
       class="dropdown-menu" >
       <sketch-picker 
@@ -60,6 +66,26 @@ export default {
     isRequired: {
       type: Boolean,
       default: false
+    },
+    id: {
+      type: String,
+      default: () => {
+        return 'colorPickerGeneratedId' + Math.random().toString().split('.')[1]
+      }
+    },
+    name: {
+      type: String
+    }
+  },
+  methods: {
+    onChange (e) {
+      this.$emit('change', e)
+    },
+    onLoad (e) {
+      this.$emit('load', e)
+    },
+    onSelect (e) {
+      this.$emit('select', e)
     }
   }
 }

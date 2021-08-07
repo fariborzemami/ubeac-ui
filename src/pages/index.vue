@@ -114,6 +114,14 @@ const componentsList = [
     editor: '/components/radio?tab=editor',
     is_inprogress: true,
     document_is_completed: true
+  },
+  {
+    name: 'ColorPicker',
+    optionsRoute: '/components/colorpicker',
+    playground: '/components/colorpicker?tab=playground',
+    editor: '/components/colorpicker?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
   }
 ]
 </script>
