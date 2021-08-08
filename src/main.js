@@ -3,6 +3,7 @@ import App from './App.vue'
 import Router from './router.js'
 
 // Third party library
+import i18n from './locale'
 import './styles/bootstrap.scss'
 import 'bootstrap/js/dist/tab.js'
 import 'bootstrap/js/dist/dropdown.js'
@@ -33,6 +34,7 @@ import DemoHeader from './demo_components/header.vue'
 const app = createApp(App)
 
 app.use(Router)
+app.use(i18n)
 
 // Global Compoenents
 app.component('ULive', Live)

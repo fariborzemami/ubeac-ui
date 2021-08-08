@@ -7,7 +7,7 @@
       <router-link 
         class="navbar-brand" 
         to="/">
-        uBeac UI 
+        {{ $t('application-name') }}
       </router-link>
     </div>
   </header>
