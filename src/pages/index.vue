@@ -11,7 +11,7 @@ meta:
   </h1>
   <ul class="list-group">
     <li
-      v-for="item in componentsList"
+      v-for="item in sortByname()"
       :key="item"
       @click="this.$router.push(item.optionsRoute)"
       class="list-group-item list-group-item-action p-3">
@@ -65,7 +65,6 @@ defineProps({
 })
 
 const state = reactive({ count: 0 })
-
 const componentsList = [
   {
     name: 'Button',
@@ -123,6 +122,7 @@ const componentsList = [
     is_inprogress: true,
     document_is_completed: true
   },
+  {
     name: 'Select',
     optionsRoute: '/components/select',
     playground: '/components/select?tab=playground',
@@ -130,6 +130,7 @@ const componentsList = [
     is_inprogress: true,
     document_is_completed: true
   },
+  {
     name: 'ColorPicker',
     optionsRoute: '/components/colorpicker',
     playground: '/components/colorpicker?tab=playground',
@@ -138,4 +139,8 @@ const componentsList = [
     document_is_completed: true
   }
 ]
+ function sortByname () { 
+    let sortedList = componentsList.sort((a, b) => b.name > a.name ? -1 : 1)
+    return sortedList
+ }
 </script>
