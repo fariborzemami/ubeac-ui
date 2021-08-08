@@ -6,7 +6,6 @@ import mdPlugin from 'vite-plugin-markdown'
 import { Mode } from 'vite-plugin-markdown'
 import Ubeac from './src/loader'
 
-import eslintPlugin from 'vite-plugin-eslint'
 import postcss from 'postcss'
 import postcssRTLCSS from 'postcss-rtlcss'
 import postcssRTLCSSOptions from 'postcss-rtlcss/options'
@@ -30,7 +29,6 @@ export default defineConfig({
   plugins: [
     Ubeac,
     vue(),
-    eslintPlugin(),
     Pages(),
     mdPlugin({
       mode: Mode.VUE

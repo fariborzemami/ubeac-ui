@@ -1,8 +1,7 @@
 <template>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-      </li>
+      <li class="breadcrumb-item" />
     </ol>
   </nav>
 </template>

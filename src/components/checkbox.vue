@@ -1,32 +1,37 @@
 <template>
   <div
     v-show="visible"
-    class="form-check">
+    class="form-check"
+  >
     <input 
-       type="checkbox"
-       v-model="isChecked"
-       :value="value"
-       @change="onChange"
-       class="form-check-input" 
-       :id="id"
-       :dir="dir"
-       :disabled="disabled"
-       :autofocus="autofocus"
-       />
+      :id="id"
+      v-model="isChecked"
+      type="checkbox"
+      :value="value"
+      class="form-check-input" 
+      :dir="dir"
+      :disabled="disabled"
+      :autofocus="autofocus"
+      @change="onChange"
+    >
     <template 
-      v-if="text">
+      v-if="text"
+    >
       <label 
         class="form-check-label" 
-        :for="id">
+        :for="id"
+      >
         {{ text }}
       </label>
     </template>
     <template 
-      v-else>
+      v-else
+    >
       <label 
         class="form-check-label" 
-        :for="id">
-        <slot></slot>
+        :for="id"
+      >
+        <slot />
       </label>
     </template>
   </div>
@@ -34,11 +39,6 @@
 
 <script>
 export default {
-  data () {
-    return {
-      isChecked: this.modelValue
-    }
-  },
   props: {
     modelValue: {
       type: [String, Boolean, Array]
@@ -80,6 +80,11 @@ export default {
     }
   },
   emits: ['update:modelValue'],
+  data () {
+    return {
+      isChecked: this.modelValue
+    }
+  },
   methods: {
     onChange() {
       this.$emit('update:modelValue', this.isChecked)

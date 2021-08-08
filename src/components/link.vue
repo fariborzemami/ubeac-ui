@@ -1,9 +1,10 @@
 <template>
-   <a 
-     :target="target"
-     :href="route">
-     <slot></slot>
-   </a>
+  <a 
+    :target="target"
+    :href="route"
+  >
+    <slot />
+  </a>
 </template>
 
 <script>

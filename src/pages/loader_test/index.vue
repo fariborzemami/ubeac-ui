@@ -12,8 +12,8 @@ meta:
   </h2>
   <pre>{{ modelExample }}</pre>
   <u-input 
-    model="modelExample">
-  </u-input>
+    model="modelExample"
+  />
   <h2>
     Change i18n expersion
   </h2>
@@ -21,7 +21,7 @@ meta:
     {{ $t('application-name') }}
     __application-name__
     __application-name__
-    <u-input placeholder="__application-name__" ></u-input>
+    <u-input placeholder="__application-name__" />
   </span>
 </template>
 

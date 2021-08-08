@@ -6,53 +6,63 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/icon.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/icon.md"
     title="Icon"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p 
-      class="mt-3 text-start document-section">
-      // NOTE: Zero version, created because of need to use in demo pages
-      Need Document
+        class="mt-3 text-start document-section"
+      >
+        // NOTE: Zero version, created because of need to use in demo pages
+        Need Document
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
-
+      title="Examples"
+    >
       <div 
-        class="input-group">
+        class="input-group"
+      >
         <div 
-          class="form-outline">
+          class="form-outline"
+        >
           <input 
-            placeholder="Search"
+            v-model="iconSearchQuery"
+            placeholder="Search" 
             type="search" 
-            class="form-control" 
-            v-model="iconSearchQuery" />
+            class="form-control"
+          >
         </div>
       </div>
 
       <template
-        v-for="iconKey in iconData">
+        v-for="iconKey in iconData"
+      >
         <div 
           class="card float-start m-2" 
-          style="width: 8rem;height: 100px;">
+          style="width: 8rem;height: 100px;"
+        >
           <div 
-            class="card-body">
+            class="card-body"
+          >
             <u-icon
               class="w-100 text-center"
-              :icon="iconKey" >
-            </u-icon>
+              :icon="iconKey"
+            />
             <span
-              class="w-100 d-block text-center" >
+              class="w-100 d-block text-center"
+            >
               {{ iconKey }}
             </span>
           </div>

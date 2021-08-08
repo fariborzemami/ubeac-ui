@@ -2,48 +2,43 @@
   <div
     v-if="visible"
     class="form-check"
-    >
+  >
     <input 
-       v-model="selectedRadio"
-       type="radio"
-       class="form-check-input" 
-       :value="value"
-       :id="id"
-       :disabled="disabled"
-       :autofocus="autofocus"
-       @change="onChange"
-       :name="name"
-       />
+      :id="id"
+      v-model="selectedRadio"
+      type="radio" 
+      class="form-check-input"
+      :value="value"
+      :disabled="disabled"
+      :autofocus="autofocus"
+      :name="name"
+      @change="onChange"
+    >
     <template 
       v-if="text"
-      >
+    >
       <label 
         class="form-check-label" 
         :for="id"
-        >
+      >
         {{ text }} 
       </label>
     </template>
     <template 
       v-else
-      >
+    >
       <label 
         class="form-check-label" 
         :for="id"
-        >
-        <slot></slot>
+      >
+        <slot />
       </label>
     </template>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      selectedRadio: this.modelValue
-    }
-  },
   props: {
     modelValue: {
       type: [String, Boolean]
@@ -84,6 +79,11 @@ export default {
     }
   },
   emits: ['update:modelValue'],
+  data () {
+    return {
+      selectedRadio: this.modelValue
+    }
+  },
   methods: {
     onChange() {
       this.$emit('update:modelValue', this.selectedRadio)

@@ -6,29 +6,33 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/colorpicker.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/colorpicker.md"
     title="ColorPicker"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p
-        class="mt-3 text-start document-section">
-        <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       <u-live
-        :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
+      title="Examples"
+    >
       <u-colorpicker 
-        v-model="pickedColor">
-      </u-colorpicker>
+        v-model="pickedColor"
+      />
     </u-tab>
   </u-tabs>
 </template>
