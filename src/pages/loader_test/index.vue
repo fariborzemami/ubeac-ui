@@ -18,8 +18,10 @@ meta:
     Change i18n expersion
   </h2>
   <span>
+    {{ $t('application-name') }}
     __application-name__
     __application-name__
+    <u-input placeholder="__application-name__" ></u-input>
   </span>
 </template>
 
