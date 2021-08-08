@@ -11,7 +11,7 @@ meta:
   </h1>
   <ul class="list-group">
     <li
-      v-for="item in sortByname()"
+      v-for="item in sortByName()"
       :key="item"
       @click="this.$router.push(item.optionsRoute)"
       class="list-group-item list-group-item-action p-3">
@@ -139,8 +139,8 @@ const componentsList = [
     document_is_completed: true
   }
 ]
- function sortByname () { 
-    let sortedList = componentsList.sort((a, b) => b.name > a.name ? -1 : 1)
+ function sortByName () { 
+    const sortedList = componentsList.sort((a, b) => b.name > a.name ? -1 : 1)
     return sortedList
  }
 </script>
