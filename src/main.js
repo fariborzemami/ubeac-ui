@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'bootstrap/scss/bootstrap.scss'
+import Router from './router.js'
+
+// Third party library
+import './styles/bootstrap.scss'
 import 'bootstrap/js/dist/tab.js'
 import 'bootstrap/js/dist/dropdown.js'
 import 'bootstrap/js/dist/tooltip.js'
-import Router from './router.js'
 import 'material-icons/iconfont/material-icons.scss';
 import numeral from 'numeral'
 import IMask from 'imask'
@@ -24,6 +26,8 @@ import ColorPicker from './components/colorpicker.vue'
 import Select from './components/select.vue'
 import Live from './components/Live.vue'
 import Link from './components/Link.vue'
+
+// Demo Compoenents References
 import DemoHeader from './demo_components/header.vue'
 
 const app = createApp(App)
@@ -31,7 +35,6 @@ const app = createApp(App)
 app.use(Router)
 
 // Global Compoenents
-app.component('DemoHeader', DemoHeader)
 app.component('ULive', Live)
 app.component('ULink', Link)
 app.component('uButton', uButton)
@@ -46,6 +49,9 @@ app.component('uForm', uForm)
 app.component('u-icon', MaterialIcon)
 app.component('u-select', Select)
 app.component('u-colorpicker', ColorPicker)
+
+// Demo Compoenents References
+app.component('DemoHeader', DemoHeader)
 
 app.mount('#app')
 

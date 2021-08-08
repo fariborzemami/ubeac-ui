@@ -5,7 +5,11 @@ meta:
 
 <template>
   <div
-    class="text-start">
+    class="text-start pb-4">
+    <p 
+    class="mt-3 text-start document-section">
+    <markdown></markdown>
+    </p>
   <h1 
     class="h2 mt-1">
     Components
@@ -59,6 +63,8 @@ meta:
 </template>
 
 <script setup>
+import { VueComponent } from '../../README.md'
+const markdown = VueComponent
 const componentsList = [
   {
     name: 'Button',

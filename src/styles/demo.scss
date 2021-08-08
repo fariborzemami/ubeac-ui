@@ -14,11 +14,15 @@
   li {
     font-size: .9em;
   }
+
+  code,
   pre {
-     padding: 2em;
+     display: block;
+     padding: 1em;
      background: #000000;
      border-radius: 10px;
      max-width: 800px;
+     color: white;
   }
 }
 
