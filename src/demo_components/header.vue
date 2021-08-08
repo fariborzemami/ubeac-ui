@@ -7,6 +7,7 @@
       {{ title }}
     </h1>
     <u-link
+      v-if="editLink"
       target="blank"
       class="mx-2 float-end mt-3"
       :route="editLink">
