@@ -38,6 +38,20 @@ meta:
             name="inputExample1"
           />
           <div class="my-3" />
+          <h4>Mask (0-0-0)</h4>
+          <u-input
+            :mask="{mask: '0-0-0'}"
+            v-model="inputExample1"
+            name="inputExample1"
+          />
+          <div class="my-3" />
+          <h4>Mask (a-0-0-0)</h4>
+          <u-input
+            :mask="{mask: 'a-0-0-0'}"
+            v-model="inputExample1"
+            name="inputExample1"
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>Disable</h4>
@@ -53,7 +67,6 @@ meta:
           <u-input
             v-model="inputExample3"
             name="inputExample3"
-            @click="doSomthing()"
           />
           <div class="my-3" />
         </div>
@@ -116,7 +129,6 @@ export default {
 <\/script>`
 )
 
-const doSomthing = () => {alert("Somthing");}
 const inputExample1 = ref('Default value')
 const inputExample2 = ref('')
 const inputExample3 = ref('')

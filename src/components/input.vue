@@ -11,6 +11,7 @@
       {{ prepand }}
     </span>
     <input 
+      ref="input"
       :id="id" 
       v-model="inputModel"
       :type="type"
@@ -38,7 +39,15 @@
 </template>
 
 <script>
+import IMask from 'imask'
 export default {
+  mounted () {
+    const self = this
+    if (this.mask && this.mask != '') {
+      var maskOptions = self.mask
+      var mask = IMask(self.$refs.input, maskOptions);
+    }
+  },
   props: {
     modelValue: {
       type: String
@@ -54,7 +63,8 @@ export default {
       type: String
     },
     mask: {
-      type: String
+      type: [Object, Boolean], 
+      default: false
     },
     format: {
       type: String
