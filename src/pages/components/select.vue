@@ -34,13 +34,12 @@ meta:
           class="row"
           >
           <div 
-            class="col"
+            class="col-4"
             >
-            <h4>Normal View</h4>
+            <h4>Default</h4>
             <u-select
                v-model="selectedExample1"
                :items="items"
-               label="Select"
                >
             </u-select>
                 <div 
@@ -49,13 +48,12 @@ meta:
                 </div>
           </div>
           <div 
-            class="col"
+            class="col-4"
             >
             <h4>Selected</h4>
             <u-select
                v-model="selectedExample2"
                :items="items"
-               label="Selected"
                >
             </u-select>
                 <div 
@@ -64,12 +62,95 @@ meta:
                 </div>
           </div>
           <div
-            class="col"
+            class="col-4"
             >
             <h4>Disabled</h4>
               <u-select
                 label=" Disable select"
                 disabled
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Clearable</h4>
+              <u-select
+                clearable
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Searchable</h4>
+              <u-select
+                searchable
+                v-model="selectedExample2"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Filterable</h4>
+              <u-select
+                searchable
+                filterable
+                v-model="selectedExample2"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Not close on select</h4>
+              <u-select
+                :close-on-select="false"
+                v-model="selectedExample2"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Rtl</h4>
+              <u-select
+                dir="rtl"
+                v-model="selectedExample2"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Multiple</h4>
+              <u-select
+                multiple
+                v-model="selectedExample2"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Placeholder</h4>
+              <u-select
+                placeholder="Please select an option"
+                :items="items"
                 >
               </u-select>
                 <div class="my-3"></div>
@@ -90,14 +171,12 @@ const code = reactive(
   <u-select
     v-model="selectedExample1"
     :items="items"
-    label="Example1"
     >
   </u-select>
   <hr>
   <pre> {{ selectedExample2 }}</pre>
   <u-select
     v-model="selectedExample2"
-    label="Example2"
     :items="items"
     >
   </u-select>
@@ -105,7 +184,6 @@ const code = reactive(
   <pre> {{ selectedExample3 }}</pre>
   <u-select
     v-model="selectedExample3"
-    label="Example3"
     multiple
     :items="items"
     >
@@ -116,20 +194,26 @@ export default {
    data () {
      return {
         selectedExample1: null,
-        selectedExample2: 'foo',
-        selectedExample3: ['foo', 'baz'],
+        selectedExample2: {
+          "label": "foo",
+          "value": 1
+        },
+        selectedExample3: {
+          "label": "bar",
+          "value": 2
+        },
         items: [
-          {   
-            key: 'foo',
-            value: 'foo'
+          {
+            label: 'foo',
+            value: 1
           },
           {
-            key: 'bar',
-            value: 'bar'
+            label: 'bar',
+            value: 2
           },
           {
-            key: 'baz',
-            value: 'baz'
+            label: 'baz',
+            value: 3
           }
         ]
      }
@@ -141,19 +225,22 @@ export default {
 const doSomthing = () => {alert("Somthing");}
 const items = [
   {
-    key: 'foo',
+    label: 'foo',
     value: 1
   },
   {
-    key: 'bar',
+    label: 'bar',
     value: 2
   },
   {
-    key: 'baz',
+    label: 'baz',
     value: 3
   }
 ]
 const selectedExample1 = ref('')
-const selectedExample2 = ref(2)
+const selectedExample2 = ref({
+  label: 'baz',
+  value: 3
+})
 
 </script>

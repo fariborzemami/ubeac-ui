@@ -2,23 +2,22 @@
   <div
     v-show="visible"
     >
-  <v-select 
-    v-model="selectedItems"
-    :options="items" 
-    :dir="dir"
-    :clearable="clearable"
-    :closeOnSelect="closeOnSelect"
-    :disabled="disabled"
-    :filterable="filterable"
-    :inputId="id"
-    :label="label"
-    :multiple="multiple"
-    :placeholder="placeholder"
-    :searchable="searchable"
-    :transition="transition"
-    :value="value"
-    @input="onChange"
-    />
+    <v-select 
+      v-model="selected"
+      :options="items" 
+      :dir="dir"
+      :clearable="clearable"
+      :closeOnSelect="closeOnSelect"
+      :disabled="disabled"
+      :filterable="filterable"
+      :inputId="id"
+      :label="label"
+      :multiple="multiple"
+      :placeholder="placeholder"
+      :searchable="searchable"
+      :value="value"
+      @option:selected="onChange"
+      />
   </div>
 </template>
 
@@ -26,12 +25,12 @@
 export default {
   data () {
     return {
-      selectedItems: this.modelValue
+      selected: this.modelValue
     }
   },
   props: {
     modelValue: {
-      type: String
+      type: [String, Array, Object]
     },
     items: {
       type: [String, Array, Object],
@@ -64,7 +63,7 @@ export default {
     },
     clearable: {
 	    type: Boolean,
-	    default: true
+	    default: false
     },
      closeOnSelect: {
       type: Boolean,
@@ -82,10 +81,6 @@ export default {
       type: Boolean,
       default: false
     },
-    transition: {
-	    type: String,
-	    default: "fade"
-    },
     value: {
       default: null
     }
@@ -93,7 +88,7 @@ export default {
   emits: ['update:modelValue', 'change'],
   methods: {
     onChange (e) {
-      this.$emit('update:modelValue', this.selectedItems)
+      this.$emit('update:modelValue', this.selected)
       this.$emit('change', e)
     }
   },
