@@ -22,7 +22,11 @@
 </template>
 
 <script>
+import VSelect from 'vue-select-connorshea'
 export default {
+  components: {
+    VSelect
+  },
   data () {
     return {
       selected: this.modelValue

@@ -9,7 +9,6 @@ import 'bootstrap/js/dist/tab.js'
 import 'bootstrap/js/dist/dropdown.js'
 import 'bootstrap/js/dist/tooltip.js'
 import 'material-icons/iconfont/material-icons.scss';
-import vSelect from 'vue-select-connorshea'
 import "vue-select-connorshea/src/scss/vue-select.scss";
 import numeral from 'numeral'
 import IMask from 'imask'
@@ -53,7 +52,6 @@ app.component('uForm', uForm)
 app.component('u-icon', MaterialIcon)
 app.component('u-select', Select)
 app.component('u-colorpicker', ColorPicker)
-app.component('v-select', vSelect)
 
 
 // Demo Compoenents References
