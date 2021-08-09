@@ -6,33 +6,36 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/select.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/select.md"
     title="Select"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p 
         class="mt-3 text-start document-section"
       >
-      <markdown></markdown>
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
+      title="Examples"
+    >
       <div 
         class="container"
-        >
+      >
         <div 
           class="row"
-          >
+        >
           <div 
             class="col-4"
             >
@@ -64,13 +67,14 @@ meta:
           <div
             class="col-4"
             >
+            class="col"
+          >
             <h4>Disabled</h4>
-              <u-select
-                label=" Disable select"
-                disabled
-                >
-              </u-select>
-                <div class="my-3"></div>
+            <u-select
+              label=" Disable select"
+              disabled
+            />
+            <div class="my-3" />
           </div>
           <div
             class="col-4"

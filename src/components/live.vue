@@ -1,12 +1,11 @@
 <template>
   <vue-live
-    :editorProps="{
-                  lineNumbers: true,
-                  tabSize: 4
-                  }"
-    :code="code">
-  </vue-live>
-
+    :editor-props="{
+      lineNumbers: true,
+      tabSize: 4
+    }"
+    :code="code"
+  />
 </template>
 
 <script>
@@ -16,14 +15,14 @@ import 'vue-prism-editor/dist/prismeditor.min.css' // import the styles somewher
 import "prismjs/themes/prism-funky.css" // import syntax highlighting styles
 
 export default {
+  components: {
+    VueLive: VueLive
+  },
   props: {
     code: {
       type: String,
       default: ''
     }
-  },
-  components: {
-    VueLive: VueLive
   }
 }
 </script>

@@ -7,15 +7,14 @@ meta:
 <template>
   <DemoHeader
     title="RTL Support"
-  ></DemoHeader>
+  />
   <u-button
     variant="success"
-    @click="toggleLayoutDirection()"
     text="Toggle Layout Direction"
     size="md"
     icon="format_textdirection_l_to_r"
-    >
-  </u-button>
+    @click="toggleLayoutDirection()"
+  />
 </template>
 
 <script setup>

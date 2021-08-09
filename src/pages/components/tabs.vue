@@ -6,27 +6,31 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/tabs.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/tabs.md"
     title="Tabs"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p 
-      class="mt-3 text-start document-section">
-      // NOTE: Zero version, created because of need to use in demo pages
+        class="mt-3 text-start document-section"
+      >
+        // NOTE: Zero version, created because of need to use in demo pages
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       Need Document
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
+      title="Examples"
+    >
       Need Document
     </u-tab>
   </u-tabs>

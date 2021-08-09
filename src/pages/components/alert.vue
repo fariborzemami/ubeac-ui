@@ -6,51 +6,55 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/alert.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/alert.md"
     title="Alert"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p 
-      class="mt-3 text-start document-section">
-      <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
+      title="Examples"
+    >
       <div class="row">
         <div class="col">
           <h4>Normal View</h4>
           <template
-            v-for="v in alertVariants">
+            v-for="v in alertVariants"
+          >
             <u-alert
               :variant="v"
-              @click="doSomthing()"
               text="Alert text will be shown!"
-              >
-            </u-alert>
-              <div class="my-3"></div>
+              @click="doSomthing()"
+            />
+            <div class="my-3" />
           </template>
         </div>
         <div class="col">
           <h4>Closable</h4>
           <template
-            v-for="v in alertVariants">
+            v-for="v in alertVariants"
+          >
             <u-alert
               :variant="v"
               text="This is a closable alert!"
               :closable="true"
-              >
-            </u-alert>
-              <div class="my-3"></div>
+            />
+            <div class="my-3" />
           </template>
         </div>
       </div>

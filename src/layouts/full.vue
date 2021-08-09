@@ -1,12 +1,15 @@
 <template>
   <header 
     class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow"
-    aria-label="Main navigation">
+    aria-label="Main navigation"
+  >
     <div 
-      class="container-fluid">
+      class="container-fluid"
+    >
       <router-link 
         class="navbar-brand" 
-        to="/">
+        to="/"
+      >
         {{ $t('application-name') }}
       </router-link>
     </div>
@@ -15,44 +18,43 @@
   <div class="container-fluid">
     <div class="row">
       <nav 
-         id="sidebarMenu" 
-         class="col col-md-3 col-lg-2 d-md-block float-end bg-light">
+        id="sidebarMenu" 
+        class="col col-md-3 col-lg-2 d-md-block float-end bg-light"
+      >
         <div 
-         class="position-sticky pt-3">
+          class="position-sticky pt-3"
+        >
           <ul class="nav flex-column">
             <li 
               v-for="route in routesListSortedByName"
-              class="nav-item ">
+              class="nav-item "
+            >
               <router-link
                 :class="{active: $route.path === route.path }"
                 class="nav-link"
-                :to="route.path">
-                {{route.name}}
+                :to="route.path"
+              >
+                {{ route.name }}
               </router-link>
             </li>
           </ul>
         </div>
       </nav>
       <div class="col col-md-9 col-lg-10">
-        <main >
-        <router-view/>
-      </main>
+        <main>
+          <router-view />
+        </main>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  created() {
-    this.$router.options.routes.forEach(route => {
-      if (route.children[0].name !== 'index') {
-        this.routesList.push({
-          name: route.children[0].name,
-          path: route.path
-        })
-      }
-    })
+export default { 
+  data() {
+    return {
+      routesList: []
+    }
   },
   computed: {
     routesListSortedByName () {
@@ -62,11 +64,16 @@ export default {
         return 0;
       })
     }
-  }, 
-  data() {
-    return {
-      routesList: []
-    }
+  },
+  created() {
+    this.$router.options.routes.forEach(route => {
+      if (route.children[0].name !== 'index') {
+        this.routesList.push({
+          name: route.children[0].name,
+          path: route.path
+        })
+      }
+    })
   }
 }
 

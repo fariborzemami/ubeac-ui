@@ -6,65 +6,78 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/input.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/input.md"
     title="Input"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p
-        class="mt-3 text-start document-section">
-        <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       <u-live
-        :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
+      title="Examples"
+    >
       <div class="row">
         <div class="col">
           <h4>Default Value</h4>
           <u-input
-             v-model="inputExample1"
-             name="inputExample1"
-            >
-          </u-input>
-            <div class="my-3"></div>
+            v-model="inputExample1"
+            name="inputExample1"
+          />
+          <div class="my-3" />
+          <h4>Mask (0-0-0)</h4>
+          <u-input
+            :mask="{mask: '0-0-0'}"
+            v-model="inputExample1"
+            name="inputExample1"
+          />
+          <div class="my-3" />
+          <h4>Mask (a-0-0-0)</h4>
+          <u-input
+            :mask="{mask: 'a-0-0-0'}"
+            v-model="inputExample1"
+            name="inputExample1"
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>Disable</h4>
           <u-input
-             v-model="inputExample2"
-             name="inputExample2"
-             disabled
-             >
-          </u-input>
-            <div class="my-3"></div>
+            v-model="inputExample2"
+            name="inputExample2"
+            disabled
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>onClick trigger Alert</h4>
           <u-input
-            @click="doSomthing()"
             v-model="inputExample3"
             name="inputExample3"
-            >
-          </u-input>
-            <div class="my-3"></div>
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>Placeholder</h4>
           <u-input
-             v-model="inputExample4"
-             name="inputExample4"
-             placeholder="Example4"
-             >
-          </u-input>
-            <div class="my-3"></div>
+            v-model="inputExample4"
+            name="inputExample4"
+            placeholder="Example4"
+          />
+          <div class="my-3" />
         </div>
       </div>
     </u-tab>
@@ -116,7 +129,6 @@ export default {
 <\/script>`
 )
 
-const doSomthing = () => {alert("Somthing");}
 const inputExample1 = ref('Default value')
 const inputExample2 = ref('')
 const inputExample3 = ref('')

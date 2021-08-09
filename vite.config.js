@@ -4,12 +4,13 @@ import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 import mdPlugin from 'vite-plugin-markdown'
 import { Mode } from 'vite-plugin-markdown'
+import Ubeac from './src/loader'
 
-import postcss from 'postcss';
-import postcssRTLCSS from 'postcss-rtlcss';
-import postcssRTLCSSOptions from 'postcss-rtlcss/options';
+import postcss from 'postcss'
+import postcssRTLCSS from 'postcss-rtlcss'
+import postcssRTLCSSOptions from 'postcss-rtlcss/options'
 
-const path = require('path');
+const path = require('path')
 
 export default defineConfig({
   resolve: {
@@ -26,7 +27,8 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(), 
+    Ubeac,
+    vue(),
     Pages(),
     mdPlugin({
       mode: Mode.VUE

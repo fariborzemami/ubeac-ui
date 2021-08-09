@@ -6,42 +6,44 @@ meta:
 
 <template>
   <DemoHeader
-    editLink="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/checkbox.md"
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/checkbox.md"
     title="CheckBox"
-  ></DemoHeader>
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="API">
+      title="API"
+    >
       <p
-        class="mt-3 text-start document-section">
-        <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="Playground">
+      title="Playground"
+    >
       <u-live
-        :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="Examples">
+      title="Examples"
+    >
       <div class="row">
         <div class="col">
           <h4>Normal View</h4>
           <u-checkBox
             text="This is a checkbox"
-            >
-          </u-checkBox>
-            <div class="my-3"></div>
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>Checked</h4>
           <u-checkBox
             text="This is a checked checkbox!"
-            >
-          </u-checkBox>
-            <div class="my-3"></div>
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>Disable</h4>
@@ -49,18 +51,16 @@ meta:
             text="This is a disable checkbox!"
             checked
             disabled
-            >
-          </u-checkBox>
-            <div class="my-3"></div>
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>onChange trigger Alert</h4>
           <u-checkBox
-            @click="doSomthing()"
             text="This is a checkbox"
-            >
-          </u-checkBox>
-            <div class="my-3"></div>
+            @click="doSomthing()"
+          />
+          <div class="my-3" />
         </div>
       </div>
     </u-tab>

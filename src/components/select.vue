@@ -90,6 +90,11 @@ export default {
     }
   },
   emits: ['update:modelValue', 'change'],
+  data () {
+    return {
+      selectedItems: this.modelValue
+    }
+  },
   methods: {
     onChange (e) {
       this.$emit('update:modelValue', this.selected)
