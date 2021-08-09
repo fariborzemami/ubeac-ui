@@ -40,7 +40,7 @@ meta:
             <u-select
                v-model="selectedExample1"
                :items="items"
-               label="Select"
+               placeholder="Select"
                >
             </u-select>
                 <div 
@@ -55,7 +55,7 @@ meta:
             <u-select
                v-model="selectedExample2"
                :items="items"
-               label="Selected"
+               placeholder="Selected"
                >
             </u-select>
                 <div 
@@ -68,7 +68,7 @@ meta:
             >
             <h4>Disabled</h4>
               <u-select
-                label=" Disable select"
+                placeholder=" Disable select"
                 disabled
                 >
               </u-select>
@@ -88,7 +88,7 @@ const code = reactive(
 `<template>
   <pre> {{ selectedExample1 }}</pre>
   <u-select
-    v-model="selectedExample1"
+    model-value="selectedExample1"
     :items="items"
     label="Example1"
     >
@@ -116,7 +116,7 @@ export default {
    data () {
      return {
         selectedExample1: null,
-        selectedExample2: 'foo',
+        selectedExample2:{ key: 'foo', value: 'foo'},
         selectedExample3: ['foo', 'baz'],
         items: [
           {   
@@ -153,7 +153,7 @@ const items = [
     value: 3
   }
 ]
-const selectedExample1 = ref('')
+const selectedExample1 = ref([])
 const selectedExample2 = ref(2)
 
 </script>

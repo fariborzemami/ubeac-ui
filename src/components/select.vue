@@ -3,41 +3,32 @@
     v-show="visible"
     :dir="dir"
     >
-  <label 
-    :for="id"
-    >
-      {{ label }}
-  </label>
-   <select 
-      v-model="selectedItems"
-      :multiple="multiple"
-      class="form-select"
-      :aria-label="placeholder"
-      :disabled="disabled"
-      :autofocus="autofocus"
-      :id="id"
-      @change="onChange"
-      @load="onLoad"
-      >
-      <template
-        v-for="i in items"
-        :key="i"
-      >
-        <option 
-          :value="i.value"
-          >
-          {{ i.key }}
-        </option>
-      </template>
-    </select>
+  <vue-select 
+    v-model="selected"
+    :options="items"
+    :disabled="disabled"
+    :loading="loading"
+    :multiple="multiple"
+    :max="maxSelectItems"
+    :placeholder="placeholder"
+    :searchable="searchable"
+    :close-on-select="closeOnSelect"
+    :label-by="labelBy"
+    @update:modelValue="onChange"
+    />
   </div>
 </template>
 
 <script>
+import VueNextSelect from 'vue-next-select'
+
 export default {
+  components: {
+    'vue-select': VueNextSelect,
+  },
   data () {
     return {
-      selectedItems: this.modelValue
+      selected: this.modelValue
     }
   },
   props: {
@@ -62,6 +53,10 @@ export default {
       type: Boolean,
       default: false
     },
+    loading: {
+      type: Boolean,
+      default: false
+    },
     visible: {
       type: Boolean,
       default: true
@@ -73,17 +68,38 @@ export default {
     multiple: {
       type: Boolean,
       default: false
-    }
-  },
-  emits: ['update:modelValue', 'load'],
-  methods: {
-    onChange () {
-      this.$emit('update:modelValue', this.selectedItems)
     },
-    onLoad (e) {
-      this.emit('load', e)
+    maxSelectItems: {
+      type: Number
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    searchable: {
+      type: Boolean,
+      default: false
+    },
+    closeOnSelect: {
+      type: Boolean,
+      default: true
+    },
+    dir: {
+      type: String,
+      default: 'ltr'
+    },
+    labelBy: {
+      type: String,
+      default: 'key'
     }
   },
+  emits: ['update:modelValue', 'change'],
+  methods: {
+    onChange (e) {
+      this.$emit('update:modelValue', this.selected)
+      this.$emit('change', e)
+    }
+  }
 }
 </script>
 
