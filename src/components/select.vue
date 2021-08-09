@@ -1,35 +1,24 @@
 <template>
   <div
     v-show="visible"
+    >
+  <v-select 
+    v-model="selectedItems"
+    :options="items" 
     :dir="dir"
-    >
-  <label 
-    :for="id"
-    >
-      {{ label }}
-  </label>
-   <select 
-      v-model="selectedItems"
-      :multiple="multiple"
-      class="form-select"
-      :aria-label="placeholder"
-      :disabled="disabled"
-      :autofocus="autofocus"
-      :id="id"
-      @change="onChange"
-      @load="onLoad"
-      >
-      <template
-        v-for="i in items"
-        :key="i"
-      >
-        <option 
-          :value="i.value"
-          >
-          {{ i.key }}
-        </option>
-      </template>
-    </select>
+    :clearable="clearable"
+    :closeOnSelect="closeOnSelect"
+    :disabled="disabled"
+    :filterable="filterable"
+    :inputId="id"
+    :label="label"
+    :multiple="multiple"
+    :placeholder="placeholder"
+    :searchable="searchable"
+    :transition="transition"
+    :value="value"
+    @input="onChange"
+    />
   </div>
 </template>
 
@@ -45,18 +34,17 @@ export default {
       type: String
     },
     items: {
-      type: [Array, Object],
+      type: [String, Array, Object],
       default: []
+    },
+    placeholder: {
+      type: String
     },
     id: {
       type: String
     },
     label: {
       type: String
-    },
-    autofocus: {
-      type: Boolean,
-      default: false
     },
     disabled: {
       type: Boolean,
@@ -73,15 +61,40 @@ export default {
     multiple: {
       type: Boolean,
       default: false
+    },
+    clearable: {
+	    type: Boolean,
+	    default: true
+    },
+     closeOnSelect: {
+      type: Boolean,
+      default: true
+    },
+    dir: {
+      type: String,
+      default: 'auto'
+    },
+    filterable: {
+      type: Boolean,
+      default: false
+    },
+    searchable: {
+      type: Boolean,
+      default: false
+    },
+    transition: {
+	    type: String,
+	    default: "fade"
+    },
+    value: {
+      default: null
     }
   },
-  emits: ['update:modelValue', 'load'],
+  emits: ['update:modelValue', 'change'],
   methods: {
-    onChange () {
+    onChange (e) {
       this.$emit('update:modelValue', this.selectedItems)
-    },
-    onLoad (e) {
-      this.emit('load', e)
+      this.$emit('change', e)
     }
   },
 }

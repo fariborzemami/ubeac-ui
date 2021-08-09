@@ -33,6 +33,7 @@
     "vite": "^2.4.3",
     "vite-plugin-markdown": "^2.0.2",
     "vite-plugin-pages": "^0.15.1",
-    "vite-plugin-vue-layouts": "^0.3.1"
+    "vite-plugin-vue-layouts": "^0.3.1",
+    "vue-select-connorshea": "^3.12.1"
   }
 }
