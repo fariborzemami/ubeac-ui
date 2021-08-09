@@ -146,6 +146,14 @@ const componentsList = [
     editor: '/components/colorpicker?tab=editor',
     is_inprogress: true,
     document_is_completed: true
+  },
+  {
+    name: 'DatePicker',
+    optionsRoute: '/components/datepicker',
+    playground: '/components/datepicker?tab=playground',
+    editor: '/components/datepicker?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
   }
 ]
 </script>

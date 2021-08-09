@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { h, createApp } from 'vue'
 import App from './App.vue'
 import Router from './router.js'
 
@@ -25,11 +25,14 @@ import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import ColorPicker from './components/colorpicker.vue'
 import Select from './components/select.vue'
-import Live from './components/Live.vue'
-import Link from './components/Link.vue'
+import Live from './components/live.vue'
+import Link from './components/link.vue'
+import Datepicker from './components/datepicker.vue'
 
 // Demo Compoenents References
 import DemoHeader from './demo_components/header.vue'
+
+window.h = h
 
 const app = createApp(App)
 
@@ -51,6 +54,7 @@ app.component('UForm', uForm)
 app.component('UIcon', MaterialIcon)
 app.component('USelect', Select)
 app.component('UColorpicker', ColorPicker)
+app.component('UDatepicker', Datepicker)
 
 // Demo Compoenents References
 app.component('DemoHeader', DemoHeader)
