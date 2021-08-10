@@ -67,8 +67,6 @@ meta:
           <div
             class="col-4"
             >
-            class="col"
-          >
             <h4>Disabled</h4>
             <u-select
               label=" Disable select"
