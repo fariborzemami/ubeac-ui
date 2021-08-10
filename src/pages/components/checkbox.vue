@@ -5,24 +5,31 @@ meta:
 </route>
 
 <template>
-  <h1>CheckBox</h1>
+  <DemoHeader
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/checkbox.md"
+    title="CheckBox"
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API"
+    >
       <p
-        class="mt-3 text-start document-section">
-        <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground"
+    >
       <u-live
-        :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples"
+    >
       <div class="row">
         <div class="col">
           <h4>Model as array</h4>
@@ -157,8 +164,7 @@ export default {
      }
    }
 }
-<\/script>
-`
+<\/script>`
 )
 const examples = [
   {

@@ -1,5 +1,8 @@
 <template>
-    <i class="material-icons" :style="iconStyle">{{ icon }}</i>
+  <i
+    class="material-icons"
+    :style="iconStyle"
+  >{{ icon }}</i>
 </template>
 
 <script>

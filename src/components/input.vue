@@ -2,53 +2,50 @@
   <div
     v-show="visible"
     class="input-group"
-    >
+  >
     <span 
       v-if="prepand"
-      class="input-group-text"
       :id="`describe + ${id}`"
+      class="input-group-text"
     >
       {{ prepand }}
     </span>
-      <input 
-          :type="type" 
-          v-model="inputModel"
-          class="form-control"
-          :disabled="disabled"
-          :placeholder="placeholder"
-          :aria-label="text" 
-          :aria-describedby="`describe + ${id}`"
-          :id="id"
-          :name="name"
-          :pattern="inputValidation"
-          :autofocus="autofocus"
-          @input="onInput"
-          @change="onChange"
-          @click="onClick"
-          @blur="onLeave"
-      />
-      <span 
-          v-if="append"
-          class="input-group-text"
-          :id="`describe + ${id}`"
-        >
-        {{ append }}
-      </span>
+    <input 
+      ref="input"
+      :id="id" 
+      v-model="inputModel"
+      :type="type"
+      class="form-control"
+      :disabled="disabled"
+      :placeholder="placeholder" 
+      :aria-label="text"
+      :aria-describedby="`describe + ${id}`"
+      :name="name"
+      :pattern="inputValidation"
+      :autofocus="autofocus"
+      @input="onInput"
+      @change="onChange"
+      @click="onClick"
+      @blur="onLeave"
+    >
+    <span 
+      v-if="append"
+      :id="`describe + ${id}`"
+      class="input-group-text"
+    >
+      {{ append }}
+    </span>
   </div>
 </template>
 
 <script>
+import IMask from 'imask'
 export default {
-  data () {
-    return {
-      inputModel: this.modelValue,
-      phoneRules: {
-        pattern: value => RegExp(this.phonePatternRegex.substring(1,
-          this.phonePatternRegex.length - 1)).test(value)
-      },
-      emailRules: {
-        pattern: value => RegExp(this.emailPatternRegex.substring(1, this.emailPatternRegex.length - 1)).test(value)
-      }
+  mounted () {
+    const self = this
+    if (this.mask && this.mask != '') {
+      var maskOptions = self.mask
+      var mask = IMask(self.$refs.input, maskOptions);
     }
   },
   props: {
@@ -66,7 +63,8 @@ export default {
       type: String
     },
     mask: {
-      type: String
+      type: [Object, Boolean], 
+      default: false
     },
     format: {
       type: String
@@ -117,18 +115,16 @@ export default {
     }
   }, 
   emits: ['update:modelValue'],
-  methods: {
-    onInput () {
-      this.$emit('update:modelValue', this.inputModel)
-    }, 
-    onChange (e) {
-      this.$emit('onChange', e)
-    }, 
-    onClick (e) {
-      this.$emit('onClick', e)
-    },
-    onLeave (e) {
-      this.$emit('onLeave', e)
+  data () {
+    return {
+      inputModel: this.modelValue,
+      phoneRules: {
+        pattern: value => RegExp(this.phonePatternRegex.substring(1,
+          this.phonePatternRegex.length - 1)).test(value)
+      },
+      emailRules: {
+        pattern: value => RegExp(this.emailPatternRegex.substring(1, this.emailPatternRegex.length - 1)).test(value)
+      }
     }
   },
   computed: {
@@ -141,6 +137,20 @@ export default {
       } else {
       return ''
       }
+    }
+  },
+  methods: {
+    onInput () {
+      this.$emit('update:modelValue', this.inputModel)
+    }, 
+    onChange (e) {
+      this.$emit('onChange', e)
+    }, 
+    onClick (e) {
+      this.$emit('onClick', e)
+    },
+    onLeave (e) {
+      this.$emit('onLeave', e)
     }
   }
 }
