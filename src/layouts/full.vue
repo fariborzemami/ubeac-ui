@@ -1,47 +1,89 @@
 <template>
   <header 
     class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow"
+    style="z-index: 1050;"
     aria-label="Main navigation"
   >
     <div 
       class="container-fluid"
     >
-      <router-link 
-        class="navbar-brand" 
-        to="/"
-      >
-        {{ $t('application-name') }}
-      </router-link>
+        <button
+          class="btn me-3 btn-dark"
+          type="button"
+          @click="this.drawer = !this.drawer"
+        >
+         <u-icon
+            class="w-100 text-center align-middle"
+            color='white'
+            icon="menu"
+          />
+        </button>
+        <router-link 
+          class="navbar-brand me-auto" 
+          @click="screenSize < 768 ? this.drawer = false : ''"
+          to="/"
+        >
+          {{ $t('application-name') }}
+        </router-link>
+        <!-- Teleport to header-end -->
+        <div 
+          class="ms-auto me-4 text-white"
+          id="header-end"
+        >
+        </div>
     </div>
   </header>
 
   <div class="container-fluid">
-    <div class="row">
+    <div
+      class="row vh-100">
       <nav 
         id="sidebarMenu" 
-        class="col col-md-3 col-lg-2 d-md-block float-end bg-light"
+        v-if="drawer" 
+        class="col col-md-3 col-lg-2 d-md-block float-end border-end"
       >
+      <!-- Teleport Sidebar-top -->
+        <div 
+          id="sidebar-top"
+          >
+        </div>
         <div 
           class="position-sticky pt-3"
+          :class="screenSize < 768 ? 'fixed-bottom fixed-top ' : ''"
         >
           <ul class="nav flex-column">
             <li 
+              class="w-100 rounded"
               v-for="route in routesListSortedByName"
-              class="nav-item "
+              :key="route"
             >
               <router-link
                 :class="{active: $route.path === route.path }"
-                class="nav-link"
+                class="nav-link list-group-item border-0"
+                @click="screenSize < 768 ? this.drawer = !this.drawer : ''"
                 :to="route.path"
               >
                 {{ route.name }}
               </router-link>
             </li>
           </ul>
+          <!-- Teleport to Sidebar-bottom -->
+          <div 
+            id="sidebar-bottom"
+          >
+          </div>
         </div>
       </nav>
-      <div class="col col-md-9 col-lg-10">
+      <div 
+        class="col col-md-9 col-lg-10 mx-auto px-4 pt-2"
+        :class="(screenSize < 768 && drawer) ? 'd-none' : ''"
+        >
         <main>
+          <!-- Teleport to content-top -->
+          <div 
+          id="content-top"
+          >
+        </div>
           <router-view />
         </main>
       </div>
@@ -53,7 +95,9 @@
 export default { 
   data() {
     return {
-      routesList: []
+      routesList: [],
+      drawer: true,
+      screenSize: window.screen.width
     }
   },
   computed: {
@@ -74,6 +118,11 @@ export default {
         })
       }
     })
+    if (this.screenSize > 768) {
+      return this.drawer = true
+    } else {
+      return this.drawer = false
+    }
   }
 }
 
