@@ -32,35 +32,68 @@ meta:
     >
       <div class="row">
         <div class="col">
-          <h4>Normal View</h4>
-          <u-checkBox
-            text="This is a checkbox"
-          />
-          <div class="my-3" />
+          <h4>Model as array</h4>
+           <pre> {{ example1Model }}</pre>
+            <u-checkBox
+              v-for="item in examples"
+              :key="item"
+              v-model="example1Model"
+              :value="item.value"
+              :text="item.text"
+              name="example1"
+              >
+            </u-checkBox>
+            <div class="my-3"></div>
         </div>
         <div class="col">
-          <h4>Checked</h4>
-          <u-checkBox
-            text="This is a checked checkbox!"
-          />
-          <div class="my-3" />
+          <h4>Model as Boolean</h4>
+           <pre> {{ example2Model }}</pre>
+            <u-checkBox
+              v-model="example2Model"
+              text="foo"
+              name="example2"
+              >
+            </u-checkBox>
+            <div class="my-3"></div>
         </div>
         <div class="col">
-          <h4>Disable</h4>
-          <u-checkBox
-            text="This is a disable checkbox!"
-            checked
-            disabled
-          />
-          <div class="my-3" />
+         <h4>Disabled</h4>
+           <pre> {{ example3Model }}</pre>
+            <u-checkBox
+              v-for="item in examples"
+              :key="item"
+              v-model="example3Model"
+              :value="item.value"
+              :text="item.text"
+              :disabled="item.disabled"
+              >
+            </u-checkBox>
+            <div class="my-3"></div>
         </div>
         <div class="col">
-          <h4>onChange trigger Alert</h4>
+          <h4>Slot</h4>
+          <pre> {{ example4Model }}</pre>
           <u-checkBox
-            text="This is a checkbox"
-            @click="doSomthing()"
-          />
-          <div class="my-3" />
+             v-model="example4Model"
+             value="bar"
+             @change="onChange"
+             name="example4"
+            >
+            bar
+          </u-checkBox>
+            <div class="my-3"></div>
+        </div>
+          <div class="col">
+          <h4>@change</h4>
+          <pre> {{ example5Model }}</pre>
+          <u-checkBox
+             v-model="example5Model"
+             @change="onChange"
+             name="example5"
+            >
+            bar
+          </u-checkBox>
+            <div class="my-3"></div>
         </div>
       </div>
     </u-tab>
@@ -68,11 +101,13 @@ meta:
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/checkBox.md'
 const markdown = VueComponent
 const code = reactive(
-`<template>
+`
+<template>
+  <h5>Array Model</h5>
   <pre> {{ checkList }}</pre>
   <u-checkBox
     v-model="checkList"
@@ -86,11 +121,31 @@ const code = reactive(
     text="bar"
     >
   </u-checkBox>
-  <pre> {{ isChecked }}</pre>
+  <hr>
+  <h5>Boolean</h5>
+  <pre> {{ isChecked1 }}</pre>
   <u-checkBox
-    v-model="isChecked"
-    text="this is a checkbox!"
+    v-model="isChecked1"
+    text="foo"
     >
+  </u-checkBox>
+  <hr>
+  <h5>@change</h5>
+  <pre> {{ isChecked2 }}</pre>
+  <u-checkBox
+     v-model="isChecked2"
+     @change="onChange"
+     name="example"
+    >
+    bar
+  </u-checkBox>
+  <hr>
+  <h5>Slot</h5>
+  <pre> {{ isChecked3 }}</pre>
+  <u-checkBox
+    v-model="isChecked3"
+    >
+    baz
   </u-checkBox>
 </template>
 <script>
@@ -98,12 +153,44 @@ export default {
    data () {
      return {
         checkList: [],
-        isChecked: true
+        isChecked1: true,
+        isChecked2: false,
+        isChecked3: false
+     }
+   }, 
+   methods: {
+     onChange () {
+        alert("This is a test for @change")
      }
    }
 }
 <\/script>`
 )
-
+const examples = [
+  {
+    text: 'foo',
+    value: 'foo', 
+    disabled: false
+  },
+  {
+    text: 'bar', 
+    value: 'bar', 
+    disabled: true
+  },
+  {
+    text: 'baz',
+    value: 'baz', 
+    disabled: false
+  }
+]
 const doSomthing = () => {alert("Somthing");}
+const example1Model = ref([])
+const example2Model = ref(true)
+const example3Model = ref([])
+const example4Model = ref([])
+const example5Model = ref(false)
+
+const onChange = () => {
+  alert("This is an Example for @change")
+}
 </script>
