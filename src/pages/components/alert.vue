@@ -39,22 +39,35 @@ meta:
             <u-alert
               :variant="v"
               text="Alert text will be shown!"
-              @click="doSomthing()"
-            />
-            <div class="my-3" />
           </template>
         </div>
-        <div class="col">
+        <div 
+          class="col"
+        >
           <h4>Closable</h4>
           <template
             v-for="v in alertVariants"
-          >
+            :key="v">
+            >
             <u-alert
               :variant="v"
               text="This is a closable alert!"
               :closable="true"
             />
             <div class="my-3" />
+          </template>
+        </div>
+        <div class="col">
+          <h4>Slot</h4>
+          <template
+            v-for="v in alertVariants"
+            :key="v">
+            <u-alert
+              :variant="v"
+              >
+              This is a Test for slot
+            </u-alert>
+              <div class="my-3"></div>
           </template>
         </div>
       </div>
