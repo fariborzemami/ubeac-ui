@@ -5,24 +5,31 @@ meta:
 </route>
 
 <template>
-  <h1>Radio</h1>
+  <DemoHeader
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/radio.md"
+    title="Radio"
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API"
+    >
       <p 
-      class="mt-3 text-start document-section">
-      <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground"
+    >
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples"
+    >
       <div class="container">
         <div class="row">
           <div class="col">
@@ -31,15 +38,14 @@ meta:
               selected: {{ selectedRadioExample1 }}
             </pre>
             <u-radioButton
-               v-model="selectedRadioExample1"
-               v-for="i in examples"
-               :text="i.text"
-               :key="i"
-               :value="i.text"
-               name="radioExample1"
-               >
-            </u-radioButton>
-                <div class="my-3"></div>
+              v-for="i in examples"
+              :key="i"
+              v-model="selectedRadioExample1"
+              :text="i.text"
+              :value="i.text"
+              name="radioExample1"
+            />
+            <div class="my-3" />
           </div>
           <div class="col">
             <h4>Selected</h4>
@@ -47,15 +53,14 @@ meta:
               selected: {{ selectedRadioExample2 }}
             </pre>
             <u-radioButton
-               v-model="selectedRadioExample2"
-               v-for="i in examples"
-               :text="i.text"
-               :key="i"
-               :value="i.text"
-               name="radioExample2"
-               >
-            </u-radioButton>
-                <div class="my-3"></div>
+              v-for="i in examples"
+              :key="i"
+              v-model="selectedRadioExample2"
+              :text="i.text"
+              :value="i.text"
+              name="radioExample2"
+            />
+            <div class="my-3" />
           </div>
           <div class="col">
             <h4>Disabled</h4>
@@ -63,16 +68,15 @@ meta:
               selected: {{ selectedRadioExample3 }}
             </pre>
             <u-radioButton
-               v-model="selectedRadioExample3"
-               v-for="i in examples"
-               :text="i.text"
-               :key="i"
-               :disabled="i.disabled"
-               :value="i.text"
-               name="radioExample3"
-               >
-            </u-radioButton>
-                <div class="my-3"></div>
+              v-for="i in examples"
+              :key="i"
+              v-model="selectedRadioExample3"
+              :text="i.text"
+              :disabled="i.disabled"
+              :value="i.text"
+              name="radioExample3"
+            />
+            <div class="my-3" />
           </div>
         </div>
       </div>
@@ -85,8 +89,7 @@ import { reactive, ref } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/radio.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<template>
+`<template>
   <pre> selected: {{ selectedValue }} </pre>
   <u-radioButton
     text="foo"
@@ -131,8 +134,7 @@ export default {
      }
    }
  }
-<\/script>
-`
+<\/script>`
 )
 const examples = [
   {

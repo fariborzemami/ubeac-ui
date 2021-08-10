@@ -1,3 +1,6 @@
 [submodule "src/modules/vue-color"]
 	path = src/modules/vue-color
 	url = https://github.com/ckpack/vue-color
+[submodule "src/modules/datepicker"]
+	path = src/modules/datepicker
+	url = git@github.com:babakhani/persian-datepicker-next-version.git

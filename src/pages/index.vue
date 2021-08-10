@@ -5,8 +5,16 @@ meta:
 
 <template>
   <div
-    class="text-start">
-  <h1>
+    class="text-start pb-4"
+  >
+    <p 
+      class="mt-3 text-start document-section"
+    >
+      <markdown />
+    </p>
+    <h1 
+      class="h2 mt-1"
+    >
     Components
   </h1>
   <ul class="list-group">
@@ -58,13 +66,9 @@ meta:
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
 
-defineProps({
-  msg: String
-})
-
-const state = reactive({ count: 0 })
+import { VueComponent } from '../../README.md'
+const markdown = VueComponent
 const componentsList = [
   {
     name: 'Button',
@@ -135,6 +139,14 @@ const componentsList = [
     optionsRoute: '/components/colorpicker',
     playground: '/components/colorpicker?tab=playground',
     editor: '/components/colorpicker?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
+  },
+  {
+    name: 'DatePicker',
+    optionsRoute: '/components/datepicker',
+    playground: '/components/datepicker?tab=playground',
+    editor: '/components/datepicker?tab=editor',
     is_inprogress: true,
     document_is_completed: true
   }

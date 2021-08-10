@@ -3,26 +3,30 @@
     <ul 
       ref="tabheader"
       class="nav nav-pills mb-3 bg-light p-2" 
-      role="tablist">
+      role="tablist"
+    >
       <li 
-      v-for="item in headerLink"
-      class="nav-item " 
-      role="presentation">
+        v-for="item in headerLink"
+        class="nav-item " 
+        role="presentation"
+      >
         <button 
           :class="{ 'active': item.active }"
           class="nav-link " 
           data-bs-toggle="pill"
           :data-bs-target="`#${item.id}`" 
           type="button" 
-          role="tab" >
+          role="tab"
+        >
           {{ item.title }}
         </button>
       </li>
     </ul>
     <div
-      ref="tabcontent"
-      class="tab-content" 
-      id="pills-tabContent">
+      id="pills-tabContent"
+      ref="tabcontent" 
+      class="tab-content"
+    >
       <slot />
     </div>
   </div>
