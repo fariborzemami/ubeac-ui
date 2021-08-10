@@ -3,22 +3,22 @@
     v-if="visible"
     :class="`alert alert-${ variant } ${ closable ? `alert-dismissible fade show` : `` } `"
     role="alert"
-    >
+  >
     <template v-if="text">
       <div>
         {{ text }}
       </div>
     </template>
     <template v-else>
-      <slot></slot>
+      <slot />
     </template>
     <button
-        v-if="closable"
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-    ></button>
+      v-if="closable"
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    />
   </div>
 </template>
 

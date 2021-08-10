@@ -5,71 +5,72 @@ meta:
 </route>
 
 <template>
-  <h1>Select</h1>
+  <DemoHeader
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/select.md"
+    title="Select"
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API"
+    >
       <p 
         class="mt-3 text-start document-section"
       >
-      <markdown></markdown>
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground"
+    >
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples"
+    >
       <div 
         class="container"
-        >
+      >
         <div 
           class="row"
-          >
+        >
           <div 
             class="col"
-            >
+          >
             <h4>Normal View</h4>
             <u-select
-               v-model="selectedExample1"
-               :items="items"
-               label="Select"
-               >
-            </u-select>
-                <div 
-                  class="my-3"
-                >
-                </div>
+              v-model="selectedExample1"
+              :items="items"
+              label="Select"
+            />
+            <div 
+              class="my-3"
+            />
           </div>
           <div 
             class="col"
-            >
+          >
             <h4>Selected</h4>
             <u-select
-               v-model="selectedExample2"
-               :items="items"
-               label="Selected"
-               >
-            </u-select>
-                <div 
-                  class="my-3"
-                >
-                </div>
+              v-model="selectedExample2"
+              :items="items"
+              label="Selected"
+            />
+            <div 
+              class="my-3"
+            />
           </div>
           <div
             class="col"
-            >
+          >
             <h4>Disabled</h4>
-              <u-select
-                label=" Disable select"
-                disabled
-                >
-              </u-select>
-                <div class="my-3"></div>
+            <u-select
+              label=" Disable select"
+              disabled
+            />
+            <div class="my-3" />
           </div>
         </div>
       </div>
@@ -82,8 +83,7 @@ import { reactive, ref } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/select.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<template>
+`<template>
   <pre> {{ selectedExample1 }}</pre>
   <u-select
     v-model="selectedExample1"
@@ -133,8 +133,7 @@ export default {
      }
    }
 }
-<\/script>
-`
+<\/script>`
 )
 
 const doSomthing = () => {alert("Somthing");}

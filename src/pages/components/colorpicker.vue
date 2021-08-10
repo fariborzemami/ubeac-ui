@@ -5,27 +5,34 @@ meta:
 </route>
 
 <template>
-  <h1>ColorPicker</h1>
+  <DemoHeader
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/colorpicker.md"
+    title="ColorPicker"
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API"
+    >
       <p
-        class="mt-3 text-start document-section">
-        <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground"
+    >
       <u-live
-        :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples"
+    >
       <u-colorpicker 
-        v-model="pickedColor">
-      </u-colorpicker>
+        v-model="pickedColor"
+      />
     </u-tab>
   </u-tabs>
 </template>
@@ -45,20 +52,19 @@ import { reactive } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/colorpicker.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<template>
-<div
-  :style="{'background-color': pickedColor}"
-  style="width: 100px;height: 100px;">
-</div>
-<br>
-<u-colorpicker
-  v-model="pickedColor"
-  :disabled="false"
-  :is-required="false"
-  :autofocus="true"
-  >
-</u-colorpicker>
+`<template>
+  <div
+    :style="{'background-color': pickedColor}"
+    style="width: 100px;height: 100px;">
+  </div>
+  <br>
+  <u-colorpicker
+    v-model="pickedColor"
+    :disabled="false"
+    :is-required="false"
+    :autofocus="true"
+    >
+  </u-colorpicker>
 </template>
 <script>
 export default {

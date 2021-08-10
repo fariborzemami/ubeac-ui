@@ -5,100 +5,116 @@ meta:
 </route>
 
 <template>
-  <h1>Button</h1>
+  <DemoHeader
+    edit-link="https://github.com/ubeac/ubeac-ui/tree/main/docs/components/primitive/button.md"
+    title="Button"
+  />
   <u-tabs>
     <u-tab
       :active="true"
-      title="options">
+      title="API"
+    >
       <p 
-      class="mt-3 text-start document-section">
-      <markdown></markdown>
+        class="mt-3 text-start document-section"
+      >
+        <markdown />
       </p>
     </u-tab>
     <u-tab
-      title="playground">
+      title="Playground"
+    >
       <u-live 
-      :code="code">
-      </u-live>
+        :code="code"
+      />
     </u-tab>
     <u-tab
-      title="examples">
+      title="Examples"
+    >
       <div 
-        class="row">
+        class="row"
+      >
         <div class="col">
           <h4>Normal View</h4>
           <template
-            v-for="s in buttonSizes">
+            v-for="s in buttonSizes"
+          >
             <template
-              v-for="v in buttonVariants">
+              v-for="v in buttonVariants"
+            >
               <u-button
                 :variant="v"
-                @click="doSomthing()"
                 text="this is button text"
                 :disabled="false"
                 :size="s"
                 icon="camera"
                 :autofocus="true"
-                :loading="false">
-              </u-button>
-              <div class="my-3"></div>
+                :loading="false"
+                @click="doSomthing()"
+              />
+              <div class="my-3" />
             </template>
           </template>
         </div>
         <div class="col">
           <h4>Loading</h4>
           <template
-            v-for="s in buttonSizes">
+            v-for="s in buttonSizes"
+          >
             <template
-              v-for="v in buttonVariants">
+              v-for="v in buttonVariants"
+            >
               <u-button
                 :variant="v"
-                @click="doSomthing()"
                 text="this is button text"
                 :disabled="false"
                 :size="s"
                 icon="camera"
                 :autofocus="true"
-                :loading="true">
-              </u-button>
-              <div class="my-3"></div>
+                :loading="true"
+                @click="doSomthing()"
+              />
+              <div class="my-3" />
             </template>
           </template>
         </div>
         <div class="col">
           <h4>Disabled</h4>
           <template
-            v-for="s in buttonSizes">
+            v-for="s in buttonSizes"
+          >
             <template
-              v-for="v in buttonVariants">
+              v-for="v in buttonVariants"
+            >
               <u-button
                 :variant="v"
-                @click="doSomthing()"
                 text="this is button text"
                 :disabled="true"
                 :size="s"
                 icon="camera"
                 :autofocus="true"
-                :loading="false">
-              </u-button>
-              <div class="my-3"></div>
+                :loading="false"
+                @click="doSomthing()"
+              />
+              <div class="my-3" />
             </template>
           </template>
         </div>
         <div class="col">
           <h4>No Icon</h4>
           <template
-            v-for="s in buttonSizes">
+            v-for="s in buttonSizes"
+          >
             <template
-              v-for="v in buttonVariants">
+              v-for="v in buttonVariants"
+            >
               <u-button
                 :variant="v"
-                @click="doSomthing()"
                 text="this is button text"
                 :size="s"
-                :loading="false">
-              </u-button>
-              <div class="my-3"></div>
+                :loading="false"
+                @click="doSomthing()"
+              />
+              <div class="my-3" />
             </template>
           </template>
         </div>
@@ -112,15 +128,14 @@ import { reactive } from 'vue'
 import { VueComponent } from '../../../docs/components/primitive/button.md'
 const markdown = VueComponent
 const code = reactive(
-`
-<u-button
+`<u-button
   variant="success"
   @click="doSomthing()"
   text="this is button text"
   size="lg"
-  icon="camera">
-</u-button>
-`
+  icon="camera"
+  >
+</u-button>`
 )
 const doSomthing = () => {alert("Somthing");}
 const buttonSizes = ['lg', 'md', 'sm']
