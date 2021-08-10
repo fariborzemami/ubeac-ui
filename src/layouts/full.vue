@@ -1,13 +1,16 @@
 <template>
   <header 
     class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow"
-    aria-label="Main navigation">
+    aria-label="Main navigation"
+  >
     <div 
-      class="container-fluid">
+      class="container-fluid"
+    >
       <router-link 
         class="navbar-brand" 
-        to="/">
-        uBeac UI 
+        to="/"
+      >
+        {{ $t('application-name') }}
       </router-link>
     </div>
   </header>
@@ -15,43 +18,43 @@
   <div class="container-fluid">
     <div class="row">
       <nav 
-         id="sidebarMenu" 
-         class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        id="sidebarMenu" 
+        class="col col-md-3 col-lg-2 d-md-block float-end bg-light"
+      >
         <div 
-         class="position-sticky pt-3">
+          class="position-sticky pt-3"
+        >
           <ul class="nav flex-column">
             <li 
               v-for="route in routesListSortedByName"
-              class="nav-item ">
+              class="nav-item "
+            >
               <router-link
                 :class="{active: $route.path === route.path }"
                 class="nav-link"
-                :to="route.path">
-                {{route.name}}
+                :to="route.path"
+              >
+                {{ route.name }}
               </router-link>
             </li>
           </ul>
         </div>
       </nav>
-      <main 
-        class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <router-view/>
-      </main>
+      <div class="col col-md-9 col-lg-10">
+        <main>
+          <router-view />
+        </main>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  created() {
-    this.$router.options.routes.forEach(route => {
-      if (route.children[0].name !== 'index') {
-        this.routesList.push({
-          name: route.children[0].name,
-          path: route.path
-        })
-      }
-    })
+export default { 
+  data() {
+    return {
+      routesList: []
+    }
   },
   computed: {
     routesListSortedByName () {
@@ -61,11 +64,16 @@ export default {
         return 0;
       })
     }
-  }, 
-  data() {
-    return {
-      routesList: []
-    }
+  },
+  created() {
+    this.$router.options.routes.forEach(route => {
+      if (route.children[0].name !== 'index') {
+        this.routesList.push({
+          name: route.children[0].name,
+          path: route.path
+        })
+      }
+    })
   }
 }
 
@@ -90,7 +98,6 @@ export default {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
@@ -99,20 +106,9 @@ export default {
     color: inherit !important;
     font-size: 1.5em !important;
   }
-}
-
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
-
-.sidebar .nav-item {
-  height: 38px;
+  .nav-item {
+    height: 38px;
+  }
 }
 
 </style>

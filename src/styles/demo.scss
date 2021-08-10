@@ -1,4 +1,5 @@
 .document-section {
+  direction: ltr;
   color: #333333;
   font-size: 1em;
   h1 {
@@ -14,19 +15,40 @@
   li {
     font-size: .9em;
   }
+
+  code,
   pre {
-     padding: 2em;
-     background: #333333;
+     display: block;
+     padding: 1em;
+     background: #000000;
+     border-radius: 10px;
      max-width: 800px;
+     color: white;
   }
 }
 
+
+.prism-editor__editor {
+  color: #f9f9f9 !important;
+}
+
+.VueLive-squiggles-wrapper {
+   display: none;
+}
+
+
 .VueLive-editor,
-pre,
 code[class*="language-"], pre[class*="language-"]{
-  background: #f1f1f1;
+  background: #000;
   padding-left: 10px;
   border-radius: 10px;
+  textarea:active,
+  textarea:focus,
+  textarea {
+    outline: 0;
+    caret-color:red;
+    caret-width:2px;
+  }
 }
 
 .VueLive-editor {

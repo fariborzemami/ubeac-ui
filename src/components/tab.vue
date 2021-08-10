@@ -1,12 +1,13 @@
 <template>
   <div 
+    :id="title"
     :data-title="title"
     :data-active="active"
-    :id="title"
     :class="{'show': active, 'active': active}"
     role="tabpanel"
-    class="tab-pane fade">
-    <slot></slot>
+    class="tab-pane fade"
+  >
+    <slot />
   </div>
 </template>
 

@@ -1,10 +1,13 @@
-import { createApp } from 'vue'
+import { h, createApp } from 'vue'
 import App from './App.vue'
-import 'bootstrap/scss/bootstrap.scss'
+import Router from './router.js'
+
+// Third party library
+import i18n from './locale'
+import './styles/bootstrap.scss'
 import 'bootstrap/js/dist/tab.js'
 import 'bootstrap/js/dist/dropdown.js'
 import 'bootstrap/js/dist/tooltip.js'
-import Router from './router.js'
 import 'material-icons/iconfont/material-icons.scss';
 import numeral from 'numeral'
 import IMask from 'imask'
@@ -22,39 +25,39 @@ import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import ColorPicker from './components/colorpicker.vue'
 import Select from './components/select.vue'
-import { VueLive, VueLiveEditor, VueLivePreview } from "vue-live";
+import Live from './components/live.vue'
+import Link from './components/link.vue'
+import Datepicker from './components/datepicker.vue'
 
-// Code Editor
-import { PrismEditor } from 'vue-prism-editor';
-import 'vue-prism-editor/dist/prismeditor.min.css'; // import the styles somewhere
-import { highlight, languages } from 'prismjs/components/prism-core';
-import 'prismjs/components/prism-clike';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/themes/prism-dark.css'; // import syntax highlighting styles
+// Demo Compoenents References
+import DemoHeader from './demo_components/header.vue'
 
+window.h = h
 
 const app = createApp(App)
-//
-// Global Compoenents
+
 app.use(Router)
-app.component('ULive', VueLive)
-app.component('PrismEditor', PrismEditor)
-app.component('ULiveEditor', VueLiveEditor)
-app.component('ULivePreview', VueLivePreview)
+app.use(i18n)
 
-app.component('uButton', uButton)
-app.component('uRadioButton', uRadioButton)
-app.component('uAlert', uAlert)
-app.component('uTabs', uTabs)
-app.component('uTab', uTab)
-app.component('uInput', uInput)
-app.component('uCheckBox', uCheckBox)
-app.component('uBreadCrumb', uBreadCrumb)
-app.component('uForm', uForm)
-app.component('u-icon', MaterialIcon)
-app.component('u-select', Select)
-app.component('u-colorpicker', ColorPicker)
+// Global Compoenents
+app.component('ULive', Live)
+app.component('ULink', Link)
+app.component('UButton', uButton)
+app.component('URadioButton', uRadioButton)
+app.component('UAlert', uAlert)
+app.component('UTabs', uTabs)
+app.component('UTab', uTab)
+app.component('UInput', uInput)
+app.component('UCheckBox', uCheckBox)
+app.component('UBreadCrumb', uBreadCrumb)
+app.component('UForm', uForm)
+app.component('UIcon', MaterialIcon)
+app.component('USelect', Select)
+app.component('UColorpicker', ColorPicker)
+app.component('UDatepicker', Datepicker)
 
+// Demo Compoenents References
+app.component('DemoHeader', DemoHeader)
 
 app.mount('#app')
 

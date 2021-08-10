@@ -5,67 +5,75 @@ meta:
 
 <template>
   <div
-    class="text-start">
-  <h1>
-    Components
-  </h1>
-  <ul class="list-group">
-    <li
-      v-for="item in componentsList"
-      :key="item"
-      @click="this.$router.push(item.optionsRoute)"
-      class="list-group-item list-group-item-action p-3">
-      <div>
-      </div>
-      <router-link 
-         style="width: 120px;"
-         class="d-block float-start text-decoration-none text-dark"
-         :to="item.optionsRoute">
-        {{ item.name }}
-      </router-link>
-      <router-link 
-        v-if="item.playground"
-        style="width: 120px;"
-        class="d-block float-start text-decoration-none text-dark"
-        :to="item.playground">
-        Playground
-      </router-link>
-      <router-link 
-        v-if="item.editor"
-        style="width: 120px;"
-        class="d-block float-start text-decoration-none text-dark"
-        :to="item.editor">
-        Examples
-      </router-link>
-      <span 
-        v-if="item.document_is_completed"    
-        class="badge bg-success me-2">
-        Document Completed
-      </span>
-      <span 
-        v-else
-        class="badge bg-danger me-2">
-        need_document
-      </span>
-      <span 
-        v-if="item.is_inprogress"    
-        class="badge bg-warning text-dark">
-        is_inprogress
-      </span>
-    </li>
-  </ul>
+    class="text-start pb-4"
+  >
+    <p 
+      class="mt-3 text-start document-section"
+    >
+      <markdown />
+    </p>
+    <h1 
+      class="h2 mt-1"
+    >
+      Components
+    </h1>
+    <ul class="list-group">
+      <li
+        v-for="item in componentsList"
+        :key="item"
+        class="list-group-item list-group-item-action p-3"
+        @click="$router.push(item.optionsRoute)"
+      >
+        <div />
+        <router-link 
+          style="width: 120px;"
+          class="d-block float-start text-decoration-none text-dark"
+          :to="item.optionsRoute"
+        >
+          {{ item.name }}
+        </router-link>
+        <router-link 
+          v-if="item.playground"
+          style="width: 120px;"
+          class="d-block float-start text-decoration-none text-dark"
+          :to="item.playground"
+        >
+          Playground
+        </router-link>
+        <router-link 
+          v-if="item.editor"
+          style="width: 120px;"
+          class="d-block float-start text-decoration-none text-dark"
+          :to="item.editor"
+        >
+          Examples
+        </router-link>
+        <span 
+          v-if="item.document_is_completed"    
+          class="badge bg-success me-2"
+        >
+          Document Completed
+        </span>
+        <span 
+          v-else
+          class="badge bg-danger me-2"
+        >
+          need_document
+        </span>
+        <span 
+          v-if="item.is_inprogress"    
+          class="badge bg-warning text-dark"
+        >
+          is_inprogress
+        </span>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
-
-defineProps({
-  msg: String
-})
-
-const state = reactive({ count: 0 })
-
+import { VueComponent } from '../../README.md'
+const markdown = VueComponent
 const componentsList = [
   {
     name: 'Button',
@@ -123,6 +131,7 @@ const componentsList = [
     is_inprogress: true,
     document_is_completed: true
   },
+  {
     name: 'Select',
     optionsRoute: '/components/select',
     playground: '/components/select?tab=playground',
@@ -130,10 +139,19 @@ const componentsList = [
     is_inprogress: true,
     document_is_completed: true
   },
+  {
     name: 'ColorPicker',
     optionsRoute: '/components/colorpicker',
     playground: '/components/colorpicker?tab=playground',
     editor: '/components/colorpicker?tab=editor',
+    is_inprogress: true,
+    document_is_completed: true
+  },
+  {
+    name: 'DatePicker',
+    optionsRoute: '/components/datepicker',
+    playground: '/components/datepicker?tab=playground',
+    editor: '/components/datepicker?tab=editor',
     is_inprogress: true,
     document_is_completed: true
   }

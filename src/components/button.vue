@@ -4,33 +4,36 @@
     :autofocus="autofocus"
     type="button" 
     :class="`btn btn-${variant} btn-${size}`"
-    >
+  >
     <u-icon
       v-if="icon && loading === false"
       :size="iconSizeMap"
       style="float: left;"
       class="mx-2 float-start"
       :icon="icon" 
-      >
-    </u-icon>
+    />
     <template
-      v-if="loading">
+      v-if="loading"
+    >
       <div 
         :class="`spinner-border spinner-border-${size}`"
-        role="status">
-      </div>
+        role="status"
+      />
     </template>
     <template
-      v-else>
+      v-else
+    >
       <template 
-        v-if="text">
+        v-if="text"
+      >
         <span>
           {{ text }}
         </span>
       </template>
       <template 
-        v-else>
-        <slot></slot>
+        v-else
+      >
+        <slot />
       </template>
     </template>
   </button>
