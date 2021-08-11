@@ -16,6 +16,7 @@
       :placeholder="placeholder"
       :searchable="searchable"
       :value="value"
+      :loading="loading"
       @option:selected="onChange"
       />
   </div>
@@ -87,6 +88,10 @@ export default {
     },
     value: {
       default: null
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   emits: ['update:modelValue', 'change'],
