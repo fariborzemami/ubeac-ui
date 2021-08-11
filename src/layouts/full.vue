@@ -48,7 +48,7 @@
           >
         </div>
         <div 
-          class="position-fixed pt-3"
+          class="position-sticky pt-3"
           :class="isMobile ? 'fixed-bottom fixed-top ' : ''"
         >
           <ul class="nav flex-column">
