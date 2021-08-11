@@ -157,6 +157,17 @@ meta:
               </u-select>
                 <div class="my-3"></div>
           </div>
+          <div
+            class="col-4"
+            >
+            <h4>Loading</h4>
+              <u-select
+                loading
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
         </div>
       </div>
     </u-tab>
