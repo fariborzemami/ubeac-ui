@@ -1,7 +1,6 @@
 <template>
   <header 
-    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow"
-    style="z-index: 1050;"
+    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow z-index-header"
     aria-label="Main navigation"
   >
     <div 
@@ -49,12 +48,12 @@
           >
         </div>
         <div 
-          class="position-sticky pt-3"
+          class="position-fixed pt-3"
           :class="isMobile ? 'fixed-bottom fixed-top ' : ''"
         >
           <ul class="nav flex-column">
             <li 
-              class="w-100 rounded"
+              class="rounded"
               v-for="route in routesListSortedByName"
               :key="route"
             >
@@ -196,5 +195,8 @@ export default {
 .slide-fade-leave-to {
   transform: translateX(-40px);
   opacity: 0;
+}
+.z-index-header {
+  z-index: 1050;
 }
 </style>
