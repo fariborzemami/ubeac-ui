@@ -39,7 +39,7 @@ NOTE: Props with * need more analyse
 
 | Name               | Type              | Default      | Description                            |
 | ------------------ |-------------------| -------------| ---------------------------------------|
-  |
+|
 | model              | Reactive Variable | null         | Reactive object of form data           |
 | confirm            | Boolean           | false        | If set true, form get user confirm by showing the data before submit |
 | disabled           | Boolean           | false        |                                        |
