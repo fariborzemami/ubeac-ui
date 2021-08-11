@@ -32,18 +32,18 @@
 ## Examples
 
 ```html
-<u-alert header="foo">
+<u-card header="foo">
     <body>
         ...
     </body>
     <footer>
         ...
     </footer>
-</u-alert>
+</u-card>
 
-<u-alert header="foo" header-algnment="center" body-algnment="center" closable=""true >
+<u-card header="foo" header-algnment="center" body-algnment="center" closable=""true >
         ...
-</u-alert>
+</u-card>
 
 ```
 
