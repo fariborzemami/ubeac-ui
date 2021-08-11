@@ -38,21 +38,23 @@ meta:
         >
           <div 
             class="col"
-          >
-            <h4>Normal View</h4>
+            >
+            <h4>Select</h4>
             <u-select
-              v-model="selectedExample1"
-              :items="items"
-              label="Select"
-            />
-            <div 
-              class="my-3"
-            />
+               v-model="selectedExample1"
+               :items="items"
+               label="Please Select"
+               >
+            </u-select>
+                <div 
+                  class="my-3"
+                >
+                </div>
           </div>
           <div 
             class="col"
-          >
-            <h4>Selected</h4>
+            >
+            <h4>Default Selected</h4>
             <u-select
               v-model="selectedExample2"
               :items="items"
