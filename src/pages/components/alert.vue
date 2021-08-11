@@ -35,10 +35,12 @@ meta:
           <h4>Normal View</h4>
           <template
             v-for="v in alertVariants"
+            :key="v"
           >
             <u-alert
               :variant="v"
               text="Alert text will be shown!"
+              />
           </template>
         </div>
         <div 
@@ -47,7 +49,7 @@ meta:
           <h4>Closable</h4>
           <template
             v-for="v in alertVariants"
-            :key="v">
+            :key="v"
             >
             <u-alert
               :variant="v"
@@ -82,10 +84,14 @@ const markdown = VueComponent
 const code = reactive(
 `<u-alert
   variant="success"
-  text="this is an alert!"
-  closable
-  >
-</u-alert>`
+  text="This is an alert!"
+  closable>
+</u-alert>
+<u-alert
+  variant="danger">
+    Slot Example
+</u-alert>
+`
 )
 
 const doSomthing = () => {alert("Somthing");}
