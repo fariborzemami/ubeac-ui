@@ -10,7 +10,7 @@
         <button
           class="btn me-3 btn-dark"
           type="button"
-          @click="this.drawer = !this.drawer"
+          @click="onClickDrawerBtn"
         >
          <u-icon
             class="w-100 text-center align-middle"
@@ -20,7 +20,7 @@
         </button>
         <router-link 
           class="navbar-brand me-auto" 
-          @click="screenSize < 768 ? this.drawer = false : ''"
+          @click="onClickBrand"
           to="/"
         >
           {{ $t('application-name') }}
@@ -41,7 +41,7 @@
         id="sidebarMenu" 
         v-if="drawer" 
         class="col col-md-3 col-lg-2 float-start border-end"
-        :class="screenSize < 768 ? 'position-absolute h-100 bg-white ' : ''"
+        :class="isMobile ? 'position-absolute h-100 bg-white ' : ''"
       >
       <!-- Teleport Sidebar-top -->
         <div 
@@ -50,7 +50,7 @@
         </div>
         <div 
           class="position-sticky pt-3"
-          :class="screenSize < 768 ? 'fixed-bottom fixed-top ' : ''"
+          :class="isMobile ? 'fixed-bottom fixed-top ' : ''"
         >
           <ul class="nav flex-column">
             <li 
@@ -61,7 +61,7 @@
               <router-link
                 :class="{active: $route.path === route.path }"
                 class="nav-link list-group-item border-0"
-                @click="screenSize < 768 ? this.drawer = !this.drawer : ''"
+                @click="onClickSidebarMenu"
                 :to="route.path"
               >
                 {{ route.name }}
@@ -79,7 +79,7 @@
 
       <div 
         class="col col-md-9 col-lg-10 mx-auto px-4 pt-2"
-        :class="screenSize < 768 && drawer ? 'd-none' : ''"
+        :class="isMobile && drawer ? 'd-none' : ''"
         >
         <main>
           <!-- Teleport to content-top -->
@@ -100,7 +100,8 @@ export default {
     return {
       routesList: [],
       drawer: true,
-      screenSize: window.screen.width
+      screenSize: null,
+      isMobile: false
     }
   },
   computed: {
@@ -112,7 +113,33 @@ export default {
       })
     }
   },
+  methods: {
+    calculateScreenSize () {
+      this.screenWidth = window.screen.width
+      if (this.screenWidth > 768) {
+        this.drawer = true
+        this.isMobile = false
+      } else {
+        this.drawer = false
+        this.isMobile = true
+      }
+    },
+    onClickBrand () {
+      if (this.isMobile) {
+        this.drawer = false
+      }
+    },
+    onClickDrawerBtn () {
+      this.drawer = !this.drawer
+    },
+    onClickSidebarMenu () {
+      if (this.isMobile) {
+        this.drawer = !this.drawer
+      } 
+    }
+  },
   created() {
+    window.onresize = this.calculateScreenSize
     this.$router.options.routes.forEach(route => {
       if (route.children[0].name !== 'index') {
         this.routesList.push({
@@ -121,11 +148,6 @@ export default {
         })
       }
     })
-    if (this.screenSize > 768) {
-      return this.drawer = true
-    } else {
-      return this.drawer = false
-    }
   }
 }
 
