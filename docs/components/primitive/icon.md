@@ -20,17 +20,8 @@
 
 * type: String
 
-### dir
-
-* type: string
-* default: left
-* available values: left, right
-
 ### Methods
-
-hover
-
-onClick
+Click
 
 ## Examples
 

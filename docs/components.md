@@ -11,6 +11,7 @@
 * [Radio](/docs/components/primitive/radio.md)
 * [Select](/docs/components/primitive/select.md)
 * [Card](/docs/components/primitive/card.md)
+* [Icon](/docs/components/primitive/icon.md)
 * Range
 * ProgressBar
 
