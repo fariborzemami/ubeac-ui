@@ -66,6 +66,9 @@ export default {
         return 'checkboxGeneratedId' + Math.random().toString().split('.')[1]
       }
     },
+    name: {
+      type: String
+    },
     autofocus: {
       type: Boolean,
       default: false
@@ -73,21 +76,18 @@ export default {
     dir: {
       type: String,
       default: "ltr"
-    },
-    readonly: {
-      type: Boolean,
-      default: false
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue', 'change'],
   data () {
     return {
       isChecked: this.modelValue
     }
   },
   methods: {
-    onChange() {
+    onChange(e) {
       this.$emit('update:modelValue', this.isChecked)
+      this.$emit('change', e)
     }
   }
 }
