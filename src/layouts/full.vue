@@ -33,14 +33,15 @@
         </div>
     </div>
   </header>
-
   <div class="container-fluid">
     <div
       class="row vh-100">
+     <transition name="slide-fade">
       <nav 
         id="sidebarMenu" 
         v-if="drawer" 
-        class="col col-md-3 col-lg-2 d-md-block float-end border-end"
+        class="col col-md-3 col-lg-2 float-start border-end"
+        :class="screenSize < 768 ? 'position-absolute h-100 bg-white ' : ''"
       >
       <!-- Teleport Sidebar-top -->
         <div 
@@ -74,9 +75,10 @@
           </div>
         </div>
       </nav>
+      </transition>
+
       <div 
         class="col col-md-9 col-lg-10 mx-auto px-4 pt-2"
-        :class="(screenSize < 768 && drawer) ? 'd-none' : ''"
         >
         <main>
           <!-- Teleport to content-top -->
@@ -159,5 +161,17 @@ export default {
     height: 38px;
   }
 }
+.slide-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
 
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.3, 0.5, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(-100px);
+  opacity: 0;
+}
 </style>
