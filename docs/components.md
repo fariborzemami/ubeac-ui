@@ -20,7 +20,7 @@
 * Tab
 
 ## Forms
-* Form
+* [Form](/docs/components/form/form.md)
 * Dialogs
 * [Captcha]( /docs/components/form/from-captcha.md)
 * [Selector](/docs/components/form/from-selector.md)
