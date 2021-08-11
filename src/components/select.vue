@@ -9,14 +9,14 @@
       :clearable="clearable"
       :closeOnSelect="closeOnSelect"
       :disabled="disabled"
-      :filterable="filterable"
+      :filterable="searchable"
       :inputId="id"
       :label="label"
       :multiple="multiple"
       :placeholder="placeholder"
-      :searchable="searchable"
       :value="value"
       :loading="loading"
+      :searchable="searchable"
       @option:selected="onChange"
       />
   </div>
@@ -70,7 +70,7 @@ export default {
 	    type: Boolean,
 	    default: false
     },
-     closeOnSelect: {
+    closeOnSelect: {
       type: Boolean,
       default: true
     },
@@ -82,24 +82,27 @@ export default {
       type: Boolean,
       default: false
     },
-    searchable: {
-      type: Boolean,
-      default: false
-    },
     value: {
       default: null
     },
     loading: {
       type: Boolean,
       default: false
+    },
+    searchable: {
+      type: Boolean,
+      default: false
     }
   },
-  emits: ['update:modelValue', 'change'],
-  data () {
-    return {
-      selectedItems: this.modelValue
+  emits: [
+    'update:modelValue',
+     'change'
+  ],
+  watch: {
+    modelValue () {
+      this.selected = this.modelValue
     }
-  },
+  }, 
   methods: {
     onChange (e) {
       this.$emit('update:modelValue', this.selected)
