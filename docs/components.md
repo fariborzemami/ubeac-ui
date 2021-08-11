@@ -10,11 +10,12 @@
 * [Input](/docs/components/primitive/input.md)
 * [Radio](/docs/components/primitive/radio.md)
 * [Select](/docs/components/primitive/select.md)
+* [Card](/docs/components/primitive/card.md)
 * Range
 * ProgressBar
 
 ## Containers
-* Card
+
 * Expansion-Panel/Accordion panel
 * Stepper/Wizard
 * Tab
