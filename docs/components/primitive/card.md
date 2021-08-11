@@ -7,12 +7,12 @@
 * type: String
 * default: ""
 
-### body-algnment
+### body-alignment
 * type: String
 * available values: start, end,center
 * default :start
 
-### header-algnment
+### header-alignment
 * type: String
 * available values: start, end,center
 * default :start
