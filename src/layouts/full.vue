@@ -41,7 +41,7 @@
         id="sidebarMenu" 
         v-if="drawer" 
         class="col col-md-3 col-lg-2 float-start border-end"
-        :class="screenSize < 768 ? 'position-absolute bg-white ' : ''"
+        :class="screenSize < 768 ? 'position-absolute h-100 bg-white ' : ''"
       >
       <!-- Teleport Sidebar-top -->
         <div 
