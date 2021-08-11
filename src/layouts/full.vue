@@ -185,11 +185,11 @@ export default {
   }
 }
 .slide-fade-enter-active {
-  transition: all 0.1s ease;
+  transition: all 100ms ease;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.1s ease;
+  transition: all 100ms ease;
 }
 
 .slide-fade-enter-from,
