@@ -163,16 +163,16 @@ export default {
   }
 }
 .slide-fade-enter-active {
-  transition: all 0.2s ease-out;
+  transition: all 0.1s ease;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.3, 0.5, 1);
+  transition: all 0.1s ease;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(-100px);
+  transform: translateX(-40px);
   opacity: 0;
 }
 </style>
