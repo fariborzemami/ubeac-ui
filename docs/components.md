@@ -20,9 +20,9 @@
 * Tab
 
 ## Forms
-* Form
+* [Form]( /docs/components/form/from-captcha.md)
 * Dialogs
-* [Captcha]( /docs/components/form/from-captcha.md)
+* [Captcha]( /docs/components/form/from.md)
 * [Selector](/docs/components/form/from-selector.md)
 * TreeView
 
