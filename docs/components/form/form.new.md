@@ -41,11 +41,11 @@ NOTE: Props with * need more analyse
 | ------------------ |-------------------| -------------| ---------------------------------------|
 | model              | Reactive Variable | null         | Reactive object of form data           |
 | cols               | integer           | 4            | Each col contains a form control in form layout if you have a lable and input it takes 2 columns           |
-| confirm            | Boolean           | false        | If set true, form switch to read only mode and needs user confirmation to sumbit data |
+| confirm*            | Boolean           | false        | If set true, form switch to read only mode and needs user confirmation to sumbit data |
 | disabled           | Boolean           | false        |                                        |
 | loading            | Boolean           | false        |                                        |
 | autofocus *        | Boolean           | false        |                                        
-| autosave *         | Boolean           | false        | If true form send submit request on ant change |
+| autosave *         | Boolean           | false        | If true form send submit request on any change |
 | autocomplete       | Boolean           | false        | (Native)                               |
 | layout *           | String            | 'horizontal' | horizontal, vertical, inline
 
