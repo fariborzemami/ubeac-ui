@@ -114,7 +114,14 @@ export default {
       default: false
     }
   }, 
-  emits: ['update:modelValue'],
+  emits: [
+    'update:modelValue'
+  ],
+  watch: {
+    modelValue () {
+      this.inputModel = this.modelValue
+    }
+  },
   data () {
     return {
       inputModel: this.modelValue,
