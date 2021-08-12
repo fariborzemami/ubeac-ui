@@ -37,13 +37,12 @@ meta:
           class="row"
         >
           <div 
-            class="col"
+            class="col-4"
             >
-            <h4>Select</h4>
+            <h4>Default</h4>
             <u-select
-               v-model="selectedExample1"
+               v-model="foo"
                :items="items"
-               label="Please Select"
                >
             </u-select>
                 <div 
@@ -52,27 +51,105 @@ meta:
                 </div>
           </div>
           <div 
-            class="col"
+            class="col-4"
             >
-            <h4>Default Selected</h4>
+            <h4>Selected</h4>
             <u-select
-              v-model="selectedExample2"
-              :items="items"
-              label="Selected"
-            />
-            <div 
-              class="my-3"
-            />
+               v-model="bar"
+               :items="items"
+               >
+            </u-select>
+                <div 
+                  class="my-3"
+                >
+                </div>
           </div>
           <div
-            class="col"
-          >
+            class="col-4"
+            >
             <h4>Disabled</h4>
             <u-select
               label=" Disable select"
               disabled
             />
             <div class="my-3" />
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Clearable</h4>
+              <u-select
+                clearable
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Searchable</h4>
+              <u-select
+                searchable
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Not close on select</h4>
+              <u-select
+                :close-on-select="false"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Rtl</h4>
+              <u-select
+                dir="rtl"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Multiple</h4>
+              <u-select
+                multiple
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Placeholder</h4>
+              <u-select
+                placeholder="Please select an option"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Loading</h4>
+              <u-select
+                loading
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
           </div>
         </div>
       </div>
@@ -86,27 +163,38 @@ import { VueComponent } from '../../../docs/components/primitive/select.md'
 const markdown = VueComponent
 const code = reactive(
 `<template>
-  <pre> {{ selectedExample1 }}</pre>
+  <pre> {{ foo }}</pre>
   <u-select
-    v-model="selectedExample1"
+    v-model="foo"
     :items="items"
-    label="Example1"
     >
   </u-select>
-  <hr>
-  <pre> {{ selectedExample2 }}</pre>
+ <br>
   <u-select
-    v-model="selectedExample2"
-    label="Example2"
+    v-model="foo"
     :items="items"
     >
   </u-select>
   <hr>
-  <pre> {{ selectedExample3 }}</pre>
+  <pre> {{ bar }}</pre>
   <u-select
-    v-model="selectedExample3"
-    label="Example3"
+    v-model="bar"
+    :items="items"
+    >
+  </u-select>
+  <hr>
+  <pre> {{ bar }}</pre>
+  <u-select
+    v-model="baz"
     multiple
+    :items="items"
+    >
+  </u-select>
+  <hr>
+  <pre> {{ qux }}</pre>
+  <u-select
+    v-model="qux"
+    searchable
     :items="items"
     >
   </u-select>
@@ -115,21 +203,28 @@ const code = reactive(
 export default {
    data () {
      return {
-        selectedExample1: null,
-        selectedExample2: 'foo',
-        selectedExample3: ['foo', 'baz'],
+        foo: null,
+        bar: {
+          "label": "foo",
+          "value": 1
+        },
+        baz: {
+          "label": "baz",
+          "value": 3
+        },
+        qux: null,
         items: [
-          {   
-            key: 'foo',
-            value: 'foo'
+          {
+            label: 'foo',
+            value: 1
           },
           {
-            key: 'bar',
-            value: 'bar'
+            label: 'bar',
+            value: 2
           },
           {
-            key: 'baz',
-            value: 'baz'
+            label: 'baz',
+            value: 3
           }
         ]
      }
@@ -141,19 +236,21 @@ export default {
 const doSomthing = () => {alert("Somthing");}
 const items = [
   {
-    key: 'foo',
+    label: 'foo',
     value: 1
   },
   {
-    key: 'bar',
+    label: 'bar',
     value: 2
   },
   {
-    key: 'baz',
+    label: 'baz',
     value: 3
   }
 ]
-const selectedExample1 = ref('')
-const selectedExample2 = ref(2)
-
+const foo = ref('')
+const bar = ref({
+    label: 'baz',
+    value: 3
+  })
 </script>
