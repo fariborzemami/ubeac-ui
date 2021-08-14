@@ -78,6 +78,11 @@ export default {
       }
     }
   },
+  watch: {
+    modelValue () {
+      this.selectedRadio = this.modelValue
+    }
+  },
   emits: ['update:modelValue'],
   data () {
     return {

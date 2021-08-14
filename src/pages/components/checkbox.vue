@@ -33,36 +33,36 @@ meta:
       <div class="row">
         <div class="col">
           <h4>Model as array</h4>
-           <pre> {{ example1Model }}</pre>
+           <pre> {{ foo }}</pre>
             <u-checkBox
               v-for="item in examples"
               :key="item"
-              v-model="example1Model"
+              v-model="foo"
               :value="item.value"
               :text="item.text"
-              name="example1"
+              name="foo"
               >
             </u-checkBox>
             <div class="my-3"></div>
         </div>
         <div class="col">
           <h4>Model as Boolean</h4>
-           <pre> {{ example2Model }}</pre>
+           <pre> {{ bar }}</pre>
             <u-checkBox
-              v-model="example2Model"
+              v-model="bar"
               text="foo"
-              name="example2"
+              name="bar"
               >
             </u-checkBox>
             <div class="my-3"></div>
         </div>
         <div class="col">
          <h4>Disabled</h4>
-           <pre> {{ example3Model }}</pre>
+           <pre> {{ baz }}</pre>
             <u-checkBox
               v-for="item in examples"
               :key="item"
-              v-model="example3Model"
+              v-model="baz"
               :value="item.value"
               :text="item.text"
               :disabled="item.disabled"
@@ -72,26 +72,25 @@ meta:
         </div>
         <div class="col">
           <h4>Slot</h4>
-          <pre> {{ example4Model }}</pre>
+          <pre> {{ qux }}</pre>
           <u-checkBox
-             v-model="example4Model"
-             value="bar"
-             @change="onChange"
-             name="example4"
+             v-model="qux"
+             value="qux"
+             name="qux"
             >
-            bar
+            qux
           </u-checkBox>
             <div class="my-3"></div>
         </div>
           <div class="col">
           <h4>@change</h4>
-          <pre> {{ example5Model }}</pre>
+          <pre> {{ quux }}</pre>
           <u-checkBox
-             v-model="example5Model"
+             v-model="quux"
              @change="onChange"
-             name="example5"
+             name="quux"
             >
-            bar
+            quux
           </u-checkBox>
             <div class="my-3"></div>
         </div>
@@ -184,11 +183,11 @@ const examples = [
   }
 ]
 const doSomthing = () => {alert("Somthing");}
-const example1Model = ref([])
-const example2Model = ref(true)
-const example3Model = ref([])
-const example4Model = ref([])
-const example5Model = ref(false)
+const foo = ref([])
+const bar = ref(true)
+const baz = ref([])
+const qux = ref([])
+const quux = ref(false)
 
 const onChange = () => {
   alert("This is an Example for @change")

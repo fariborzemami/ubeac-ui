@@ -34,30 +34,30 @@ meta:
         <div class="col">
           <h4>Default Value</h4>
           <u-input
-            v-model="inputExample1"
-            name="inputExample1"
+            v-model="foo"
+            name="foo"
           />
           <div class="my-3" />
           <h4>Mask (0-0-0)</h4>
           <u-input
             :mask="{mask: '0-0-0'}"
-            v-model="inputExample1"
-            name="inputExample1"
+            v-model="foo"
+            name="foo"
           />
           <div class="my-3" />
           <h4>Mask (a-0-0-0)</h4>
           <u-input
             :mask="{mask: 'a-0-0-0'}"
-            v-model="inputExample1"
-            name="inputExample1"
+            v-model="foo"
+            name="foo"
           />
           <div class="my-3" />
         </div>
         <div class="col">
           <h4>Disable</h4>
           <u-input
-            v-model="inputExample2"
-            name="inputExample2"
+            v-model="bar"
+            name="bar"
             disabled
           />
           <div class="my-3" />
@@ -65,17 +65,17 @@ meta:
         <div class="col">
           <h4>onClick trigger Alert</h4>
           <u-input
-            v-model="inputExample3"
-            name="inputExample3"
+            v-model="baz"
+            name="baz"
           />
           <div class="my-3" />
         </div>
         <div class="col">
           <h4>Placeholder</h4>
           <u-input
-            v-model="inputExample4"
-            name="inputExample4"
-            placeholder="Example4"
+            v-model="qux"
+            name="qux"
+            placeholder="qux"
           />
           <div class="my-3" />
         </div>
@@ -91,28 +91,34 @@ const markdown = VueComponent
 const code = reactive(
 `<template>
   <h6>Placeholder</h6>
-  <pre> text: {{ inputValue1 }} </pre>
+  <pre> text: {{ foo }} </pre>
   <u-input
-    v-model="inputValue1"
-    name="inputExample1"
+    v-model="foo"
+    name="foo"
+    >
+  </u-input>
+  <br>
+  <u-input
+    v-model="foo"
+    name="foo"
     >
   </u-input>
   <hr>
   <h6>Default Value</h6>
-  <pre> text: {{ inputValue2 }} </pre>
+  <pre> text: {{ bar }} </pre>
   <u-input
-    v-model="inputValue2"
+    v-model="bar"
     type="text"
-    name="inputExample2"
+    name="bar"
     >
   </u-input>
   <hr>
   <h6>Number type</h6>
-  <pre> text: {{ inputValue3 }} </pre>
+  <pre> text: {{ baz }} </pre>
   <u-input
-    v-model="inputValue3"
+    v-model="baz"
     type="number"
-    name="inputExample3"
+    name="baz"
     >
   </u-input>
 </template>
@@ -120,17 +126,17 @@ const code = reactive(
 export default {
    data () {
      return {
-        inputValue1: '',
-        inputValue2: "foo",
-        inputValue3: 123
+        foo: '',
+        bar: "foo",
+        baz: 123
      }
    }
  }
 <\/script>`
 )
 
-const inputExample1 = ref('Default value')
-const inputExample2 = ref('')
-const inputExample3 = ref('')
-const inputExample4 = ref('')
+const foo = ref('Default value')
+const bar = ref('')
+const baz = ref('')
+const qux = ref('')
 </script>
