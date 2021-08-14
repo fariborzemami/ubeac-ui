@@ -15,14 +15,20 @@
       type="text"
       :name="name"
       @change="onChange"
-      @load="onLoad"
-      @select="onSelect"
     >
     <div 
       class="dropdown-menu p-0"
     >
       <sketch-picker 
+        v-if="!hideSlider"
+        disableAlpha
         v-model="colors"
+      />
+      <compact-picker
+        v-if="hideSlider"
+        v-model="colors" 
+        :palette="defaultPallete"
+        class="compact-padding"
       />
     </div>
   </div>
@@ -30,9 +36,11 @@
 
 <script>
 import Sketch from '@/modules/vue-color/src/lib-components/Sketch.vue';
+import Compact from '@/modules/vue-color/src/lib-components/Compact.vue';
 export default {
   components: {
     'sketch-picker': Sketch,
+    'compact-picker': Compact
   },
   props: {
     modelValue: {
@@ -50,6 +58,10 @@ export default {
       type: Boolean,
       default: false
     },
+    hideSlider: {
+      type: Boolean,
+      default: false
+    },
     isRequired: {
       type: Boolean,
       default: false
@@ -61,6 +73,9 @@ export default {
       }
     },
     name: {
+      type: String
+    },
+    defaultPallete: {
       type: String
     }
   },
@@ -79,6 +94,13 @@ export default {
         this.$emit('update:modelValue', this.colors.hex)
       }
     },
+    modelValue () {
+      this.selectedColor = this.modelValue
+      this.onSelect()
+    }
+  },
+  created () {
+    window.onload = this.onLoad()
   },
   methods: {
     onChange (e) {
@@ -89,9 +111,15 @@ export default {
     },
     onSelect (e) {
       this.$emit('select', e)
+      alert('djhfjdksa')
     }
   }
 }
  
 </script>
 
+<style lang="scss">
+  .compact-padding ul  {
+    padding-left: 0 !important;
+  }
+</style>
