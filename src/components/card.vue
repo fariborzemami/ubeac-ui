@@ -1,0 +1,60 @@
+<template>
+  <div
+    v-if="visible"
+    class="card"
+  >
+    <div
+      v-if="header"
+      class="card-header"
+      :class="`text-${headerAlignment}`"
+    >
+      {{ header }}
+      <button
+        v-if="closable"
+        @click="visible = false"
+        type="button"
+        class="btn-close float-end"
+        aria-label="Close"
+      />
+    </div>
+    <div 
+      class="card-body"
+      :class="`text-${bodyAlignment}`"
+      >
+       <slot />
+    </div>
+      <slot 
+        v-if="!!$slots.footer"
+        name="footer"
+        >
+      </slot>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    header: {
+      type: String,
+      default: ''
+    },
+    bodyAlignment: {
+      type: String,
+      default: 'start'
+    },
+    headerAlignment: {
+      type: String,
+      default: 'start'
+    },
+    closable: {
+      type: Boolean,
+      default: false
+    },
+    visible: {
+      type: Boolean,
+      default: true
+    }
+  }
+}
+</script>
+
