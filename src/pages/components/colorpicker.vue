@@ -34,6 +34,9 @@ meta:
       class="row">
       <div 
         class="col col-3">
+        <h5>
+          Compact picker
+        </h5>
         <u-colorpicker 
           v-model="pickedColor"
           hide-slider
@@ -41,8 +44,10 @@ meta:
       </div>
       <div 
           class="col col-3">
+          <h5>
+            Sketch picker
+          </h5>
           <u-colorpicker 
-          readonly
             v-model="pickedColor"
           />
       </div>
