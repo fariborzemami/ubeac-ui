@@ -6,6 +6,7 @@ meta:
 
 <template>
   <DemoHeader
+    edit-link="https://github.com/ubeac/ubeac-ui/blob/main/docs/components/primitive/card.md"
     title="Card"
   />
    <u-tabs>
