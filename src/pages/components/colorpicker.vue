@@ -30,9 +30,28 @@ meta:
     <u-tab
       title="Examples"
     >
-      <u-colorpicker 
-        v-model="pickedColor"
-      />
+    <div 
+      class="row">
+      <div 
+        class="col col-3">
+        <h5>
+          Compact picker
+        </h5>
+        <u-colorpicker 
+          v-model="pickedColor"
+          hide-slider
+        />
+      </div>
+      <div 
+          class="col col-3">
+          <h5>
+            Sketch picker
+          </h5>
+          <u-colorpicker 
+            v-model="pickedColor"
+          />
+      </div>
+    </div>
     </u-tab>
   </u-tabs>
 </template>
@@ -63,6 +82,14 @@ const code = reactive(
     :disabled="false"
     :is-required="false"
     :autofocus="true"
+    >
+  </u-colorpicker>
+  <hr>
+  <u-colorpicker
+    v-model="pickedColor"
+    :disabled="false"
+    :is-required="false"
+    hide-slider
     >
   </u-colorpicker>
 </template>
