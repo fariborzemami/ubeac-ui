@@ -41,7 +41,7 @@ meta:
             >
             <h4>Default</h4>
             <u-select
-               v-model="selectedExample1"
+               v-model="foo"
                :items="items"
                >
             </u-select>
@@ -55,7 +55,7 @@ meta:
             >
             <h4>Selected</h4>
             <u-select
-               v-model="selectedExample2"
+               v-model="bar"
                :items="items"
                >
             </u-select>
@@ -91,20 +91,6 @@ meta:
             <h4>Searchable</h4>
               <u-select
                 searchable
-                v-model="selectedExample2"
-                :items="items"
-                >
-              </u-select>
-                <div class="my-3"></div>
-          </div>
-          <div
-            class="col-4"
-            >
-            <h4>Filterable</h4>
-              <u-select
-                searchable
-                filterable
-                v-model="selectedExample2"
                 :items="items"
                 >
               </u-select>
@@ -116,7 +102,6 @@ meta:
             <h4>Not close on select</h4>
               <u-select
                 :close-on-select="false"
-                v-model="selectedExample2"
                 :items="items"
                 >
               </u-select>
@@ -128,7 +113,6 @@ meta:
             <h4>Rtl</h4>
               <u-select
                 dir="rtl"
-                v-model="selectedExample2"
                 :items="items"
                 >
               </u-select>
@@ -140,7 +124,6 @@ meta:
             <h4>Multiple</h4>
               <u-select
                 multiple
-                v-model="selectedExample2"
                 :items="items"
                 >
               </u-select>
@@ -152,6 +135,17 @@ meta:
             <h4>Placeholder</h4>
               <u-select
                 placeholder="Please select an option"
+                :items="items"
+                >
+              </u-select>
+                <div class="my-3"></div>
+          </div>
+          <div
+            class="col-4"
+            >
+            <h4>Loading</h4>
+              <u-select
+                loading
                 :items="items"
                 >
               </u-select>
@@ -169,24 +163,38 @@ import { VueComponent } from '../../../docs/components/primitive/select.md'
 const markdown = VueComponent
 const code = reactive(
 `<template>
-  <pre> {{ selectedExample1 }}</pre>
+  <pre> {{ foo }}</pre>
   <u-select
-    v-model="selectedExample1"
+    v-model="foo"
+    :items="items"
+    >
+  </u-select>
+ <br>
+  <u-select
+    v-model="foo"
     :items="items"
     >
   </u-select>
   <hr>
-  <pre> {{ selectedExample2 }}</pre>
+  <pre> {{ bar }}</pre>
   <u-select
-    v-model="selectedExample2"
+    v-model="bar"
     :items="items"
     >
   </u-select>
   <hr>
-  <pre> {{ selectedExample3 }}</pre>
+  <pre> {{ bar }}</pre>
   <u-select
-    v-model="selectedExample3"
+    v-model="baz"
     multiple
+    :items="items"
+    >
+  </u-select>
+  <hr>
+  <pre> {{ qux }}</pre>
+  <u-select
+    v-model="qux"
+    searchable
     :items="items"
     >
   </u-select>
@@ -195,15 +203,16 @@ const code = reactive(
 export default {
    data () {
      return {
-        selectedExample1: null,
-        selectedExample2: {
+        foo: null,
+        bar: {
           "label": "foo",
           "value": 1
         },
-        selectedExample3: {
-          "label": "bar",
-          "value": 2
+        baz: {
+          "label": "baz",
+          "value": 3
         },
+        qux: null,
         items: [
           {
             label: 'foo',
@@ -239,10 +248,9 @@ const items = [
     value: 3
   }
 ]
-const selectedExample1 = ref('')
-const selectedExample2 = ref({
-  label: 'baz',
-  value: 3
-})
-
+const foo = ref('')
+const bar = ref({
+    label: 'baz',
+    value: 3
+  })
 </script>

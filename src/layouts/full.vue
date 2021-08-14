@@ -1,47 +1,91 @@
 <template>
   <header 
-    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow"
+    class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow z-index-header"
     aria-label="Main navigation"
   >
     <div 
       class="container-fluid"
     >
-      <router-link 
-        class="navbar-brand" 
-        to="/"
-      >
-        {{ $t('application-name') }}
-      </router-link>
+        <button
+          class="btn me-3 btn-dark"
+          type="button"
+          @click="onClickDrawerBtn"
+        >
+         <u-icon
+            class="w-100 text-center align-middle"
+            color='white'
+            icon="menu"
+          />
+        </button>
+        <router-link 
+          class="navbar-brand me-auto" 
+          @click="onClickBrand"
+          to="/"
+        >
+          {{ $t('application-name') }}
+        </router-link>
+        <!-- Teleport to header-end -->
+        <div 
+          class="ms-auto me-4 text-white"
+          id="header-end"
+        >
+        </div>
     </div>
   </header>
-
   <div class="container-fluid">
-    <div class="row">
+    <div
+      class="row vh-100">
+     <transition name="slide-fade">
       <nav 
         id="sidebarMenu" 
-        class="col col-md-3 col-lg-2 d-md-block float-end bg-light"
+        v-if="drawer" 
+        class="col col-md-3 col-lg-2 float-start border-end"
+        :class="isMobile ? 'position-absolute h-100 bg-white ' : ''"
       >
+      <!-- Teleport Sidebar-top -->
+        <div 
+          id="sidebar-top"
+          >
+        </div>
         <div 
           class="position-sticky pt-3"
+          :class="isMobile ? 'fixed-bottom fixed-top ' : ''"
         >
           <ul class="nav flex-column">
             <li 
+              class="rounded"
               v-for="route in routesListSortedByName"
-              class="nav-item "
+              :key="route"
             >
               <router-link
                 :class="{active: $route.path === route.path }"
-                class="nav-link"
+                class="nav-link list-group-item border-0"
+                @click="onClickSidebarMenu"
                 :to="route.path"
               >
                 {{ route.name }}
               </router-link>
             </li>
           </ul>
+          <!-- Teleport to Sidebar-bottom -->
+          <div 
+            id="sidebar-bottom"
+          >
+          </div>
         </div>
       </nav>
-      <div class="col col-md-9 col-lg-10">
+      </transition>
+
+      <div 
+        class="col col-md-9 col-lg-10 mx-auto px-4 pt-2"
+        :class="isMobile && drawer ? 'd-none' : ''"
+        >
         <main>
+          <!-- Teleport to content-top -->
+          <div 
+          id="content-top"
+          >
+        </div>
           <router-view />
         </main>
       </div>
@@ -53,7 +97,10 @@
 export default { 
   data() {
     return {
-      routesList: []
+      routesList: [],
+      drawer: true,
+      screenSize: null,
+      isMobile: false
     }
   },
   computed: {
@@ -65,7 +112,33 @@ export default {
       })
     }
   },
+  methods: {
+    calculateScreenSize () {
+      this.screenWidth = window.screen.width
+      if (this.screenWidth > 768) {
+        this.drawer = true
+        this.isMobile = false
+      } else {
+        this.drawer = false
+        this.isMobile = true
+      }
+    },
+    onClickBrand () {
+      if (this.isMobile) {
+        this.drawer = false
+      }
+    },
+    onClickDrawerBtn () {
+      this.drawer = !this.drawer
+    },
+    onClickSidebarMenu () {
+      if (this.isMobile) {
+        this.drawer = !this.drawer
+      } 
+    }
+  },
   created() {
+    window.onresize = this.calculateScreenSize
     this.$router.options.routes.forEach(route => {
       if (route.children[0].name !== 'index') {
         this.routesList.push({
@@ -110,5 +183,20 @@ export default {
     height: 38px;
   }
 }
+.slide-fade-enter-active {
+  transition: all 100ms ease;
+}
 
+.slide-fade-leave-active {
+  transition: all 100ms ease;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+.z-index-header {
+  z-index: 1050;
+}
 </style>
