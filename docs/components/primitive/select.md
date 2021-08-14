@@ -4,66 +4,74 @@
 
 ### items
 
-* type: JSON, Array
-* ExampleJSON : {"key":"itemtitle","value":"1","Icon":"Alert"} 
-* ExampleArray : [["itemtitle","1","Alert"],["itemtitle2","2","Mail"]]
+- type: Object, Array
+- ExampleJSON : {"key":"foo","value":"1","icon":"alert"}
+- ExampleArray : [["foo","1","alert"],["bar","2","mail"]]
 
-### maxSelectItems
+### model
 
-* type: number
-* default: 1
+- type: Object
+- ExampleJSON : {"key":"foo","value":"1"}
 
-### SelectedItems
+### max-select-items
 
-* type: array, json
-* ExampleJSON : {"key":"itemtitle","value":"1"} 
-* ExampleArray : [["itemtitle","1"],["itemtitle2","2"]]
-
+- type: number
+- default: 1
 
 ### icon
 
-* type: String
-* default: ""
-* alignment: Start,End
-
+- type: String
+- default: ""
+- alignment: Start,End
 
 ### placeholder
 
-* type: String
+- type: String
 
 ### tooltip
 
-* type: String
+- type: String
 
 ### disabled
 
-* type: boolean
-* default: false
+- type: boolean
+- default: false
 
 ### visible
 
-* type: boolean
-* default: true
+- type: boolean
+- default: true
 
 ### loading
 
-* type: boolean
-* default: false
+- type: boolean
+- default: false
 
 ### searchable
 
-* type: boolean
-* default: false
-
+- type: boolean
+- default: false
 
 ## Events
 
 change
 
-load
-
 ## Examples
 
 ```html
-<u-select disabled="false"  visible="true" @change="" @load="" loading="true" />
+<u-select disabled="false" visible="true" @change="foo" loading="true" />
 ```
+
+# Changelog
+
+## [0.3.1] - 2021-08-09
+
+### Fixed
+
+- `items` json and array examples has been update.
+
+### changed
+
+- `SelectedItems`, property has been changed to `model`
+- `maxSelectItems`, property has been changed to `max-select-items`
+- `load` event removed

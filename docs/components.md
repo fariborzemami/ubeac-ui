@@ -10,17 +10,19 @@
 * [Input](/docs/components/primitive/input.md)
 * [Radio](/docs/components/primitive/radio.md)
 * [Select](/docs/components/primitive/select.md)
+* [Card](/docs/components/primitive/card.md)
+* [Icon](/docs/components/primitive/icon.md)
 * Range
 * ProgressBar
 
 ## Containers
-* Card
+
 * Expansion-Panel/Accordion panel
 * Stepper/Wizard
 * Tab
 
 ## Forms
-* Form
+* [Form](/docs/components/form/form.new.md)
 * Dialogs
 * [Captcha]( /docs/components/form/from-captcha.md)
 * [Selector](/docs/components/form/from-selector.md)

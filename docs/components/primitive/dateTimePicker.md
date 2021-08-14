@@ -4,69 +4,75 @@
 
 ### id
 
-* type: String
+- type: String
 
 ### name
 
-* type: String
+- type: String
 
-### value
+### model
 
-* type: Date|String
+- type: Date|String
 
 ### format
 
-* type: String
-* default: yyyy MM dd
+- type: String
+- default: yyyy MM dd
 
 ### placeholder
 
-* type: String
-
-### firstDayOfWeek
-
-* type: number
-* default: 6 >> شنبه
+- type: String
 
 ### disabled
 
-* type: boolean
-* default: false
+- type: boolean
+- default: false
 
 ### visible
 
-* type: boolean
-* default: true
+- type: boolean
+- default: true
 
-### isRequired
+### is-required
 
-* type: boolean
-* default: false
+- type: boolean
+- default: false
 
 ### label
 
-* type: String
+- type: String
 
 ### tooltip
 
-* type: String
-
+- type: String
 
 ## Events
 
-load
-
-opened
-
-closed
-
 select
-
-## Method
-formatter
 
 ## Examples
 
 ```html
-<u-datePicker isRequired="false" label="" disabled="false" visible="true" @opened="" @closed="" @select="" />
+<u-datePicker
+  is-required="false"
+  label="foo"
+  disabled="false"
+  visible="true"
+  @select="bar"
+/>
 ```
+
+# Changelog
+
+## [0.3.1] - 2021-08-09
+
+### Fixed
+
+- `Examples`, fixed unnamed functions
+
+### Changed
+
+- `isRequired`, property name has changed to `is-required`
+- `formatter`, method has been removed
+- `firstDayOfWeek`, property removed
+- `v-model`, property has been changed to `model`
