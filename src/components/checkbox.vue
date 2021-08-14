@@ -10,6 +10,7 @@
       :value="value"
       class="form-check-input" 
       :dir="dir"
+      :name="name"
       :disabled="disabled"
       :autofocus="autofocus"
       @change="onChange"
@@ -67,7 +68,11 @@ export default {
       }
     },
     name: {
-      type: String
+      type: String,
+      default () {
+        // TODO: need name generator helper
+        return 'checkboxGeneratedName' + Math.random().toString().split('.')[1]
+      }
     },
     autofocus: {
       type: Boolean,
@@ -82,6 +87,11 @@ export default {
   data () {
     return {
       isChecked: this.modelValue
+    }
+  },
+  watch: {
+    modelValue () {
+      this.isChecked = this.modelValue
     }
   },
   methods: {

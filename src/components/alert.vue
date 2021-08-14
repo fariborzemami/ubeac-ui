@@ -14,6 +14,7 @@
     </template>
     <button
       v-if="closable"
+      @click="visible = false"
       type="button"
       class="btn-close"
       data-bs-dismiss="alert"

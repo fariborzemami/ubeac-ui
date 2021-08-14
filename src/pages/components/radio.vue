@@ -33,14 +33,14 @@ meta:
       <div class="container">
         <div class="row">
           <div class="col">
-            <h4>Normal View</h4>
+            <h4>Default</h4>
             <u-radioButton
               v-for="i in examples"
               :key="i"
-              v-model="selectedRadioExample1"
+              v-model="foo"
               :text="i.text"
               :value="i.text"
-              name="radioExample1"
+              name="foo"
             />
             <div class="my-3" />
           </div>
@@ -50,10 +50,10 @@ meta:
             <u-radioButton
               v-for="i in examples"
               :key="i"
-              v-model="selectedRadioExample2"
+              v-model="bar"
               :text="i.text"
               :value="i.text"
-              name="radioExample2"
+              name="bar"
             />
             <div class="my-3" />
           </div>
@@ -63,11 +63,11 @@ meta:
             <u-radioButton
               v-for="i in examples"
               :key="i"
-              v-model="selectedRadioExample3"
+              v-model="baz"
               :text="i.text"
               :disabled="i.disabled"
               :value="i.text"
-              name="radioExample3"
+              name="baz"
             />
             <div class="my-3" />
           </div>
@@ -83,36 +83,52 @@ import { VueComponent } from '../../../docs/components/primitive/radio.md'
 const markdown = VueComponent
 const code = reactive(
 `<template>
-  <pre> selected: {{ selectedValue }} </pre>
+  <pre> selected: {{ foo }} </pre>
   <u-radioButton
     text="foo"
-    v-model="selectedValue"
+    v-model="foo"
     value="foo"
-    name="radioBtnExample1"
+    name="foo"
     >
   </u-radioButton>
   <u-radioButton
     text="bar"
-    v-model="selectedValue"
+    v-model="foo"
     value="bar"
-    name="radioBtnExample1"
+    name="foo"
     >
   </u-radioButton>
   <hr>
-  <pre> selected: {{ selectedValue2 }} </pre>
-  <u-radioButton
+  <h6>
+      Two way binding check
+  </h6>
+    <u-radioButton
     text="foo"
-    v-model="selectedValue2"
+    v-model="foo"
+    value="foo"
+    >
+  </u-radioButton>
+  <u-radioButton
+    text="bar"
+    v-model="foo"
+    value="bar"
+    >
+  </u-radioButton>
+  <hr>
+  <pre> selected: {{ bar }} </pre>
+  <u-radioButton
+    text="bar"
+    v-model="bar"
     name="radioBtnExample2"
-    value="foo"
+    value="bar"
     >
   </u-radioButton>
   <hr>
   <u-radioButton
-    text="foo"
-    v-model="selectedValue3"
-    name="radioBtnExample3"
-    value="foo"
+    text="baz"
+    v-model="baz"
+    name="baz"
+    value="baz"
     >
   </u-radioButton>
 </template>
@@ -121,9 +137,9 @@ const code = reactive(
 export default {
    data () {
      return {
-        selectedValue: null,
-        selectedValue2: 'foo',
-        selectedValue3: ''
+        foo: null,
+        bar: 'bar',
+        baz: ''
      }
    }
  }
@@ -145,7 +161,7 @@ const examples = [
       ]
 const doSomthing = () => {alert("Somthing");}
 
-const selectedRadioExample1 = ref('')
-const selectedRadioExample2 = ref('bar')
-const selectedRadioExample3 = ref('')
+const foo = ref('')
+const bar = ref('bar')
+const baz = ref('')
 </script>
