@@ -30,9 +30,13 @@ meta:
     <u-tab
       title="Examples"
     >
-      <div class="row">
-        <div class="col">
-          <h4>Default</h4>
+      <div 
+        class="row">
+        <div
+          class="col">
+          <h4>
+            Default
+          </h4>
             <u-card
                header="foo"
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
@@ -42,17 +46,23 @@ meta:
         <div 
           class="col"
         >
-          <h4>Closable</h4>
+          <h4>
+            Closable
+          </h4>
             <u-card
                header="bar"
                closable
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
             >
            </u-card>
-            <div class="my-3" />
+            <div 
+              class="my-3" />
         </div>
-        <div class="col">
-          <h4>Slot</h4>
+        <div 
+          class="col">
+          <h4>
+            Slot
+          </h4>
             <u-card
               header="baz"
             >
@@ -70,7 +80,9 @@ meta:
                 </div>
                </template>
             </u-card>
-            <div class="my-3"></div>
+            <div 
+              class="my-3">
+            </div>
         </div>
       </div>
     </u-tab>
