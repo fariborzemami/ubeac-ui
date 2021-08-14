@@ -18,24 +18,6 @@
       />
     </div>
     <div 
-      v-if="text || title"
-      class="card-body"
-      :class="`text-${bodyAlignment}`"
-      >
-        <h5 
-          v-if="title"
-          class="card-title"
-        >
-            {{ title }}
-        </h5>
-        <p 
-          class="card-text"
-        >
-          {{ text }}
-        </p>
-    </div>
-    <div 
-      v-else
       class="card-body"
       :class="`text-${bodyAlignment}`"
       >
@@ -43,8 +25,8 @@
     </div>
       <slot 
         v-if="!!$slots.footer"
-        name="footer">
-        
+        name="footer"
+        >
       </slot>
   </div>
 </template>
@@ -55,18 +37,6 @@ export default {
     header: {
       type: String,
       default: ''
-    },
-    title: {
-      type: String,
-      default: ''
-    },
-    text: {
-      type: String,
-      default: ''
-    },
-    footer: {
-      type: String,
-      default: null
     },
     bodyAlignment: {
       type: String,

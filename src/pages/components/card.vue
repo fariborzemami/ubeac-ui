@@ -38,9 +38,11 @@ meta:
             Default
           </h4>
             <u-card
-               header="foo"
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+              header="foo"
             >
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            </div>
            </u-card>
         </div>
         <div 
@@ -52,8 +54,10 @@ meta:
             <u-card
                header="bar"
                closable
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
             >
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            </div>
            </u-card>
             <div 
               class="my-3" />
@@ -61,7 +65,7 @@ meta:
         <div 
           class="col">
           <h4>
-            Slot
+            Footer Slot
           </h4>
             <u-card
               header="baz"
@@ -97,17 +101,20 @@ const code = reactive(
 `<u-card
     header="foo"
     closable
-    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
- >
- <template #footer>
- <div 
-    class="card-footer">
-    <small 
-      class="text-muted">
-        Last update: 2 mins ago
-    </small>
+    text=""
+  >
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
   </div>
- </template>
+  <template #footer>
+    <div 
+       class="card-footer">
+       <small 
+         class="text-muted">
+           Last update: 2 mins ago
+       </small>
+     </div>
+  </template>
 </u-card>
 <hr>
 <h6>
@@ -117,9 +124,10 @@ const code = reactive(
     header="bar"
     header-alignment="center"
     body-alignment="center"
-    title="Lorem"
-    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
  >
+ <div>
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+ </div>
 </u-card>
 `
 )
