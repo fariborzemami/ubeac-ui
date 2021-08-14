@@ -22,6 +22,7 @@ import uAlert from './components/alert.vue'
 import uTabs from './components/tabs.vue'
 import uTab from './components/tab.vue'
 import uInput from './components/input.vue'
+import uCard from './components/card.vue'
 import uBreadCrumb from './components/breadcrumb.vue'
 import MaterialIcon from './components/icon.vue'
 import ColorPicker from './components/colorpicker.vue'
@@ -49,6 +50,7 @@ app.component('UAlert', uAlert)
 app.component('UTabs', uTabs)
 app.component('UTab', uTab)
 app.component('UInput', uInput)
+app.component('UCard', uCard)
 app.component('UCheckBox', uCheckBox)
 app.component('UBreadCrumb', uBreadCrumb)
 app.component('UForm', uForm)
