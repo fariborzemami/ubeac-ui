@@ -111,7 +111,6 @@ export default {
     },
     onSelect (e) {
       this.$emit('select', e)
-      alert('djhfjdksa')
     }
   }
 }
