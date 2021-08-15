@@ -52,6 +52,13 @@ meta:
             name="foo"
           />
           <div class="my-3" />
+          <h4>pattern +980000000000</h4>
+          <u-input
+            :mask="{mask: '+{98}0000000000'}"
+            v-model="mobileMaskInput"
+            name="buzz"
+          />
+          <div class="my-3" />
         </div>
         <div class="col">
           <h4>Disable</h4>
@@ -139,4 +146,5 @@ const foo = ref('Default value')
 const bar = ref('')
 const baz = ref('')
 const qux = ref('')
+const mobileMaskInput = ref('+98')
 </script>
