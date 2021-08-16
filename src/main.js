@@ -7,7 +7,6 @@ import i18n from './locale'
 import './styles/bootstrap.scss'
 import 'bootstrap/js/dist/tab.js'
 import 'bootstrap/js/dist/dropdown.js'
-import 'bootstrap/js/dist/tooltip.js'
 import 'material-icons/iconfont/material-icons.scss';
 import "vue-select-connorshea/src/scss/vue-select.scss";
 import numeral from 'numeral'
@@ -31,6 +30,9 @@ import Live from './components/live.vue'
 import Link from './components/link.vue'
 import Datepicker from './components/datepicker.vue'
 
+// Directives
+import TooltipDirective from './directives/tooltip.js'
+
 // Demo Compoenents References
 import DemoHeader from './demo_components/header.vue'
 
@@ -41,7 +43,7 @@ const app = createApp(App)
 app.use(Router)
 app.use(i18n)
 
-// Global Compoenents
+// Global Components
 app.component('ULive', Live)
 app.component('ULink', Link)
 app.component('UButton', uButton)
@@ -59,6 +61,8 @@ app.component('USelect', Select)
 app.component('UColorpicker', ColorPicker)
 app.component('UDatepicker', Datepicker)
 
+// Global Directives
+app.directive('tooltip', TooltipDirective)
 
 // Demo Compoenents References
 app.component('DemoHeader', DemoHeader)
