@@ -17,7 +17,7 @@ Form responsibilities:
  disabled
  readonly
   @load="formOnLoad"
-  model="filteringObject"
+
 
   >
   <u-form-input></u-form-input>
@@ -32,13 +32,11 @@ NOTE: Props with * need more analyse
 
 | Name               | Type              | Default      | Description                            |
 | ------------------ |-------------------| -------------| ---------------------------------------|
-| model              | Reactive Variable | null         | Reactive object of form data           |
 | confirm*            | Boolean           | false        | If set true, form switch to read only mode and needs user confirmation to sumbit data |
 | disabled           | Boolean           | false        |                                        |
 | loading            | Boolean           | false        |                                        |
 | autofocus *        | Boolean           | false        |                                        
 | autocomplete       | Boolean           | false        | (Native)                               |
-| layout *           | String            | 'horizontal' | horizontal, vertical, inline
 
 
 ## Form Events
@@ -47,6 +45,7 @@ NOTE: Props with * need more analyse
 | ------------------ | -------------------------------------------------------|
 | load               | Form Hook, after the previews data is loaded           |
 | ready              | When form is ready to edit                             |
+
 
 
 ## Form Methods
