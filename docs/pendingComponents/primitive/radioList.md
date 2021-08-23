@@ -15,31 +15,15 @@
 * type: boolean
 * default: false
 
-### disable
+### disabled
 
 * type: boolean
 * default: false
-
-### dir
-
-* type: string
-* default: right
-* available values: left, right
 
 ### visible
 
 * type: boolean
 * default: true
-
-### readonly
-
-* type: boolean
-* default: false
-
-### isRequired
-
-* type: boolean
-* default: false
 
 ### tooltip
 
@@ -49,16 +33,11 @@
 
 * type: Number
 
-### cssClass
-
-* type: String
-
-
 ### items
 
-* type: JSON, Array
-* ExampleJSON : {"key":"itemtitle","value":"1","Icon":"Alert","selected":"false"} 
-* ExampleArray : [["itemtitle","1","Alert","true"],["itemtitle2","2","Mail","false"]]
+* type: object, Array
+* ExampleJSON : {"key":"foo","value":"1","selected":"false"} 
+* ExampleArray : [["foo","1","true"],["bar","2","false"]]
 
 ### MaxSelectItem
 
@@ -67,25 +46,20 @@
 
 ### SelectedItem
 
-* type: JSON, Array
+* type: object, Array
 
-* ExampleJSON : {"key":"itemtitle","value":"1","Icon":"Alert"} 
-* ExampleArray : [["itemtitle","1","Alert"],["itemtitle2","2","Mail"]]
+* ExampleJSON : {"key":"foo","value":"1"} 
+* ExampleArray : [["foo","1"],["bar","2"]]
 
-### Icon
-
-* type: String
-* default: ""
-* alignment: Start,End
 
 ## Methods
 
-onchange
+change
 
-onload
+load
 
 ## Examples
 
 ```html
-<u-radiobuttonlist isRequired="false" label="" disable="false" autofocus="false" visible="true" repeatColumns="2" @change="" />
+<u-radiobuttonlist label="" disable="false" autofocus="false" visible="true" repeatColumns="2" @change="" />
 ```
