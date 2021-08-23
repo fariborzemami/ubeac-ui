@@ -39,11 +39,6 @@
 * ExampleJSON : {"key":"foo","value":"1","selected":"false"} 
 * ExampleArray : [["foo","1","true"],["bar","2","false"]]
 
-### MaxSelectItem
-
-* type: number
-* default: none
-
 ### SelectedItem
 
 * type: object, Array
