@@ -6,30 +6,23 @@ API server.
 
 Form responsibilities:
 
-- Create an entity
-- Update an entity
-- Load entity data
 - Show entity data in a `readonly` form
 - Validate entity data Model, before send to client
 - Handling Tab index 
-- Persistence Data
 - Submit by enter key 
 
 ``` html
 
 <u-form
- cols="6"
  disabled
  readonly
-  @onload="formOnLoad"
+  @load="formOnLoad"
   model="filteringObject"
 
   >
   <u-form-input></u-form-input>
   <u-btn></u-btn>
 </u-form>
-
-<script>
 
 ```
 
@@ -40,15 +33,12 @@ NOTE: Props with * need more analyse
 | Name               | Type              | Default      | Description                            |
 | ------------------ |-------------------| -------------| ---------------------------------------|
 | model              | Reactive Variable | null         | Reactive object of form data           |
-| cols               | integer           | 4            | Each col contains a form control in form layout if you have a lable and input it takes 2 columns           |
 | confirm*            | Boolean           | false        | If set true, form switch to read only mode and needs user confirmation to sumbit data |
 | disabled           | Boolean           | false        |                                        |
 | loading            | Boolean           | false        |                                        |
 | autofocus *        | Boolean           | false        |                                        
-| autosave *         | Boolean           | false        | If true form send submit request on any change |
 | autocomplete       | Boolean           | false        | (Native)                               |
 | layout *           | String            | 'horizontal' | horizontal, vertical, inline
-
 
 
 ## Form Events
@@ -67,7 +57,6 @@ NOTE: Props with * need more analyse
 | validate           | Triggers a validation on all field (***need validation method or library**** )                    |
 | resetValidation    | Resets the validation on all field                     |
 | reset              | Resets all form data to default values                            |
-
 
 
 ## Form Slots
